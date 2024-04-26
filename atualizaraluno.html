@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>Atualizar Aluno</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A700"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C700"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo%3A400"/>
+  <link rel="stylesheet" href="./styles/padrao.css"/>
+</head>
+<body>
+  <div class="fundo">
+    <div class="banner">
+      <div class="blocoAmareloLinks">
+        <div class="blocoAzulCima">
+        </div>
+        <div class="div1">
+          <div class="div2">
+            <p class="divTitulo">
+              <img src="img/logoreal.png" alt="Biometric Call Logo" class="logo"> <!-- Adicione essa linha -->
+
+  
+            </p>
+            <p class="titulo1">BICALL</p>
+          </div>
+          <p class="txtBanner"><a class="txtBanner" href="index.html">TELA PRINCIPAL</a></p>
+          <p class="txtBanner"><a class="txtBanner" href="cadastraraluno.html">CADASTRAR ALUNO</a></p>
+          <p class="txtBanner"><a class="txtBanner" href="verificarchamada.html">VERIFICAR CHAMADA</a></p>
+          <p class="txtBanner"><a class="txtBanner" href= "apagaraluno.html">APAGAR ALUNO</a></p>
+          
+        </div>
+      </div>
+      <div class="blocoAzulMeio">
+      </div>
+    </div>
+    <div class="divFormCad">
+      <!-- form atualização -->
+      <form action="atualizar.php" method="POST"> 
+        <div class="divRB">  
+          <input type="radio" name="serie" value="1" class="sc">
+          <p class="rb1">1º ANO</p>
+          <input type="radio" name="curso" value="Administração" class="sc">
+          <p class="rbAdm">ADM</p>
+        </div>
+        <input type="submit" value="Atualizar" class="button" />
+        <img class="biometria-xq5" src="./assets/biometria.png"/>
+        <div class="txtBoxNome"> <input type="text" name="cxnomealuno" class="digitarnomeatt">
+        </div>
+        <p class="txtDigital">INSIRA A DIGITAL DO ALUNO:</p>
+        <div class="ladoLado">
+          <p class="txtSerie">SELECIONE A SÉRIE DO ALUNO:</p>
+          <p class="txtCurso">SELECIONE O CURSO DO ALUNO:</p>
+        </div>
+        <div class="auto-group-uawh-Vrc">
+          <input type="radio" name="serie" value="3" class="sc">
+          <p class="rb3">3º ANO</p>
+          <input type="radio" name="curso" value="Logística" class="sc">
+          <p class="rbLog">LOG</p>
+        </div>
+        <div class="auto-group-hgg7-vqS">
+          <input type="radio" name="serie" value="2" class="sc">
+          <p class="rb2">2º ANO</p>
+          <input type="radio" name="curso" value="Desenvolvimento de Sistemas" class="sc">
+          <p class="rbDs">DS</p>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="divRodape">
+    <div class="blocoAmareloRodape">
+    </div>
+    <div class="blocoAzulRodape">
+    </div>
+  </div>
+</div>
+</body>
+</html>

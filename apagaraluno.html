@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>Apagar Aluno</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A700"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C700"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo%3A400"/>
+  <link rel="stylesheet" href="./styles/padrao.css"/>
+</head>
+<body>
+  <div class="fundo">
+    <div class="banner">
+      <div class="blocoAmareloLinks">
+        <div class="blocoAzulCima">
+        </div>
+        <div class="div1">
+          <div class="div2">
+            <p class="divTitulo">
+              <img src="img/logoreal.png" alt="Biometric Call Logo" class="logo"> <!-- Adicione essa linha -->
+            </p>
+            <p class="titulo1">BICALL</p>
+          </div>
+          <p class="txtBanner"><a class="txtBanner" href="index.html">TELA PRINCIPAL</a></p>
+          <p class="txtBanner"><a class="txtBanner" href="cadastraraluno.html">CADASTRAR ALUNO</a></p>
+          <p class="txtBanner"><a class="txtBanner" href="verificarchamada.html">VERIFICAR CHAMADA</a></p>
+          <p class="txtBanner"><a class="txtBanner" href= "atualizaraluno.html">ATUALIZAR ALUNO</a></p>
+        </div>
+      </div>
+      <div class="blocoAzulMeio">
+      </div>
+    </div>
+    <p class="txtCad">APAGAR</p>
+    <div class="divForm">
+      <form method="POST" action="deletar_dados.php">
+        <div class="txtNomeAluno">Código: <input type="text" name="cx_apag_cod" class="digitarID" placeholder="Digite o código" pattern="\d*" title="Apenas números são permitidos" required></div>
+        <div class="auto-group-ljkm-xm5">
+          <div class=""><button class="btnapagar-iVM">APAGAR </button></div> 
+          <p class="txtApagar">TEM CERTEZA QUE DESEJA APAGAR?</p>
+          <div class="rbsim-6Vu">
+            <input type="radio" name="escolha" class="sc"/>
+            <p class="rbSim">SIM</p>
+          </div>
+          <div class="rbnao-hEo">
+            <input type="radio" name="escolha" class="sc"/>
+            <p class="rbNao">NÃO</p>
+          </div>
+        </div>
+      

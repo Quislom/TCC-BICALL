@@ -1,0 +1,191 @@
+
+html {
+	font-size:62.5%;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+ul, li {
+	list-style: none;
+}
+input {
+	border: none;
+}
+body {
+  width: 144rem;
+}.telaprincipal-Xu9 {
+  flex-direction: column;
+  background-color: #abcfd8;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  display: flex;
+
+  .banner-sy1 {
+    margin-bottom: 30.7rem;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+
+    .auto-group-ax5m-36o {
+      padding-bottom: 1.9rem;
+      width: 170.9rem;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      background-color: #ffa404;
+      margin-right: 21.8rem;
+      flex-shrink: 0;
+      box-sizing: border-box;
+
+      .blocoazul-xzT {
+        width: 100%;
+        height: 28.5rem;
+        background-color: #40a2e3;
+        flex-shrink: 0;
+      }
+      .auto-group-l4eb-vgP {
+        flex-shrink: 0;
+        margin: 0rem 29.9rem 0rem 37.7rem;
+        width: calc(100% - 67.6rem);
+        height: 11.5rem;
+        display: flex;
+        align-items: center;
+
+        .auto-group-7cvu-dqh {
+          margin-right: 11.9rem;
+          width: 18.5rem;
+          height: 100%;
+          position: relative;
+          flex-shrink: 0;
+
+          .titulo-P4B {
+            width: 18.5rem;
+            height: 3.9rem;
+            left: 0;
+            font-size: 3.2rem;
+            color: #6d460c;
+            white-space: nowrap;
+            position: absolute;
+            top: 7.6rem;
+            font-weight: 700;
+            line-height: 1.2125;
+            letter-spacing: 1.056rem;
+            font-family: Inter, 'Source Sans Pro';
+          }
+          .titulo-myq {
+            font-family: Baloo, 'Source Sans Pro';
+            white-space: nowrap;
+            width: 16.5rem;
+            height: 8.1rem;
+            left: 0;
+            font-weight: 400;
+            line-height: 1.2575;
+            position: absolute;
+            top: 0;
+            font-size: 6.4rem;
+            color: #ffffff;
+          }
+        }
+        .cadastraraluno-UtF {
+          max-width: 15.1rem;
+          color: #ffffff;
+          font-family: Inter, 'Source Sans Pro';
+          font-size: 2.4rem;
+          font-weight: 700;
+          line-height: 1.2125;
+          flex-shrink: 0;
+          margin: 1.8rem 6.1rem 0rem 0rem;
+          cursor: pointer;
+          text-align: center;
+        }
+        .verificarchamada-Zeo {
+          margin: 1.8rem 6.5rem 0rem 0rem;
+          max-width: 12.9rem;
+          font-size: 2.4rem;
+          font-weight: 700;
+          font-family: Inter, 'Source Sans Pro';
+          text-align: center;
+          line-height: 1.2125;
+          color: #ffffff;
+          flex-shrink: 0;
+        }
+        .atualizaraluno-fC3 {
+          max-width: 14.3rem;
+          font-size: 2.4rem;
+          color: #ffffff;
+          flex-shrink: 0;
+          margin: 1.8rem 7.9rem 0rem 0rem;
+          text-align: center;
+          font-weight: 700;
+          line-height: 1.2125;
+          font-family: Inter, 'Source Sans Pro';
+        }
+        .apagaraluno-yiX {
+          font-size: 2.4rem;
+          font-weight: 700;
+          max-width: 10.1rem;
+          text-align: center;
+          color: #ffffff;
+          font-family: Inter, 'Source Sans Pro';
+          flex-shrink: 0;
+          margin-top: 1.8rem;
+          line-height: 1.2125;
+        }
+      }
+    }
+    .blocoazul-tab {
+      margin-left: 21.8rem;
+      width: 170.9rem;
+      height: 3rem;
+      background-color: #40a2e3;
+      flex-shrink: 0;
+    }
+  }
+  .informaes-RKd {
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin: 0rem 0rem 32.6rem 0.3rem;
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    color: #ffffff;
+  }
+  .rodape-8jq {
+    margin-bottom: 10.4rem;
+    width: 170.9rem;
+    height: 14.7rem;
+    position: relative;
+    flex-shrink: 0;
+
+    .blocoamarelo-gWT {
+      top: 2.9rem;
+      background-color: #ffa404;
+      width: 144rem;
+      height: 11.8rem;
+      position: absolute;
+      left: 0;
+    }
+    .blocoazul-RU3 {
+      top: 0;
+      background-color: #40a2e3;
+      width: 170.9rem;
+      height: 3rem;
+      position: absolute;
+      left: 0;
+    }
+  }
+  .btnduvida-yVZ {
+    vertical-align: top;
+    flex-shrink: 0;
+    margin-left: 354rem;
+    width: 8.5rem;
+    height: 8.3rem;
+    object-fit: contain;
+  }
+}
