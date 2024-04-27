@@ -15,15 +15,20 @@ input {
 body {
   width: 144rem;
 }.verificarchamada-KAw {
-  width: 100%;
+      width: 100%;
       overflow: hidden;
       position: relative;
       align-items: center;
       display: flex;
       flex-direction: column;
       background-color: #abcfd8;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* o conteudo ocupara toda a altura */
 }
 .verificarchamada-KAw .banner-TH9 {
+  justify-content: space-between;
+  display: flex;
   margin-bottom: 9.4rem;
   width: 100%;
   align-items: center;
@@ -133,11 +138,9 @@ body {
   flex-shrink: 0;
 }
 .verificarchamada-KAw .banner-TH9 .blocoazul-CZV {
-  margin-left: 21.8rem;
-  width: 270.9rem;
-  height: 3rem;
-  background-color: #40a2e3;
-  flex-shrink: 0;
+  width: 100%;
+  height: 30px;
+  background-color:#40a2e3;;
 }
 .verificarchamada-KAw .table-LQo {
   margin: 0rem 8.9rem 17.2rem 8.9rem;
@@ -166,8 +169,10 @@ body {
   align-items: center;
   background-color: #ffffff;
   flex-shrink: 0;
+  display: flex;
 }
 .verificarchamada-KAw .table-LQo .thead-eAb .th-yCs {
+  display: flex;
   margin-right: 32.8667rem;
   width: 9.2rem;
   height: 100%;
@@ -185,6 +190,8 @@ body {
   flex-shrink: 0;
 }
 .verificarchamada-KAw .table-LQo .thead-eAb .th-gNB {
+  flex: 1;
+  padding: 20px;
   margin-right: 32.8667rem;
   width: 9.2rem;
   height: 100%;
@@ -218,6 +225,7 @@ body {
   flex-shrink: 0;
 }
 .verificarchamada-KAw .table-LQo .tbody-gWb {
+  display: flex;
   width: 100%;
   height: 29.8rem;
   overflow: hidden;
@@ -229,6 +237,7 @@ body {
   flex-shrink: 0;
 }
 .verificarchamada-KAw .table-LQo .tbody-gWb .tr-2qM {
+  display: flex;
   box-sizing: border-box;
   padding: 1.6rem 33.667rem 1.6rem 3.2rem;
   width: 100%;
@@ -242,6 +251,7 @@ body {
   flex-shrink: 0;
 }
 .verificarchamada-KAw .table-LQo .tbody-gWb .tr-2qM .td-Msd {
+  display: flex;
   margin: 0rem 36.867rem 3.2rem 0rem;
   width: 5.2rem;
   height: 1.5rem;
@@ -259,6 +269,7 @@ body {
   flex-shrink: 0;
 }
 .verificarchamada-KAw .table-LQo .tbody-gWb .tr-2qM .td-rJb {
+  display: flex;
   margin: 0rem 36.867rem 3.2rem 0rem;
   width: 5.2rem;
   height: 1.5rem;
@@ -276,6 +287,7 @@ body {
   flex-shrink: 0;
 }
 .verificarchamada-KAw .table-LQo .tbody-gWb .tr-2qM .td-MFM {
+  display: flex;
   margin-bottom: 3.2rem;
   width: 5.2rem;
   height: 1.5rem;
@@ -293,6 +305,7 @@ body {
   flex-shrink: 0;
 }
 .verificarchamada-KAw .table-LQo .tbody-gWb .tr-SGo {
+  display: flex;
   box-sizing: border-box;
   padding: 1.6rem 33.667rem 1.6rem 3.2rem;
   width: 100%;
@@ -306,6 +319,7 @@ body {
   flex-shrink: 0;
 }
 .verificarchamada-KAw .table-LQo .tbody-gWb .tr-SGo .td-ZsD {
+  display: flex;
   margin-right: 36.8667rem;
   width: 5.2rem;
   height: 1.5rem;
@@ -323,6 +337,7 @@ body {
   flex-shrink: 0;
 }
 .verificarchamada-KAw .table-LQo .tbody-gWb .tr-SGo .td-5qZ {
+  display: flex;
   margin-right: 36.8667rem;
   width: 5.2rem;
   height: 1.5rem;
@@ -340,6 +355,7 @@ body {
   flex-shrink: 0;
 }
 .verificarchamada-KAw .table-LQo .tbody-gWb .tr-SGo .td-Bdh {
+  display: flex;
   width: 5.2rem;
   height: 1.5rem;
   overflow: hidden;
@@ -356,6 +372,7 @@ body {
   flex-shrink: 0;
 }
 .verificarchamada-KAw .table-LQo .tbody-gWb .tr-GQF {
+  display: flex;
   box-sizing: border-box;
   padding: 1.6rem 33.667rem 1.6rem 3.2rem;
   width: 100%;
@@ -369,6 +386,7 @@ body {
   flex-shrink: 0;
 }
 .verificarchamada-KAw .table-LQo .tbody-gWb .tr-GQF .td-QFZ {
+  display: flex;
   margin-right: 36.8667rem;
   width: 5.2rem;
   height: 1.5rem;
@@ -386,6 +404,7 @@ body {
   flex-shrink: 0;
 }
 .verificarchamada-KAw .table-LQo .tbody-gWb .tr-GQF .td-uy1 {
+  display: flex;
   margin-right: 36.8667rem;
   width: 5.2rem;
   height: 1.5rem;
@@ -403,6 +422,7 @@ body {
   flex-shrink: 0;
 }
 .verificarchamada-KAw .table-LQo .tbody-gWb .tr-GQF .td-RwM {
+  display: flex;
   width: 5.2rem;
   height: 1.5rem;
   overflow: hidden;
@@ -419,6 +439,7 @@ body {
   flex-shrink: 0;
 }
 .verificarchamada-KAw .table-LQo .tbody-gWb .tr-iQf {
+  display: flex;
   box-sizing: border-box;
   padding: 1.6rem 33.667rem 1.6rem 3.2rem;
   width: 100%;
@@ -432,6 +453,7 @@ body {
   flex-shrink: 0;
 }
 .verificarchamada-KAw .table-LQo .tbody-gWb .tr-iQf .td-3xj {
+  display: flex;
   margin-right: 36.8667rem;
   width: 5.2rem;
   height: 1.5rem;
@@ -449,6 +471,7 @@ body {
   flex-shrink: 0;
 }
 .verificarchamada-KAw .table-LQo .tbody-gWb .tr-iQf .td-MyR {
+  display: flex;
   margin-right: 36.8667rem;
   width: 5.2rem;
   height: 1.5rem;
@@ -466,6 +489,7 @@ body {
   flex-shrink: 0;
 }
 .verificarchamada-KAw .table-LQo .tbody-gWb .tr-iQf .td-fUK {
+  display: flex;
   width: 5.2rem;
   height: 1.5rem;
   overflow: hidden;
@@ -481,33 +505,41 @@ body {
   justify-content: center;
   flex-shrink: 0;
 }
-.verificarchamada-KAw .rodape-rHu {
-  margin-bottom: 10.4rem;
-  width: 170.9rem;
-  height: 14.7rem;
-  position: relative;
-  flex-shrink: 0;
+
+/*Formatações do rodapé*/
+.divRodape {
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  display: flex;
+  flex-wrap:wrap ;
 }
-.verificarchamada-KAw .rodape-rHu .blocoamarelo-zQ7 {
-  width: 144rem;
-  height: 11.8rem;
-  position: absolute;
-  left: 0;
-  top: 2.9rem;
+.blocoAmareloRodape {
+  
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: space-between;
   background-color: #ffa404;
+  padding: 10px;
 }
-.verificarchamada-KAw .rodape-rHu .blocoazul-voZ {
-  width: 170.9rem;
-  height: 3rem;
-  position: absolute;
-  left: 0;
-  top: 0;
+.blocoAzulRodape {
+  display: flex;
   background-color: #40a2e3;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  
+
 }
+
+/*icone ajuda */
 .verificarchamada-KAw .btnduvida-U4P {
   width: 8.5rem;
   height: 8.3rem;
   object-fit: contain;
   vertical-align: top;
   flex-shrink: 0;
+  
 }
