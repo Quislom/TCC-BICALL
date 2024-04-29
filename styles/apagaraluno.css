@@ -270,3 +270,28 @@
   vertical-align: top;
   flex-shrink: 0;
 }
+
+
+.divRodape {
+  width: 100%;
+  height: 14.7rem;
+  position: relative;
+  flex-shrink: 0;
+}
+.blocoAmareloRodape {
+  width: 100%;
+  height: 11.8rem;
+  position: absolute;
+  left: 0;
+  top: 2.9rem;
+  background-color: #ffa404;
+}
+.blocoAzulRodape {
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #40a2e3;
+}
+
