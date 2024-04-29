@@ -4,8 +4,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    margin-top: 55px;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 body
@@ -16,7 +15,7 @@ body
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #0c0ce94d;
+    background: #ABCFD8;
 }
 
 .container {
@@ -25,6 +24,7 @@ body
    display: flex;
    box-shadow: 5px 5px 10px rgba(0,0,0, .212);
    
+   
 }
 
 .form-image{
@@ -32,8 +32,9 @@ body
     display:flex;
     justify-content: center;
     align-items: center;
-    background-color: #fde3a7d7;
+    background-color: #40A2E3;
     padding: 1rem;
+    
 }
 
 .form-image img 
@@ -43,10 +44,11 @@ body
 
 .form
 {
+    
     width: 50%; 
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content:top;
+    align-items: top;
     flex-direction: column;
     background-color: #fff;
     padding: 3rem;
@@ -55,9 +57,11 @@ body
 
 .form-header 
 {
+    
     margin-bottom: 3rem;
     display: flex;
     justify-content: space-between;
+    
     
 }
 
@@ -93,9 +97,9 @@ color: #fff;
 
     content:'';
     display:block;
-    width: 19rem;
+    width: 16rem;
     height: 0.3rem;
-    background-color: #6b63fff1;
+    background-color: #40A2E3;
     margin: 0 auto;
     position: absolute;
     border-radius: 10px;
@@ -111,6 +115,8 @@ color: #fff;
 
 .input-box
 {
+    
+    font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
     margin-bottom: 1.1rem;
@@ -119,14 +125,14 @@ color: #fff;
 .input-box input
 {
  margin: 0.6rem 0;
- padding: 0.8rem 1.2rem;
+ padding: 0.8rem 12.2rem;
  border:none;
  border-radius: 10px;
  box-shadow: 1px 1px 6px #000000c1; 
  font-size: 0.8rem;
 }
 
-.input-box input::hover 
+.input-box input:hover 
 {
     background-color: #eeeeee75;
 }
@@ -138,7 +144,7 @@ color: #fff;
 
 .input-box label, .gender-title h6 
 {
-    font-size: 0.75rem;
+    font-size: 10px;
     font-weight: 600;
     color:#000000c0;
 }
@@ -176,10 +182,11 @@ color: #fff;
 
 .continue-button button
 {
-    width: 100%;
+    width: 40%;
     margin-top: 2.5rem;
+
     border: none;
-    background-color: #6c63ff;
+    background-color: #004AAD;
     padding: 0.62rem;
     border-radius: 5px;
     cursor: pointer;
