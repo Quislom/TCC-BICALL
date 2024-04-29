@@ -12,4 +12,4 @@ function validarFormulario() {
   
     alert("Olá, não esqueça de preencher os campos e selecionar as opções!!")
     alert("É serio, nao esqueça!!")
-  
+    

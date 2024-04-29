@@ -31,7 +31,7 @@
     
   
   .banner {
-    margin-bottom: 9.4rem;
+    margin-top: 5px;
     width: 100%;
     align-items: center;
     display: flex;
@@ -41,7 +41,7 @@
   
   .blocoAmareloCima {
     box-sizing: border-box;
-    padding-bottom: 1.9rem;
+    margin-top: 5px;
     width: 100%;
     background-color: #ffa404;
   }
@@ -328,6 +328,7 @@
   top: 2rem;
   border-radius: 2rem;
 }
+/*caixa de texto do nome*/
 .digitarnome{
   padding-left: 5px;
   margin-top: -20px;
@@ -341,6 +342,16 @@
   font-size: 20px; /* Defina o tamanho da fonte desejado */
   font-weight: bold; /* Deixa o texto em negrito */
 }
+txtBoxNomeA{
+  margin: 0.6rem 0;
+ padding: 0.10rem 12.2rem;
+ border:none;
+ border-radius: 10px;
+ box-shadow: 1px 1px 6px #000000c1; 
+ font-size: 0.8rem;
+}
+
+
   /*divs*/
   .divForm {
     box-sizing: border-box;
@@ -436,13 +447,15 @@
   }
   .rb1 {
     margin: 0rem 35.2rem 0.3rem 0rem;
-    font-size: 2.4rem;
-    font-weight: 700;
+    
     line-height: 1.2125;
-    color: #ffffff;
-    font-family: Inter, 'Source Sans Pro';
     white-space: nowrap;
     flex-shrink: 0;
+
+    font-family: inherit, Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color:#000000c0;
   } 
   
   
@@ -1057,6 +1070,7 @@ height: 30px;
   flex-shrink: 0;
   text-align: center;
 }
+
 
 
 

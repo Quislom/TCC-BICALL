@@ -8,6 +8,28 @@
     <title>Formulário de Cadastro</title>
 </head>
 <body>
+    <div class="fundo">
+        <div class="banner">
+          <div class="blocoAmareloLinks">
+            <div class="blocoAzulCima">
+            </div>
+            <div class="div1">
+              <div class="div2">
+                <p class="divTitulo">
+                  <img src="img/logoreal.png" alt="Biometric Call Logo" class="logo"> <!-- Adicione essa linha -->
+    
+                </p>
+                <p class="titulo1">BICALL</p>
+              </div>
+              <p class="txtBanner"><a class="txtBanner" href="index.html">TELA PRINCIPAL</a></p>
+              <p class="txtBanner"><a class="txtBanner" href="verificarchamada.html">VERIFICAR CHAMADA</a></p>
+              <p class="txtBanner"><a class="txtBanner" href="atualizaraluno.html">ATUALIZAR ALUNO</a></p>
+              <p class="txtBanner"><a class="txtBanner" href="apagaraluno.html">APAGAR ALUNO</a></p>
+            </div>
+          </div>
+          <div class="blocoAzulMeio">
+          </div>
+        </div>
     <div class ="container">
         <div class = "form-image">
             <img src = "img/undraw_mathematics_-4-otb (1).svg">
@@ -23,10 +45,64 @@
                 <!--agrupando os conteudos do formulário-->
                 <div class="input-group">
                     <div class = "input-box">
-                        <label for="firstname">Nome do aluno</label>
+                        <label for="txtBoxNomeA">Nome do aluno</label>
                         <!--o required é tipo um obrigatorio-->
-                        <input id="firstname" type="text" name="firstname" placeholder="Digite o seu primeiro nome" required>
+                        <input class="txtBoxNomeA" type="text" name="txtBoxNomeA" placeholder="Digite o nome do aluno" required>
+
+                        
+                        
                     </div>
+                    
+                    <div class="serie-inputs">
+
+                                <div class = "input-box">
+                                    <label for="txtBoxNomeA">Selecione a série do aluno:</label>
+                                </div>
+
+                            <div class="serie-group">
+                                <div class="serie-input">
+                                    <input id="s1" type="radio" name="gender">
+                                    <label for="s1">1º ano</label>
+                                </div>
+        
+                                <div class="serie-input">
+                                    <input id="s2" type="radio" name="gender">
+                                    <label for="s2">2º ano</label>
+                                </div>
+        
+                                <div class="serie-input">
+                                    <input id="s3" type="radio" name="gender">
+                                    <label for="s3">3º ano</label>
+                                </div>
+                            
+                            </div>
+                            <div class="serie-inputs">
+
+                                <div class = "input-box">
+                                    <label for="txtBoxNomeA">Selecione o curso do aluno:</label>
+                                </div>
+
+                            <div class="serie-group">
+                                <div class="serie-input">
+                                    <input id="s1" type="radio" name="gender">
+                                    <label for="s1">ADM</label>
+                                </div>
+        
+                                <div class="serie-input">
+                                    <input id="s2" type="radio" name="gender">
+                                    <label for="s2">DS</label>
+                                </div>
+        
+                                <div class="serie-input">
+                                    <input id="s3" type="radio" name="gender">
+                                    <label for="s3">LOG</label>
+                                </div>
+                            
+                            </div>
+                            
+                        </div>
+
+                        </div>
                 </div>
                 <div class="continue-button">
                     <button><a href="#">Cadastrar</a></button>
@@ -35,5 +111,11 @@
             </form>
         </div>
     </div>
+    <div class="divRodape">
+        <div class="blocoAmareloRodape">
+        </div>
+        <div class="blocoAzulRodape">
+        </div>
+        </div>
 </body>
 </html>
