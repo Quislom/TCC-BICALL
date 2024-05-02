@@ -103,7 +103,7 @@ color: #fff;
     display:block;
     width: 23rem;
     height: 0.3rem;
-    background-color: #004AAD;
+    background-color: #ffa404;
     margin: 0 auto;
     position: absolute;
     border-radius: 10px;
@@ -195,14 +195,13 @@ color: #fff;
     align-items: center;
 }
 
+/*botão formulário*/
 .continue-button button
 {
     width: 40%;
-    
     margin-top: 2.5rem;
-
     border: none;
-    background-color: #004AAD;
+    background-color: #ffa404;
     padding: 0.80rem;
     border-radius: 5px;
     cursor: pointer;
@@ -240,6 +239,8 @@ color: #fff;
     .form
     {
         width: 100%;
+        border-radius: 50px 50px 50px 50px ;
+
     }
 
 }
