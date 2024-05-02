@@ -13,7 +13,7 @@ body
 {
     /*tela toda*/
     width: 100%;
-    height: 100vh;
+    height: -100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,6 +31,7 @@ body
 }
 
 .form-image{
+    border-radius: 50px 0px 0px 50px ;
     width: 50%;
     display:flex;
     justify-content: center;
@@ -47,7 +48,7 @@ body
 
 .form
 {
-    
+    border-radius: 0px 50px 50px 0px ;
     width: 50%; 
     display: flex;
     justify-content:top;
@@ -240,6 +241,7 @@ color: #fff;
     {
         width: 100%;
     }
+
 }
 @media screen and (max-width: 1064px) {
     .container {
