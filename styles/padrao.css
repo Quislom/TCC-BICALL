@@ -401,7 +401,7 @@ txtBoxNomeA{
     font-size: 2.4rem;
     font-weight: 700;
     line-height: 1.2125;
-    color: #ffffff;
+    color: #000000;
     font-family: Inter, 'Source Sans Pro';
     white-space: nowrap;
     flex-shrink: 0;
@@ -411,7 +411,7 @@ txtBoxNomeA{
     font-size: 2.4rem;
     font-weight: 700;
     line-height: 1.2125;
-    color: #ffffff;
+    color: #000000;
     font-family: Inter, 'Source Sans Pro';
     white-space: nowrap;
     flex-shrink: 0;
@@ -421,7 +421,7 @@ txtBoxNomeA{
     font-size: 2.4rem;
     font-weight: 700;
     line-height: 1.2125;
-    color: #ffffff;
+    color: #000000;
     font-family: Inter, 'Source Sans Pro';
     white-space: nowrap;
     flex-shrink: 0;
@@ -431,7 +431,7 @@ txtBoxNomeA{
     font-size: 2.4rem;
     font-weight: 700;
     line-height: 1.2125;
-    color: #ffffff;
+    color: #000000;
     font-family: Inter, 'Source Sans Pro';
     white-space: nowrap;
     flex-shrink: 0;
@@ -441,22 +441,20 @@ txtBoxNomeA{
     font-size: 2.4rem;
     font-weight: 700;
     line-height: 1.2125;
-    color: #ffffff;
+    color: #000000;
     font-family: Inter, 'Source Sans Pro';
     white-space: nowrap;
     flex-shrink: 0;
   }
   .rb1 {
-    margin: 0rem 35.2rem 0.3rem 0rem;
-    
+    margin: 0rem 34.9rem 0.352rem 0rem;
+    font-size: 2.4rem;
+    font-weight: 700;
     line-height: 1.2125;
+    color: #000000;
+    font-family: Inter, 'Source Sans Pro';
     white-space: nowrap;
     flex-shrink: 0;
-
-    font-family: inherit, Arial, Helvetica, sans-serif;
-    font-size: 17px;
-    font-weight: 600;
-    color:#000000c0;
   } 
   
   

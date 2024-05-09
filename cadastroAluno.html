@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href="styles/cadastroAluno.css">
     <link rel="stylesheet" href="./styles/padrao.css"/>
-    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A700" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C700" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo%3A400" />
     <title>Formulário de Cadastro</title>
 </head>
 <body>
@@ -41,7 +43,7 @@
         </div>
 
         <div class="form">
-            <form action="#">
+            <form name="formAluno" action="tabela-alunos.php" method="POST" onsubmit="return validarFormulario()">
                 <div class = "form-header">
                     <div class="title">
                         <h1>Cadastrar Aluno</h1>
@@ -52,7 +54,7 @@
                     <div class = "input-box">
                         <label for="txtBoxNomeA">Nome do aluno</label>
                         <!--o required é tipo um obrigatorio-->
-                        <input class="txtBoxNomeA" type="text" name="txtBoxNomeA" placeholder="Digite o nome do aluno" required>
+                        <input class="txtBoxNomeA" type="text" name="txtBoxNomeA" title="Apenas letras são permitidas" pattern="[A-Za-z\s]+" placeholder="Digite o nome do aluno" required>
 
                         
                         
@@ -66,18 +68,18 @@
 
                             <div class="serie-group">
                                 <div class="serie-input">
-                                    <input id="s1" type="radio" name="gender">
-                                    <label for="s1">1º ano</label>
+                                    <input type="radio" name="serie" value="1º ANO" class="sc">
+                                    <p class="rb1">1º ANO</p>
                                 </div>
         
                                 <div class="serie-input">
-                                    <input id="s2" type="radio" name="gender">
-                                    <label for="s2">2º ano</label>
+                                    <input type="radio" name="serie" value="2º ANO" class="sc" />
+                                    <p class="rb2">2º ANO</p>
                                 </div>
         
                                 <div class="serie-input">
-                                    <input id="s3" type="radio" name="gender">
-                                    <label for="s3">3º ano</label>
+                                    <input type="radio" name="serie" value="3º ANO" class="sc" />
+                                     <p class="rb3">3º ANO</p>
                                 </div>
                             
                             </div>
@@ -89,18 +91,18 @@
 
                             <div class="serie-group">
                                 <div class="serie-input">
-                                    <input id="s1" type="radio" name="gender">
-                                    <label for="s1">ADM</label>
+                                    <input type="radio" name="curso" value="Administração" class="sc" />
+                                    <p class="rbAdm">ADM</p>
                                 </div>
         
                                 <div class="serie-input">
-                                    <input id="s2" type="radio" name="gender">
-                                    <label for="s2">DS</label>
+                                    <input type="radio" name="curso" value="Desenvolvimento de Sistemas" class="sc" />
+                                    <p class="rbDs">DS</p>
                                 </div>
         
                                 <div class="serie-input">
-                                    <input id="s3" type="radio" name="gender">
-                                    <label for="s3">LOG</label>
+                                    <input type="radio" name="curso" value="Logística" class="sc" />
+                                    <p class="rbLog">LOG</p>
                                 </div>
                             
                             </div>
