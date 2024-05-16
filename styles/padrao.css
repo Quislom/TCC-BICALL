@@ -41,15 +41,15 @@
   }
 
   .hamburguer{
-    width: 2rem;
-    height: 2rem;
+    width: 8rem;
+    height: 10rem;
     position: fixed;
     z-index:5;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    right: 2rem;
-    top:2rem;
+    right: 3rem;
+    top:5rem;
     cursor: pointer;
   }
    .show-menu .hamburguer{
@@ -58,23 +58,50 @@
   
    .line{
     width: 100%;
-    height: 1rem;
-    padding: 1px;
+    height: 0rem;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(241, 241, 241);
+    box-shadow: #1d8be6;
+    transition: transform .7s;
+    display: none;
    }
   
    .show-menu #line1{
+    transform: rotate(45deg) translate(.4rem,.9rem);
+    background-color: pink;
+    box-shadow: none;
     
   
    }
+
+   .show-menu #line2{
+  opacity: 0; 
+  visibility: hidden;
+  
+   }
+
+   
+   .show-menu #line3{
+    transform: rotate(45deg) translate(.4rem,.9rem);
+    background-color: pink;
+    box-shadow: none;
+    
+  
+   }
+
+
+
+
   
 
 
 @media screen and (max-width: 1570px) 
 {
     
-.menu-burger,
-.menu-burger::before,
-.menu-burger::after
+
+
+    .line
     {
         display: block;
     }
