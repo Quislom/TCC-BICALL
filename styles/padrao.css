@@ -54,27 +54,6 @@
   
 }
 
-.menu-burger,
-.menu-burger::before,
-.menu-burger::after{
-    content: "";
-    position: absolute;
-    display: block;
-    height: calc(var(--menu-size) / 10);
-    width: var(--menu-size);
-    background-color: white;
-    border-radius: 5px;
-    transition: all .3s linear;
-    display: none;
-    bottom: 50px;
-    width: 60px;
-    
- 
-}
-
-.menu-burger::before{
-    transform: translateY(calc(var(--menu-size) / -3));
-}
 
 .menu-burger::after{
     transform: translateY(calc(var(--menu-size) / 3));
