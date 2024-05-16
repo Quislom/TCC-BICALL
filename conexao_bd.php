@@ -2,7 +2,7 @@
 
 $host = "localhost";
 $user = "root";
-$pass = "root"; // Substitua pela sua senha do MySQL
+$pass = ""; // Substitua pela sua senha do MySQL
 $base = "tcc";
 
 // Criar uma conexão com o banco de dados

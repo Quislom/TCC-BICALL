@@ -43,7 +43,7 @@
   .hamburguer{
     width: 8rem;
     height: 10rem;
-    position: fixed;
+    position: absolute ;
     z-index:5;
     display: flex;
     flex-direction: column;
@@ -285,15 +285,17 @@
   .titulo1 {
     width: 16.5rem;
     height: 8.1rem;
-    position: absolute;
-    left: 0;
-    top: 0;
+    position: absolute ;
+    left: -15rem;
+    top: 3rem;
     font-size: 6.4rem;
     font-weight: 400;
     line-height: 1.2575;
     color: #613a07;
     font-family: Baloo, 'Source Sans Pro';
     white-space: nowrap;
+    display: flex;
+    right: -100px;
   }
  
   .blocoAzulMeio {
@@ -1228,10 +1230,11 @@ height: 30px;
   box-sizing: border-box;
 }
 .logo{
-  margin-left: -150%;
-  margin-top: -373px;
- width: auto;
+  margin-left: -325px ;
+  margin-top: -375px;
+  width: auto;
   height: 330px;
+  
 }
 .digitarnomeatt{
   margin-top: -20px;
