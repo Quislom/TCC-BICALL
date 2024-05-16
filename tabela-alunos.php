@@ -45,13 +45,13 @@
     <?php
     $host = "localhost:3306";
     $user = "root";
-    $pass = "root";
+    $pass = "";
     $base = "tcc";
     $con = mysqli_connect($host, $user, $pass, $base);
 
     // Código para inserir novos dados
 
-    $nome = $_POST['cxnomealuno'];
+    $nome = $_POST['txtBoxNomeA'];
     $cursos = $_POST['curso'];
     $serie = $_POST['serie'];
 
