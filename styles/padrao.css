@@ -53,6 +53,8 @@
     cursor: pointer;
     display: none;
   }
+
+  
    .show-menu .hamburguer{
     right: 16rem;
    }
@@ -116,6 +118,29 @@
     color: rgb(0, 255, 255);
     transition: color .7s;
 }
+
+/*Botão do menu-burger*/
+.sidebar{
+  width: 20rem;
+  height: 100%;
+  position: absolute ;
+  background-color: rgb(238, 48, 0);
+  z-index:5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  right: -20rem;
+  top:5rem;
+  cursor: pointer;
+  top:0;
+  position: fixed;
+  transition: 0.7s;
+  
+}
+.sidebar.active{
+right: 0;
+}
+
 
   
 
