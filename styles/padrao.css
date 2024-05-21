@@ -55,6 +55,24 @@
   }
 
   
+  .hamburguer_exit{
+    width: 3rem;
+    height: 10rem;
+    position: absolute ;
+    z-index:5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    right: 3rem;
+    top:5rem;
+    cursor: pointer;
+    display: block;
+    position:fixed;
+    bottom: 10rem;
+
+  }
+
+  
    .show-menu .hamburguer{
     right: 16rem;
    }
@@ -138,6 +156,28 @@
   
 }
 .sidebar.active{
+right: 0;
+}
+
+/*Botão exit do menu-burger*/
+.sidebar{
+  width: 20rem;
+  height: 100%;
+  position: absolute ;
+  background-color: rgb(238, 48, 0);
+  z-index:5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  right: -20rem;
+  top:5rem;
+  cursor: pointer;
+  top:0;
+  position: fixed;
+  transition: 0.7s;
+  
+}
+.sidebar.disabled{
 right: 0;
 }
 
