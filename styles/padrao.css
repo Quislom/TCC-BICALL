@@ -41,23 +41,21 @@
   }
 
   .hamburguer{
-    width: 8rem;
-    height: 10rem;
+    width: 1rem;
+    height: 1rem;
     position: absolute ;
     z-index:7;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     right: 3rem;
-    top:5rem;
+    top:-1rem;
     cursor: pointer;
     display: none;
+    left:0;
   }
 
-  .listaSidebar{
   
-
-  }
   
   .hamburguer_exit{
     width: 3rem;
@@ -84,7 +82,7 @@
    .line{
     margin-top: 10px;
     width: 100%;
-    height: 1px;
+    height: -2px;
     padding: 10px;
     border-radius: 10px;
     background-color: rgb(241, 241, 241);
@@ -141,52 +139,69 @@
     transition: color .7s;
 }
 
+.lista{
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  bottom:100px;
+  position: absolute;
+}
+
 /*Botão do menu-burger*/
 .sidebar{
-  width: 20rem;
+  width: 50rem;
   height: 100%;
-  position: absolute ;
-  background-color:white;
+  background-color: #1d8be6;
   z-index:5;
   display: flex;
+  align-items: center;
   flex-direction: column;
-  justify-content: space-between;
-  right: -20rem;
+  justify-content: center;
+  left: -50rem;
   top:5rem;
   cursor: pointer;
   top:0;
   position: fixed;
   transition: 0.7s;
+  box-shadow: #535353;
   
 }
 .sidebar.active{
-right: 0;
+left: 0;
+
 }
 
-/*Botão exit do menu-burger*/
-.sidebar{
-  width: 20rem;
-  height: 100%;
-  position: absolute ;
-  background-color: rgb(238, 48, 0);
-  z-index:5;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  right: -20rem;
-  top:5rem;
-  cursor: pointer;
-  top:0;
-  position: fixed;
-  transition: 0.7s;
-  
-}
-.sidebar.disabled{
-right: 0;
+.textoSidebar{
+  font-size: 15px;
+
 }
 
+.lista1{
+  margin-bottom: 10px;
 
-  
+}
+
+.lista2{
+  margin-bottom: 30px;
+
+}
+
+.lista3{
+  margin-bottom: 30px;
+
+}
+
+.lista{
+  margin-bottom: 10px;
+
+}
+
+/*Recolher a sidebar caso o site esteja em tela cheia*/
+@media screen and (min-width: 100rem) {
+  .sidebar {
+    display: none;
+  }
+}
 
 /**/
 @media screen and (max-width: 100rem) 
@@ -204,6 +219,7 @@ right: 0;
     .txtBanner{
       display: none;
     }
+    
   
     
 }
@@ -222,6 +238,7 @@ right: 0;
     flex-direction: column;
 
   }
+  
 
 }
 
@@ -355,8 +372,26 @@ right: 0;
     width: 16.5rem;
     height: 8.1rem;
     position: absolute ;
-    left: -15rem;
-    top: 3rem;
+    left: -20rem;
+    top: 1rem;
+    font-size: 6.4rem;
+    font-weight: 400;
+    line-height: 1.2575;
+    color:white;
+    font-family: Baloo, 'Source Sans Pro';
+    white-space: nowrap;
+    display: flex;
+    right: -100px;
+    z-index: 7;
+  }
+
+    
+  .titulo2 {
+    width: 16.5rem;
+    height: 8.1rem;
+    position: absolute ;
+    left: -20rem;
+    top: 8rem;
     font-size: 6.4rem;
     font-weight: 400;
     line-height: 1.2575;
@@ -365,6 +400,8 @@ right: 0;
     white-space: nowrap;
     display: flex;
     right: -100px;
+    z-index: 7;
+
   }
  
   .blocoAzulMeio {
@@ -1163,10 +1200,12 @@ right: 0;
 .logo {
   background: url('https://fn12.com/api/clusters/cluster-fn12-prod-us-west1/projects/3peSmWhZvTYA8Wp7QmLUfv/assets/images/6f8da9ee0723107a66ac17aa00a1237298de2f39?Expires=1711047331&KeyName=fn12-cdn&Signature=XlqakQsxVfJ0ijydUj81mdieRF4=') 50% / cover no-repeat;
   position: absolute;
-  left: -66px;
+  left: -120px;
   top: 224px;
   width: 500px;
   height: 500px;
+  z-index: 7;                 
+
 }
 .txtConectar {
   font-family: 'Inter';
