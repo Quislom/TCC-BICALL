@@ -165,7 +165,7 @@
   position: fixed;
   transition: 0.7s;
   box-shadow: #535353;
-  
+
 }
 .sidebar.active{
 left: 0;
@@ -178,7 +178,7 @@ left: 0;
 }
 
 .lista1{
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 
 }
 
@@ -193,9 +193,43 @@ left: 0;
 }
 
 .lista{
-  margin-bottom: 10px;
+  margin-bottom: 110444px;
 
 }
+/* Estilizando os links da sidebar */
+.sidebar ul {
+  list-style-type: none; /* Removendo os marcadores da lista */
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 10px; /* Espaçamento entre os itens da lista */
+}
+
+.sidebar ul li a {
+  text-decoration: none; /* Removendo o sublinhado padrão dos links */
+  color: #ffa404; /* Cor do texto dos links */
+  display: block; /* Transformando os links em elementos de bloco para ocupar toda a largura do contêiner */
+  padding: 10px; /* Espaçamento interno dos links */
+  cursor: pointer;
+    margin-left:8%;
+    max-width: 15.1rem;
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    text-decoration: none; /* Remover o sublinhado padrão dos links */
+  transition: color 0.3s, transform 0.3s; /* Adicionar uma transição suave para a cor do texto */
+     width: auto;
+    font-family: 'Inter', 'Source Sans Pro';
+    flex-shrink: 0;
+}
+
+.sidebar ul li a:hover {
+  color: #555; /* Alterando a cor do texto ao passar o mouse */
+}
+
+
 
 /*Recolher a sidebar caso o site esteja em tela cheia*/
 @media screen and (min-width: 100rem) {
