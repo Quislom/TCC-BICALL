@@ -54,8 +54,12 @@
     $nome = $_POST['txtBoxNomeA'];
     $cursos = $_POST['curso'];
     $serie = $_POST['serie'];
+    $cpf = $_POST['cpf'];
+    $datanasc = $_POST['datanasc'];
+    $endereço = $_POST['endereço'];
+    $telefone = $_POST['telefone'];
 
-    $sql = "insert into tb_alunos ( nome, Cursos, serie) value ('$nome', '$cursos', '$serie')";
+    $sql = "insert into tb_alunos ( nome, Cursos, serie, cpf, datanasc, endereço, telefone) value ('$nome', '$cursos', '$serie', '$cpf', '$datanasc', '$endereço','$telefone')";
     $query = mysqli_query($con, $sql);
 
     echo "<script>
@@ -64,9 +68,9 @@
 
     // Exibir dados após a inserção
     $res = mysqli_query($con, "select * from tb_alunos");
-    echo "<table class='styled-table'><tr><td> Código do Aluno</td><td> Nome do Aluno</td> <td>Curso do Aluno</td> <td> Serie do Aluno</td> </tr>";
+    echo "<table class='styled-table'><tr><td> Código do Aluno</td><td> Nome do Aluno</td> <td>Curso do Aluno</td> <td> Serie do Aluno</td> <td> CPF do Aluno</td> <td> Data de nascimento do Aluno</td> <td> Endereço do Aluno</td <td> Telefone do Aluno</td> </tr>";
     while ($escrever = mysqli_fetch_array($res)) {
-        echo "</td><td> " . $escrever['id'] . "</td><td> " . $escrever['nome'] . "</td><td>" . $escrever['Cursos'] . "</td><td>" . $escrever['serie'] . "</td>   </tr>";
+        echo "</td><td> " . $escrever['id'] . "</td><td> " . $escrever['nome'] . "</td><td>" . $escrever['Cursos'] . "</td><td>" . $escrever['serie'] ."</td><td>" . $escrever['cpf'] . "</td><td>" . $escrever['datanasc'] ."</td><td>" . $escrever['endereço'] . "</td><td>" . $escrever['telefone'] . "</td>   </tr>";
     }
     echo "</table>";
     echo "</br></br>";
