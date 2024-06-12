@@ -389,6 +389,13 @@ left: 0;
     height: 30px;
     background-color:white;
   }
+
+  .blocoAzulCima.dark-mode {
+    bottom: 50;
+    width: 100%;
+    height: 30px;
+    background-color:rgb(0, 0, 0);
+  }
   .auto-group-tkzx-fmH {
     margin-left: 37.7rem;
     width: 19.6rem;
@@ -450,13 +457,43 @@ left: 0;
     z-index: 7;
 
   }
+/* concatenando para dark-mode*/
+  .titulo2.dark-mode {
+    width: 16.5rem;
+    height: 8.1rem;
+    position: absolute ;
+    left: -20rem;
+    top: 7rem;
+    font-size: 6.4rem;
+    font-weight: 400;
+    line-height: 1.2575;
+    color: #ffffff;
+    font-family: Baloo, 'Source Sans Pro';
+    white-space: nowrap;
+    display: flex;
+    right: -100px;
+    z-index: 7;
+
+  }
  
   .blocoAzulMeio {
     width: 100%;
     height: 30px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     flex-shrink: 0;
-    box-shadow: 0px 5px 5px 0px  #525252;
+    box-shadow: 0px 5px 8px -5px  #525252; 
+
+
+  }
+
+
+
+  .blocoAzulMeio.dark-mode {
+    width: 100%;
+    height: 30px;
+    background-color: rgb(0, 0, 0);
+    flex-shrink: 0;
+    
   }
 
   /*Texto-Link Banner*/
@@ -510,7 +547,7 @@ left: 0;
   left: 0;
   top: 0;
   background-color: white;
-  box-shadow: 0px -5px 5px 0px  #525252;
+  box-shadow: 0px -5px 8px -5px  #525252;
 
   
 }
