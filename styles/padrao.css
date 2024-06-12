@@ -25,7 +25,18 @@
       align-items: center;
       display: flex;
       flex-direction: column;
-      background-color: #abcfd8;
+      background-color: #ffffff;
+      min-height: 100vh
+    }
+    
+    .fundo.dark-mode {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      background-color: #000000;
       min-height: 100vh
     }
     
@@ -466,10 +477,17 @@ left: 0;
     
   }
   .txtBanner:hover {
-    color: #6D460C; /* Alterar a cor do texto dos links quando o mouse passa por cima */
+    color: #000000; /* Alterar a cor do texto dos links quando o mouse passa por cima */
     transform: scale(1.1); /* Aumentar ligeiramente o tamanho do link ao passar o mouse */
    
 }
+
+.txtBanner.dark-mode:hover {
+  color: #ffffff; /* Alterar a cor do texto dos links quando o mouse passa por cima */
+  transform: scale(1.1); /* Aumentar ligeiramente o tamanho do link ao passar o mouse */
+ 
+}
+
 
 .divRodape {
   width: 100%;
@@ -508,6 +526,21 @@ left: 0;
   background-color: white;
   flex-shrink: 0;
 }
+
+
+.blocoAmareloLinks.dark-mode{
+  box-sizing: border-box;
+  padding-bottom: 1.9rem;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(0, 0, 0);
+  flex-shrink: 0;
+}
+
+
+
 .div1 {
   margin: 0rem 29.9rem 0rem 37.7rem;
   width: calc(100% - 67.6rem);
