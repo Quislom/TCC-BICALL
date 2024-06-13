@@ -4,6 +4,8 @@ btn.addEventListener("click", ()=>{
   div.classList.toggle("active")
 })
 
+
+
 //Script dark-mode
 document.getElementById('toggle-dark-mode').addEventListener('click', function(){ 
   document.body.classList.toggle('dark-mode');
@@ -33,6 +35,16 @@ document.getElementById('toggle-dark-mode').addEventListener('click', function()
     titulo2.classList.toggle('dark-mode');
   }
 
+  const blocoAmareloRodape = document.querySelector('.blocoAmareloRodape');
+  if (blocoAmareloRodape){
+    blocoAmareloRodape.classList.toggle('dark-mode');
+  }
+
+  const  blocoAzulRodape = document.querySelector('.blocoAzulRodape');
+  if ( blocoAzulRodape){
+    blocoAzulRodape.classList.toggle('dark-mode');
+  }
+ 
   const txtBannerElements = document.querySelectorAll('.txtBanner');
   txtBannerElements.forEach(function(element){
     element.classList.toggle('dark-mode');

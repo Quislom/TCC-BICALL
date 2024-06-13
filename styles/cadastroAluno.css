@@ -37,6 +37,7 @@ body
     align-items: center;
     background-color: #40A2E3;
     padding: 1rem;
+    border: 1px solid black; 
     
 }
 
@@ -45,18 +46,18 @@ body
     width: 31rem;
 }
 
-.form
-{
-    border-radius: 0px 50px 50px 0px ;
+.form {
+    border-radius: 0px 50px 50px 0px;
     width: 50%; 
     display: flex;
-    justify-content:top;
-    align-items: top;
+    justify-content: flex-start; 
+    align-items: flex-start; 
     flex-direction: column;
     background-color: #fff;
     padding: 3rem;
-    
+    border: 1px solid black; 
 }
+
 
 .form-header 
 {
