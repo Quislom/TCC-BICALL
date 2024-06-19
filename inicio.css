@@ -1,0 +1,138 @@
+ .index-img {
+    position: absolute;
+    top: 263px;
+    left: 50%;
+    width: 937px;
+    height: 570px;
+  }
+   .logo {
+
+    position: absolute;
+    left: -10px;
+    top: 400px;
+    width: 149px;
+    height: 175px;
+  }
+  .conectar {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.5;
+    color: #FFFFFF;
+    text-align: center; /* Centraliza o texto horizontalmente */
+}
+
+.btn-con {
+    border-radius: 77px;
+    background: #40A2E3;
+    margin-bottom: 103px;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente os itens dentro do flex container */
+    justify-content: center; /* Centraliza horizontalmente os itens dentro do flex container */
+    width: 243px;
+    box-sizing: border-box;
+    margin-left: 1600px;
+}
+
+   .txt-bio {
+    margin-left: 70px;
+    position: relative;
+    overflow-wrap: break-word;
+    font-family: 'Baloo', 'Roboto Condensed';
+    font-weight: 400;
+    font-size: 150px;
+    color: #FFA404;
+    left:-40px;
+  }
+   .txt-call {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 900px;
+    font-size: 128px;
+    letter-spacing: 77.4px;
+    color: #6D460C;
+    margin-left: 70px;
+    
+  }
+   .titulo {
+    position: absolute;
+    margin-left: 40px;
+    bottom: 0px;
+    display: flex;
+    box-sizing: border-box;
+  }
+  .container {
+    position: relative;
+    margin-bottom: 94px;
+    display: flex;
+    align-self: flex-start;
+    padding: 0 70.2px 119px 0;
+    box-sizing: border-box;
+  }
+  .txt-index {
+    display: inline-block;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-size: 29px;
+    letter-spacing: -1px;
+    line-height: 1.; /* Ajuste o espaçamento entre linhas conforme necessário */
+    color: #000000;
+    margin-bottom: 30px; /* Espaçamento abaixo do bloco de texto */
+    max-width: 25%; /* Garante que o texto quebra conforme o contêiner */
+    margin-left: 40px;
+}
+
+
+   .quem-somos {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1.5;
+    color: #FFFFFF;
+  }
+   .btn-who {
+    border-radius: 77px;
+    background: #40A2E3;
+    display: flex;
+    width: 342px;
+    box-sizing: border-box;
+    margin-left: 30px;  
+  }
+ .saiba-mais {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1.5;
+    color: #000000;
+  }
+ .btn-more {
+    border-radius: 77px;
+    border: 3px solid #40A2E3;
+    display: flex;
+    padding: 10.5px 0.5px 10.5px 0;
+    width: 342px;
+    box-sizing: border-box;
+  }
+ .container-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: flex-start;
+    width: 771px;
+    box-sizing: border-box;
+  }
+  .container-1 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    right: 566px;
+  }
+  .index {
+    background: #FFFFFF;
+  }
+  
