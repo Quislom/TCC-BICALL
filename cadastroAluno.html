@@ -6,163 +6,132 @@
     <link rel='stylesheet' href="styles/cadastroAluno.css">
     <link rel="stylesheet" href="./styles/padrao.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A700" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C700" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo%3A400" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C700" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo%3A400" />
     <title>Formulário de Cadastro</title>
 </head>
 <body>
     <div class="fundo">
         <div class="banner">
-          <div class="blocoAmareloLinks">
-            <div class="blocoAzulCima">
-            </div>
-            <div class="div1">
-              <div class="div2">
-                <p class="divTitulo">
-                    <!--Logo do projeto no banner-->
-                  <img src="img/logo.png" alt="Biometric Call Logo" class="logo">
-                </p>
-                <p class="titulo1">BIOMETRIC</p>
-                <p class="titulo2">CALL</p>
+            <div class="blocoAmareloLinks">
+                <div class="blocoAzulCima"></div>
+                <div class="div1">
+                    <div class="div2">
+                        <p class="divTitulo">
+                            <img src="img/logo.png" alt="Biometric Call Logo" class="logo">
+                        </p>
+                        <p class="titulo1">BIOMETRIC</p>
+                        <p class="titulo2">CALL</p>
+                    </div>    
+                    <p class="txtBanner"><a class="txtBanner" href="index.html">TELA PRINCIPAL</a></p>
+                    <p class="txtBanner"><a class="txtBanner" href="verificarchamada.html">VERIFICAR CHAMADA</a></p>
+                    <p class="txtBanner"><a class="txtBanner" href="atualizaraluno.html">ATUALIZAR ALUNO</a></p>
+                    <p class="txtBanner"><a class="txtBanner" href="apagaraluno.html">APAGAR ALUNO</a></p>
 
-              </div>    
-              <p class="txtBanner"><a class="txtBanner" href="index.html">TELA PRINCIPAL</a></p>
-              <p class="txtBanner"><a class="txtBanner" href="verificarchamada.html">VERIFICAR CHAMADA</a></p>
-              <p class="txtBanner"><a class="txtBanner" href="atualizaraluno.html">ATUALIZAR ALUNO</a></p>
-              <p class="txtBanner"><a class="txtBanner" href="apagaraluno.html">APAGAR ALUNO</a></p>
+                    <div class="hamburguer">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
 
- <!-- Adicionando o menu-hamburguer-->
-<div class="hamburguer">
-   
-    <div class="line" ></div>
-    <div class="line" ></div>
-    <div class="line" ></div>
-    
-    
-</div>
-
-
- <!-- Colocando os links dentro do menu-hamburguer-->
-
-
- <div class="sidebar">
-    
-        <ul class="">
-            <li class="lista"><a href="index.html" class="textoSidebar">TELA PRINCIPAL</a></li>
-            <li class="lista1"><a href="verificarchamada.html" class="textoSidebar">VERIFICAR CHAMADA</a></li>
-            <li class="lista2"><a href="atualizaraluno.html" class="textoSidebar">ATUALIZAR ALUNO</a></li>
-            <li class="lista3"><a href="apagaraluno.html" class="textoSidebar">APAGAR ALUNO</a></li>
-        </ul>
-    </div>
-</div>
-    
-
- 
-
-        
-    </div>
-    <div class="blocoAzulMeio">
-    </div>
-  </div>
-
-
-        
-
-        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-        
-        
-    <div class ="container">
-
-        <div class = "form-image">
-            <img src = "img/undraw_mathematics_-4-otb (1).svg">
-        </div>
-
-        <div class="form">
-            <form name="formAluno" action="tabela-alunos.php" method="POST" onsubmit="return validarFormulario()">
-                <div class = "form-header">
-                    <div class="title">
-                        <h1>Cadastrar Aluno</h1>
+                    <div class="sidebar">
+                        <ul class="">
+                            <li class="lista"><a href="index.html" class="textoSidebar">TELA PRINCIPAL</a></li>
+                            <li class="lista1"><a href="verificarchamada.html" class="textoSidebar">VERIFICAR CHAMADA</a></li>
+                            <li class="lista2"><a href="atualizaraluno.html" class="textoSidebar">ATUALIZAR ALUNO</a></li>
+                            <li class="lista3"><a href="apagaraluno.html" class="textoSidebar">APAGAR ALUNO</a></li>
+                        </ul>
                     </div>
                 </div>
-                <!--agrupando os conteudos do formulário-->
-                <div class="input-group">
-                    <div class = "input-box">
-                        <label for="txtBoxNomeA">Nome do aluno</label>
-                        <!--o required é tipo um obrigatorio-->
-                        <input class="txtBoxNomeA" type="text" name="txtBoxNomeA" title="Apenas letras são permitidas" pattern="[A-Za-z\s]+" placeholder="Digite o nome do aluno" required>
+                <div class="blocoAzulMeio"></div>
+            </div>
+        </div>
 
-                        
-                        
+        <div class ="container">
+            <div class="form-image">
+                <img src="img/undraw_mathematics_-4-otb (1).svg">
+            </div>
+
+            <div class="form">
+                <form name="formAluno" action="tabela-alunos.php" method="POST" onsubmit="return validarFormulario()">
+                    <div class="form-header">
+                        <div class="title">
+                            <h1>Cadastrar Aluno</h1>
+                        </div>
                     </div>
-                    
-                    <div class="serie-inputs">
+                    <div class="input-group">
+                        <div class="input-box">
+                            <label for="txtBoxNomeA">Nome do aluno</label>
+                            <input class="txts" type="text" name="txtBoxNomeA" title="Apenas letras são permitidas" pattern="[A-Za-z\s]+" placeholder="Digite o nome do aluno" required>
 
-                                <div class = "input-box">
-                                    <label for="txtBoxNomeA">Selecione a série do aluno:</label>
-                                </div>
+                            <label for="cpf">CPF do aluno</label>
+                            <input class="txts" type="text" name="cpf" title="Apenas números são permitidos, e deve conter exatamente 11 dígitos" pattern="\d{11}" placeholder="Digite o CPF do aluno" maxlength="11" required>
 
+                            <label for="datanasc">Data de nascimento do aluno:</label>
+                            <input class="txts" type="date" name="datanasc" required>
+
+                            <label for="endereco">Endereço do aluno</label>
+                            <input class="txts" type="text" name="endereco" placeholder="Digite o endereço do aluno" required>
+
+                            <label for="telefone">Telefone para contato</label>
+                            <input type="tel" name="telefone" placeholder="(XX) XXXXX-XXXX" pattern="\(\d{2}\) \d{5}-\d{4}" required>
+                        </div>
+                        
+                        <div class="serie-inputs">
+                            <div class="input-box">
+                                <label for="serie">Selecione a série do aluno:</label>
+                            </div>
                             <div class="serie-group">
                                 <div class="serie-input">
                                     <input type="radio" name="serie" value="1º ANO" class="sc">
                                     <p class="rb1">1º ANO</p>
                                 </div>
-        
                                 <div class="serie-input">
                                     <input type="radio" name="serie" value="2º ANO" class="sc" />
                                     <p class="rb2">2º ANO</p>
                                 </div>
-        
                                 <div class="serie-input">
                                     <input type="radio" name="serie" value="3º ANO" class="sc" />
-                                     <p class="rb3">3º ANO</p>
+                                    <p class="rb3">3º ANO</p>
                                 </div>
-                            
                             </div>
-                            <div class="serie-inputs">
-
-                                <div class = "input-box">
-                                    <label for="txtBoxNomeA">Selecione o curso do aluno:</label>
-                                </div>
-
+                        </div>
+                        
+                        <div class="serie-inputs">
+                            <div class="input-box">
+                                <label for="curso">Selecione o curso do aluno:</label>
+                            </div>
                             <div class="serie-group">
                                 <div class="serie-input">
                                     <input type="radio" name="curso" value="Administração" class="sc" />
                                     <p class="rbAdm">ADM</p>
                                 </div>
-        
                                 <div class="serie-input">
                                     <input type="radio" name="curso" value="Desenvolvimento de Sistemas" class="sc" />
                                     <p class="rbDs">DS</p>
                                 </div>
-        
                                 <div class="serie-input">
                                     <input type="radio" name="curso" value="Logística" class="sc" />
                                     <p class="rbLog">LOG</p>
                                 </div>
-                            
                             </div>
-                            
                         </div>
-
-                        </div>
-                </div>
-                <div class="continue-button">
-                    <button><a href="tabela-alunos.php">Cadastrar</a></button>
-                </div>
-
-            </form>
-        </div>
-    </div>
-    <div class="divRodape">
-        <div class="blocoAmareloRodape">
-            <button id="toggle-dark-mode">Toggle Dark Mode</button>
-        </div>
-        <div class="blocoAzulRodape">
-        </div>
+                    </div>
+                    <div class="continue-button">
+                        <button type="submit">Cadastrar</button>
+                    </div>
+                </form>
+            </div>
         </div>
 
+        <div class="divRodape">
+            <div class="blocoAmareloRodape">
+                <button id="toggle-dark-mode">Toggle Dark Mode</button>
+            </div>
+            <div class="blocoAzulRodape"></div>
+        </div>
+        
         <script src="menuHamburguer.js"></script>
-
+    </div>
 </body>
 </html>
-

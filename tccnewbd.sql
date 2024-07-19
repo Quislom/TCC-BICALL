@@ -9,7 +9,7 @@ id int auto_increment primary key ,
   cpf char(11),
   datanasc date,
   endereco varchar(150),
-  telefone char(11)
+  telefone varchar(20)
 ) ;
 
 select * from tb_alunos

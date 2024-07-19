@@ -40,7 +40,7 @@
     position: relative;
     overflow-wrap: break-word;
     font-family: 'Baloo', 'Roboto Condensed';
-    font-weight: 400;
+    font-weight: 900;
     font-size: 150px;
     color: #FFA404;
     left:-40px;
@@ -48,7 +48,7 @@
    .txt-call {
     overflow-wrap: break-word;
     font-family: 'Inter';
-    font-weight: 900px;
+    font-weight: 900;
     font-size: 128px;
     letter-spacing: 77.4px;
     color: #6D460C;
@@ -75,12 +75,12 @@
     align-self: flex-start;
     overflow-wrap: break-word;
     font-family: 'Inter';
-    font-size: 29px;
+    font-size: 40px;
     letter-spacing: -1px;
-    line-height: 1.; /* Ajuste o espaçamento entre linhas conforme necessário */
+    line-height: 1.1; /* Ajuste o espaçamento entre linhas conforme necessário */
     color: #000000;
     margin-bottom: 30px; /* Espaçamento abaixo do bloco de texto */
-    max-width: 25%; /* Garante que o texto quebra conforme o contêiner */
+    max-width: 37%; /* Garante que o texto quebra conforme o contêiner */
     margin-left: 40px;
 }
 
@@ -94,6 +94,9 @@
     color: #FFFFFF;
   }
    .btn-who {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
     border-radius: 77px;
     background: #40A2E3;
     display: flex;
@@ -110,6 +113,9 @@
     color: #000000;
   }
  .btn-more {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
     border-radius: 77px;
     border: 3px solid #40A2E3;
     display: flex;

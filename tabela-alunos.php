@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sua Página</title>
     <style>
-
-        
         .styled-table {
             width: 100%;
             border-collapse: collapse;
@@ -23,8 +21,6 @@
             padding: 12px 15px;
             text-align: center;
             border-bottom: 1px solid #ddd;
-            
-            
         }
 
         .styled-table th {
@@ -43,37 +39,80 @@
 </head>
 <body>
     <?php
-    $host = "localhost:3306";
+    $host = "localhost";
     $user = "root";
     $pass = "";
     $base = "tcc";
     $con = mysqli_connect($host, $user, $pass, $base);
 
-    // Código para inserir novos dados
+    // Verifica a conexão
+    if (!$con) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
 
-    $nome = $_POST['txtBoxNomeA'];
-    $cursos = $_POST['curso'];
-    $serie = $_POST['serie'];
-    $cpf = $_POST['cpf'];
-    $datanasc = $_POST['datanasc'];
-    $endereço = $_POST['endereco'];
-    $telefone = $_POST['telefone'];
+    // Verifica se o formulário foi submetido
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Sanitização dos dados de entrada
+        $nome = mysqli_real_escape_string($con, $_POST['txtBoxNomeA']);
+        $cursos = mysqli_real_escape_string($con, $_POST['curso']);
+        $serie = mysqli_real_escape_string($con, $_POST['serie']);
+        $cpf = mysqli_real_escape_string($con, $_POST['cpf']);
+        $datanasc = mysqli_real_escape_string($con, $_POST['datanasc']);
+        $endereco = mysqli_real_escape_string($con, $_POST['endereco']);
+        $telefone = mysqli_real_escape_string($con, $_POST['telefone']);
 
-    $sql = "insert into tb_alunos ( nome, cursos, serie, cpf, datanasc, endereco, telefone) value ('$nome', '$cursos', '$serie', '$cpf', '$datanasc', '$endereço','$telefone')";
-    $query = mysqli_query($con, $sql);
-
-    echo "<script>
-            alert ('Dados cadastrados com sucesso');
-          </script>";
+        // Verifica se todos os campos estão preenchidos
+        if (empty($nome) || empty($cursos) || empty($serie) || empty($cpf) || empty($datanasc) || empty($endereco) || empty($telefone)) {
+            echo "Por favor, preencha todos os campos.";
+        } else {
+            // Insere os dados no banco de dados
+            $sql = "INSERT INTO tb_alunos (nome, cursos, serie, cpf, datanasc, endereco, telefone) 
+                    VALUES ('$nome', '$cursos', '$serie', '$cpf', '$datanasc', '$endereco', '$telefone')";
+            
+            if (!mysqli_query($con, $sql)) {
+                echo "Erro ao cadastrar os dados: " . mysqli_error($con);
+            }
+        }
+    }
 
     // Exibir dados após a inserção
-    $res = mysqli_query($con, "select * from tb_alunos");
-    echo "<table class='styled-table'><tr><td> Código do Aluno</td><td> Nome do Aluno</td> <td>Curso do Aluno</td> <td> Serie do Aluno</td> <td> CPF do Aluno</td> <td> Data de nascimento do Aluno</td> <td> Endereço do Aluno</td <td> Telefone do Aluno</td> </tr>";
-    while ($escrever = mysqli_fetch_array($res)) {
-        echo "</td><td> " . $escrever['id'] . "</td><td> " . $escrever['nome'] . "</td><td>" . $escrever['cursos'] . "</td><td>" . $escrever['serie'] ."</td><td>" . $escrever['cpf'] . "</td><td>" . $escrever['datanasc'] ."</td><td>" . $escrever['endereco'] . "</td><td>" . $escrever['telefone'] . "</td>   </tr>";
+    $res = mysqli_query($con, "SELECT * FROM tb_alunos");
+    if (mysqli_num_rows($res) > 0) {
+        echo "<table class='styled-table'>
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nome</th>
+                        <th>Curso</th>
+                        <th>Série</th>
+                        <th>CPF</th>
+                        <th>Data de Nascimento</th>
+                        <th>Endereço</th>
+                        <th>Telefone</th>
+                    </tr>
+                </thead>
+                <tbody>";
+        
+        while ($escrever = mysqli_fetch_array($res)) {
+            echo "<tr>
+                    <td>" . htmlspecialchars($escrever['id']) . "</td>
+                    <td>" . htmlspecialchars($escrever['nome']) . "</td>
+                    <td>" . htmlspecialchars($escrever['cursos']) . "</td>
+                    <td>" . htmlspecialchars($escrever['serie']) . "</td>
+                    <td>" . htmlspecialchars($escrever['cpf']) . "</td>
+                    <td>" . htmlspecialchars($escrever['datanasc']) . "</td>
+                    <td>" . htmlspecialchars($escrever['endereco']) . "</td>
+                    <td>" . htmlspecialchars($escrever['telefone']) . "</td>
+                  </tr>";
+        }
+        
+        echo "</tbody></table>";
+    } else {
+        echo "<p>Nenhum dado encontrado.</p>";
     }
-    echo "</table>";
-    echo "</br></br>";
+
+    // Fechar a conexão
+    mysqli_close($con);
     ?>
 </body>
 </html>
