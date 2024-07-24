@@ -1,9 +1,9 @@
  .index-img {
     position: absolute;
     top: 263px;
-    left: 50%;
+    left: 43%;
     width: 937px;
-    height: 570px;
+    height: 500px;
   }
    .logo {
 
@@ -12,7 +12,13 @@
     top: 400px;
     width: 149px;
     height: 175px;
+    
   }
+.logo-img{
+  width: 150px;
+  height: 150px;
+}
+
   .conectar {
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -32,7 +38,7 @@
     justify-content: center; /* Centraliza horizontalmente os itens dentro do flex container */
     width: 243px;
     box-sizing: border-box;
-    margin-left: 1600px;
+    margin-left: 1440px;
 }
 
    .txt-bio {

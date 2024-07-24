@@ -25,7 +25,9 @@ body
    height: 80vh; 
    display: flex;
    margin-bottom: 20%;
+   overflow: hidden; /* Oculta o conteúdo que exceder o tamanho do container */
    
+    
    
 }
 
@@ -48,14 +50,16 @@ body
 
 .form {
     border-radius: 0px 50px 50px 0px;
-    width: 50%; 
+    width: 100%; 
+    max-width: 50%; /* Limita a largura máxima a 50% */
     display: flex;
     justify-content: flex-start; 
     align-items: flex-start; 
     flex-direction: column;
     background-color: #fff;
     padding: 3rem;
-    border: 1px solid black; 
+    border: 1px solid black;            
+    overflow: auto; /* Permite rolagem se o conteúdo exceder o tamanho do formulário */
 }
 
 
@@ -65,9 +69,10 @@ body
     margin-bottom: 3rem;
     display: flex;
     justify-content: space-between;
-    
+ 
     
 }
+
 
 .login-button
 {
@@ -105,13 +110,12 @@ color: #fff;
     height: 0.3rem;
     background-color: #ffa404;
     margin: 0 auto;
-    position: absolute;
     border-radius: 10px;
 }
 
 .input-group
 {
-    
+     
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 1rem 0;
