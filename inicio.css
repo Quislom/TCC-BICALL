@@ -1,7 +1,7 @@
  .index-img {
     position: absolute;
     top: 263px;
-    left: 43%;
+    left: 45%;
     width: 937px;
     height: 500px;
   }
@@ -32,13 +32,13 @@
 .btn-con {
     border-radius: 77px;
     background: #40A2E3;
-    margin-bottom: 103px;
+    margin-bottom: 107px;
     display: flex;
     align-items: center; /* Centraliza verticalmente os itens dentro do flex container */
     justify-content: center; /* Centraliza horizontalmente os itens dentro do flex container */
     width: 243px;
     box-sizing: border-box;
-    margin-left: 1440px;
+    margin-left: 1640px;
 }
 
    .txt-bio {
@@ -47,7 +47,7 @@
     overflow-wrap: break-word;
     font-family: 'Baloo', 'Roboto Condensed';
     font-weight: 900;
-    font-size: 150px;
+    font-size: 110px;
     color: #FFA404;
     left:-40px;
   }
@@ -55,10 +55,10 @@
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 900;
-    font-size: 128px;
+    font-size: 100px;
     letter-spacing: 77.4px;
     color: #6D460C;
-    margin-left: 70px;
+    margin-left: 140px;
     
   }
    .titulo {
@@ -86,7 +86,7 @@
     line-height: 1.1; /* Ajuste o espaçamento entre linhas conforme necessário */
     color: #000000;
     margin-bottom: 30px; /* Espaçamento abaixo do bloco de texto */
-    max-width: 37%; /* Garante que o texto quebra conforme o contêiner */
+    max-width: 30%; /* Garante que o texto quebra conforme o contêiner */
     margin-left: 40px;
 }
 
