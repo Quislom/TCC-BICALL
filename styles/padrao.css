@@ -199,6 +199,51 @@ left: 0;
 }
 
 
+/*responsividade da logo quando a sidebar é ativada*/
+
+/* Tamanhos da logo quando a sidebar é ativada */
+.logo-reduzida .titulo1,
+.logo-reduzida .titulo2 {
+  width: 12rem; /* Tamanho menor da logo quando a sidebar está ativa */
+  height: 6rem;
+  font-size: 4.8rem;
+  left: -12rem;
+
+  
+}
+
+.logo-reduzida .logo{
+  background: url('https://fn12.com/api/clusters/cluster-fn12-prod-us-west1/projects/3peSmWhZvTYA8Wp7QmLUfv/assets/images/6f8da9ee0723107a66ac17aa00a1237298de2f39?Expires=1711047331&KeyName=fn12-cdn&Signature=XlqakQsxVfJ0ijydUj81mdieRF4=') 50% / cover no-repeat;
+  position: absolute;
+  left: -240px;
+  top: 224px;
+  width: auto;
+  height: 140px;
+  margin-top: -300px;
+  z-index: 7;                 
+
+}
+
+
+
+
+/*estilizaçao da logotipo no banner*/
+.logo {
+  background: url('https://fn12.com/api/clusters/cluster-fn12-prod-us-west1/projects/3peSmWhZvTYA8Wp7QmLUfv/assets/images/6f8da9ee0723107a66ac17aa00a1237298de2f39?Expires=1711047331&KeyName=fn12-cdn&Signature=XlqakQsxVfJ0ijydUj81mdieRF4=') 50% / cover no-repeat;
+  position: absolute;
+  left: -220px;
+  top: 224px;
+  width: auto;
+  height: 200px;
+  margin-top: -330px;
+  z-index: 7;                 
+
+}
+
+
+
+
+
 
 /*Recolher a sidebar caso o site esteja em tela cheia*/
 @media screen and (min-width: 100rem) {
@@ -333,6 +378,9 @@ left: 0;
 
 }
 
+@media screen {
+  
+}
  
 
 
@@ -1296,16 +1344,7 @@ left: 0;
     background-color: #FFA404;
     position: absolute;
 }
-.logo {
-  background: url('https://fn12.com/api/clusters/cluster-fn12-prod-us-west1/projects/3peSmWhZvTYA8Wp7QmLUfv/assets/images/6f8da9ee0723107a66ac17aa00a1237298de2f39?Expires=1711047331&KeyName=fn12-cdn&Signature=XlqakQsxVfJ0ijydUj81mdieRF4=') 50% / cover no-repeat;
-  position: absolute;
-  left: -120px;
-  top: 224px;
-  width: 500px;
-  height: 500px;
-  z-index: 7;                 
 
-}
 .txtConectar {
   font-family: 'Inter';
   font-weight: 700;
@@ -1436,13 +1475,7 @@ height: 30px;
   width: 480px;
   box-sizing: border-box;
 }
-.logo{
-  left: -220px;
-  margin-top: -330px;
-  width: auto;
-  height: 200px;
-  
-}
+
 .digitarnomeatt{
   margin-top: -20px;
   width: 48.6rem;

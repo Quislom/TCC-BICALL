@@ -1,8 +1,18 @@
-let btn= document.querySelector(".hamburguer");
-let div = document.querySelector(".sidebar");
-btn.addEventListener("click", ()=>{
-  div.classList.toggle("active")
-})
+
+
+// Seleciona o botão hamburguer e a sidebar
+let btn = document.querySelector(".hamburguer");
+let sidebar = document.querySelector(".sidebar");
+let banner = document.querySelector(".banner");
+
+// Adiciona um listener para o evento de clique no botão
+btn.addEventListener("click", () => {
+  // Alterna a classe 'active' na sidebar
+  sidebar.classList.toggle("active");
+
+  // Alterna a classe 'logo-reduzida' no banner
+  banner.classList.toggle("logo-reduzida");
+});
 
 
 
