@@ -1383,7 +1383,7 @@ height: 30px;
   align-items: flex-end;
   padding: 150px 68px 244px 0;
   width: 100%;
-  height: 100%;
+  height: 100rem;
   box-sizing: border-box;
   position: relative;
   
@@ -1417,7 +1417,7 @@ height: 30px;
 }
 .txtBoxNP {
   border-radius: 20px;
-  background: #FFFFFF;
+  background: #ffffff;
   margin-bottom: 4px;
   padding: 20px;
   width: 486px;

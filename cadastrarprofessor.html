@@ -31,27 +31,23 @@
     </div>
     <br>
     <br>
-    <div class="txtBoxNP">
-      <span class="txtNP">
-        Nome Completo
-      </span>
-    </div>
-      <div class="txtBoxEP">
-        <span class="txtEP">
-          Email
-        </span>
-      </div>
+
+    <!-- Formulário -->
+
+    <form method="POST" action="cadastro.php">
+
+      <label>Nome:</label>
+      <input class="txtBoxNP" type= "text" placeholder="Digite o nome"><br>
+      <label>Email: </label>
+        
+     <input class="txtBoxNP" type= "text" name="login" id="login" placeholder="Digite o Email"><br>
+      <label>Senha: </label>
+        
+      <input class="txtBoxNP" type="password" name="senha" id="senha" placeholder="Digite a senha"><br>
+      <input class="btnCadProfessor" type="submit" value="Cadastrar" id="cadastrar" name="cadastrar">
+      
+    </form>
     
-    <div class="txtBoxSP">
-      <span class="txtSP">
-        Senha
-      </span>
-    </div>
-    <div class="btnCadProfessor">
-      <span class="txtBtnProfessor">
-        CADASTRAR
-      </span>
-    </div>
     <div class="divConta">
       <span class="txtConta">Já tem conta?</span><span class="txtConectar">Cadastre-se/span><span>
     </div>

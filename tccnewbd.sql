@@ -12,4 +12,12 @@ id int auto_increment primary key ,
   telefone varchar(20)
 ) ;
 
+CREATE TABLE tb_professores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL
+);
+
+
 select * from tb_alunos
