@@ -201,21 +201,23 @@ left: 0;
 
 /*responsividade da logo quando a sidebar é ativada*/
 
-/* Tamanhos da logo quando a sidebar é ativada */
+/* Responsividade do texto da logo quando a sidebar é ativada */
 .logo-reduzida .titulo1,
 .logo-reduzida .titulo2 {
   width: 12rem; /* Tamanho menor da logo quando a sidebar está ativa */
   height: 6rem;
   font-size: 4.8rem;
-  left: -12rem;
+  left: -5rem;
 
   
 }
 
+/* Tamanhos da logo quando a sidebar é ativada */
+
 .logo-reduzida .logo{
   background: url('https://fn12.com/api/clusters/cluster-fn12-prod-us-west1/projects/3peSmWhZvTYA8Wp7QmLUfv/assets/images/6f8da9ee0723107a66ac17aa00a1237298de2f39?Expires=1711047331&KeyName=fn12-cdn&Signature=XlqakQsxVfJ0ijydUj81mdieRF4=') 50% / cover no-repeat;
   position: absolute;
-  left: -240px;
+  left: -160px;
   top: 224px;
   width: auto;
   height: 140px;
@@ -231,10 +233,10 @@ left: 0;
 .logo {
   background: url('https://fn12.com/api/clusters/cluster-fn12-prod-us-west1/projects/3peSmWhZvTYA8Wp7QmLUfv/assets/images/6f8da9ee0723107a66ac17aa00a1237298de2f39?Expires=1711047331&KeyName=fn12-cdn&Signature=XlqakQsxVfJ0ijydUj81mdieRF4=') 50% / cover no-repeat;
   position: absolute;
-  left: -220px;
+  left: -150px;
   top: 224px;
   width: auto;
-  height: 200px;
+  height: 180px;
   margin-top: -330px;
   z-index: 7;                 
 
@@ -435,7 +437,7 @@ left: 0;
     width: 16.5rem;
     height: 8.1rem;
     position: absolute ;
-    left: -6rem;
+    left: -1rem;
     bottom: 3rem;
     font-size: 6.4rem;
     font-weight: 400;
@@ -454,7 +456,7 @@ left: 0;
     width: 16.5rem;
     height: 8.1rem;
     position: absolute ;
-    left: -6rem;
+    left: -1rem;
     top: 7rem;
     font-size: 6.4rem;
     font-weight: 400;
