@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inria+Sans%3A700"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500%2C700"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C500%2C700"/>
-
+  <script src="js/alertas.js"></script> <!-- Alert que aparece após o cadastro ser realizado com sucesso -->
   <link rel="stylesheet" href="./styles/padrao.css"/>
 </head>
 <body>
@@ -27,32 +27,34 @@
     <div class="logo"></div>
    </div>
     <div class="divCadastrar">
-    <div class="h1" ><h1>CADASTRE-SE</h1></h1> 
+    <div class="h1" ><h1 style="text-shadow: 1px 1px 2px black;">CADASTRE-SE</h1>
     </div>
     <br>
     <br>
 
     <!-- Formulário -->
 
-    <form method="POST" action="cadastro.php">
+    <form name= "formProf" method="POST" action="cadastroProfessor.php">
 
-      <label>Nome:</label>
-      <input class="txtBoxNP" type= "text" placeholder="Digite o nome"><br>
-      <label>Email: </label>
-        
-     <input class="txtBoxNP" type= "text" name="login" id="login" placeholder="Digite o Email"><br>
-      <label>Senha: </label>
-        
-      <input class="txtBoxNP" type="password" name="senha" id="senha" placeholder="Digite a senha"><br>
+      <label>Nome:</label> <br/>
+      <input name= "nome"class="txtBoxNP" type= "text" placeholder="Digite o nome"><br>
+      
+      <label>Email: </label> <br/> 
+      <input name= "email" class="txtBoxNP" type= "text"  id="login" placeholder="Digite o Email"><br>
+      
+     <label>Senha: </label> <br/>   
+      <input  class="txtBoxNP" type="password" name="senha" id="senha" placeholder="Digite a senha"><br>
       <input class="btnCadProfessor" type="submit" value="Cadastrar" id="cadastrar" name="cadastrar">
       
     </form>
     
     <div class="divConta">
-      <span class="txtConta">Já tem conta?</span><span class="txtConectar">Cadastre-se/span><span>
+      <span class="txtConta">Já tem conta? <a class="txtConectar" href="conectarprofessor.html">Conecte-se</a>
     </div>
 
     </div>
   </div>
+
+
 </body>
 </html>

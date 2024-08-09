@@ -1,15 +1,17 @@
 function validarFormulario() {
-    var nomeAluno = document.forms["formAluno"]["cxnomealuno"].value;
-    var serie = document.forms["formAluno"]["serie"].value;
-    var curso = document.forms["formAluno"]["curso"].value;
+    var nome = document.forms["formProf"]["nome"].value;
+    var email = document.forms["formProf"]["email"].value;
+    var senha = document.forms["formProf"]["senha"].value;
   
-    if (nomeAluno == "" || serie == "" || curso == "") {
+    if (nome == "" || email == "" || senha == "") {
       alert("Por favor, preencha todos os campos!");
       return false;
+
+    }
+
+    else {
+      alert(" Dados cadastrados com sucesso! ");
     }
   }
   
   
-    alert("Olá, não esqueça de preencher os campos e selecionar as opções!!")
-    alert("É serio, nao esqueça!!")
-    
