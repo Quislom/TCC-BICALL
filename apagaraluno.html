@@ -1,90 +1,115 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <link rel="icon" href="/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <title>Apagar Aluno</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A700"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C700"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo%3A400"/>
-  <link rel="stylesheet" href="./styles/padrao.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href="styles/cadastroAluno.css">
+    <link rel="stylesheet" href="./styles/padrao.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A700" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C700" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo%3A400" />
+    <title>Formulário de Cadastro</title>
 </head>
 <body>
-  <div class="fundo">
-    <div class="banner">
-      <div class="blocoAmareloLinks">
-        <div class="blocoAzulCima">
-        </div>
-        <div class="div1">
-          <div class="div2">
-            <p class="divTitulo">
-              <img src="img/logoreal.png" alt="Biometric Call Logo" class="logo"> <!-- Adicione essa linha -->
-            </p>
-            <p class="titulo1">BICALL</p>
-          </div>
-          <p class="txtBanner"><a class="txtBanner" href="index.html">TELA PRINCIPAL</a></p>
-          <p class="txtBanner"><a class="txtBanner" href="cadastroAluno.html">CADASTRAR ALUNO</a></p>
-          <p class="txtBanner"><a class="txtBanner" href="verificarchamada.html">VERIFICAR CHAMADA</a></p>
-          <p class="txtBanner"><a class="txtBanner" href= "atualizaraluno.html">ATUALIZAR ALUNO</a></p>
-        </div>
+    <div class="fundo">
+        <div class="banner">
+            <div class="blocoAmareloLinks">
+                <div class="blocoAzulCima"></div>
+                <div class="div1">
+                    <div class="div2">
+                        <p class="divTitulo">
+                            <img src="img/logo.png" alt="Biometric Call Logo" class="logo">
+                        </p>
+                        <p class="titulo1">BIOMETRIC</p>
+                        <p class="titulo2">CALL</p>
+                    </div>    
+                    <p class="txtBanner"><a class="txtBanner" href="index.html">TELA PRINCIPAL</a></p>
+                    <p class="txtBanner"><a class="txtBanner" href="verificarchamada.html">VERIFICAR CHAMADA</a></p>
+                    <p class="txtBanner"><a class="txtBanner" href="atualizaraluno.html">ATUALIZAR ALUNO</a></p>
+                    <p class="txtBanner"><a class="txtBanner" href="cadastroAluno.html">CADASTRAR ALUNO</a></p>
 
-        
- <!-- Adicionando o menu-hamburguer-->
-<div class="hamburguer">
-  <div class="line" id="line1"></div>
-  <div class="line" id="line2"></div>
-  <div class="line" id="line3"></div>
+                    <div class="hamburguer">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
 
-</div>
-<!-- Colocando os links dentro do menu-hamburguer-->
-
-
-<div class="sidebar">
-    
-  <ul class="">
-
-
-
-
+                    <div class="sidebar">
+                        <ul class="">
+                            
       <li class="listaSidebar"><a href="index.html" class="textoSidebar">TELA PRINCIPAL</a></li>
+      <li class="listaSidebar"><a class="txtBanner" href="cadastroAluno.html">CADASTRAR ALUNO</a></li>
       <li class=""><a href="verificarchamada.html" class="">VERIFICAR CHAMADA</a></li>
       <li class=""><a href="atualizaraluno.html" class="">ATUALIZAR ALUNO</a></li>
       <li class=""><a href="apagaraluno.html" class="">APAGAR ALUNO</a></li>
-  </ul>
-</div>
-      </div>
-      <div class="blocoAzulMeio">
-      </div>
-    </div>
-    <p class="txtCad">APAGAR</p>
-    <div class="divForm">
-      <form method="POST" action="deletar_dados.php">
-        <div class="txtNomeAluno">Código: <input type="text" name="cx_apag_cod" class="digitarID" placeholder="Digite o código" pattern="\d*" title="Apenas números são permitidos" required></div>
-        <div class="auto-group-ljkm-xm5">
-          <div class=""><button class="btnapagar-iVM">APAGAR </button></div> 
-          <p class="txtApagar">TEM CERTEZA QUE DESEJA APAGAR?</p>
-          <div class="rbsim-6Vu">
-            <input type="radio" name="escolha" class="sc"/>
-            <p class="rbSim">SIM</p>
-          </div>
-          <div class="rbnao-hEo">
-            <input type="radio" name="escolha" class="sc"/>
-            <p class="rbNao">NÃO</p>
-          </div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="blocoAzulMeio"></div>
+            </div>
         </div>
-        </form> 
-      </div>  
-    </div> 
-    <div class="divRodape">
-      <div class="blocoAmareloRodape">
-      </div>
-      <div class="blocoAzulRodape">
-      </div>
+
+        <div class ="container">
+            <div class="form-image">
+                <img src="img/undraw_mathematics_-4-otb (1).svg">
+            </div>
+
+            <div class="form">
+                <form name="formAluno" action="deletar_dados.php" method="POST" >
+                    <div class="form-header">
+                        <div class="title">
+                            <h1>Apagar Aluno</h1>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-box">
+                            
+                            <label for="cpf">CPF do aluno</label>
+                            <input class="txts" type="text" name="cpf" title="Apenas números são permitidos, e deve conter exatamente 11 dígitos" pattern="\d{11}" placeholder="Digite o CPF do aluno" maxlength="11" required>
+
+                        </div>
+                        
+                        <div class="serie-inputs">
+                            <div class="input-box">
+                            </div>
+                            <div class="serie-group">
+                                <div class="serie-input">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="serie-inputs">
+                            <div class="input-box">
+                            </div>
+                            <div class="serie-group">
+                                <div class="serie-input">
+                                    
+                                </div>
+                                <div class="serie-input">
+                                    
+                                </div>
+                                <div class="serie-input">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="continue-button">
+                        <button type="submit">Apagar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="divRodape">
+            <div class="blocoAmareloRodape">
+                <button id="toggle-dark-mode">Toggle Dark Mode</button>
+            </div>
+            <div class="blocoAzulRodape"></div>
+        </div>
+        
+        <script src="menuHamburguer.js"></script>
     </div>
-
-    <script src="menuHamburguer.js"></script>
-
-  </body>
+</body>
 </html>

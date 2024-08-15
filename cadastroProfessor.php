@@ -1,3 +1,6 @@
+
+
+
 <?php
 $host = "localhost";
 $user = "root";
@@ -28,7 +31,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("sss", $nome, $email, $senha);
         
         if ($stmt->execute()) {
-            echo "Cadastro realizado com sucesso!";
+            header("Location: conectarprofessor.html");
+            // Redirecionar para uma página protegida ou inicial
+exit();            
         } else {
             echo "Erro ao cadastrar professor: " . $stmt->error;
         }

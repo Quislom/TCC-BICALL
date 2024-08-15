@@ -1,3 +1,5 @@
+
+
 <?php
 $host = "localhost";
 $user = "root";
@@ -28,9 +30,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (mysqli_num_rows($result) == 1) {
             // Login bem-sucedido
-            echo "Login bem-sucedido!";
-            // Redirecionar para uma página protegida ou inicial
+            header("Location: index.html");
+                        // Redirecionar para uma página protegida ou inicial
             // header("Location: pagina_protegida.php");
+            exit();
         } else {
             // Credenciais inválidas
             echo "Email ou senha inválidos.";

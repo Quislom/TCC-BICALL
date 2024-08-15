@@ -1,10 +1,10 @@
 <?php
-if ($_POST['cx_apag_cod'] != "") {
+if ($_POST['cpf'] != "") {
     include_once 'conexao_bd.php';
  
-    $id_excluir = $_POST['cx_apag_cod'];
+    $cpf_excluir = $_POST['cpf'];
  
-    $sql_excluir = "DELETE FROM tb_alunos WHERE id = '$id_excluir'";
+    $sql_excluir = "DELETE FROM tb_alunos WHERE cpf = '$cpf_excluir'";
     $query_excluir = mysqli_query($conn, $sql_excluir);
  
     if ($query_excluir) {
@@ -13,7 +13,7 @@ if ($_POST['cx_apag_cod'] != "") {
         echo "<script>alert('Erro ao excluir dados.');</script>";
     }
 } else {
-    echo "ID não fornecido para exclusão.";
+    echo "cpf não fornecido para exclusão.";
 
     
 }
