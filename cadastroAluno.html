@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A700" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C700" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo%3A400" />
+    <script src="js/apicep.js"></script>
+  
     <title>Formulário de Cadastro</title>
 </head>
 <body>
@@ -53,7 +55,6 @@
             <div class="form-image">
                 <img src="img/undraw_mathematics_-4-otb (1).svg">
             </div>
-
             <div class="form">
                 <form name="formAluno" action="tabela-alunos.php" method="POST" onsubmit="return validarFormulario()">
                     <div class="form-header">
@@ -72,13 +73,22 @@
                             <label for="datanasc">Data de nascimento do aluno:</label>
                             <input class="txts" type="date" name="datanasc" required>
 
+                            <label for="cep">CEP do aluno</label>
+                            <input class="txts" type="text" name="cep" id="cep" title="Apenas números são permitidos, e deve conter exatamente 8 dígitos" pattern="\d{8}" placeholder="Digite o CEP do aluno" maxlength="8" required onblur="buscarCEP()">
+
                             <label for="endereco">Endereço do aluno</label>
-                            <input class="txts" type="text" name="endereco" placeholder="Digite o endereço do aluno" required>
+                            <input class="txts" type="text" name="endereco" id="endereco" placeholder="Digite o endereço do aluno" required>
+
+                            <label for="bairro">Bairro do aluno</label>
+                            <input class="txts" type="text" name="bairro" id="bairro" placeholder="Digite o bairro do aluno" required>
+
+                            <label for="complemento">Complemento</label>
+                            <input class="txts" type="text" name="complemento" placeholder="Digite o complemento">
 
                             <label for="telefone">Telefone para contato</label>
                             <input type="tel" name="telefone" placeholder="(XX) XXXXX-XXXX" pattern="\(\d{2}\) \d{5}-\d{4}" required>
                         </div>
-                        
+
                         <div class="serie-inputs">
                             <div class="input-box">
                                 <label for="serie">Selecione a série do aluno:</label>
@@ -98,7 +108,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="serie-inputs">
                             <div class="input-box">
                                 <label for="curso">Selecione o curso do aluno:</label>
@@ -128,12 +138,20 @@
 
         <div class="divRodape">
             <div class="blocoAmareloRodape">
-                <button id="toggle-dark-mode">Toggle Dark Mode</button>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="toggle-dark-mode">
+                    <label for="toggle-dark-mode" class="switch">
+                        <span class="toggle-thumb"></span>
+                    </label>
+                </div>
+                    
             </div>
             <div class="blocoAzulRodape"></div>
         </div>
         
         <script src="menuHamburguer.js"></script>
+
+        
     </div>
 </body>
 </html>

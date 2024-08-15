@@ -40,6 +40,54 @@
       min-height: 100vh
     }
     
+    .toggle-switch {
+      position: absolute;
+      width: 60px;
+      height: 30px;
+      right: 5px;
+      background-color: #000000; /* Cor de fundo para o modo claro */
+      border-radius: 30px;
+      overflow: hidden;
+      transition: background-color 0.3s ease;
+  }
+  
+  input[type="checkbox"] {
+      display: none;
+  }
+  
+  .switch {
+      display: block;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      position: relative;
+  }
+  
+  .toggle-thumb {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 24px;
+      height: 24px;
+      background-color: #ffffff; /* Cor do "dedo" do switch */
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+      background-image: url('nossalogo.png'); /* Ícone do sol */
+      background-size: cover;
+  }
+  
+  
+  input[type="checkbox"]:checked + .switch .toggle-thumb {
+      transform: translateX(30px); /* Move o "dedo" para a direita */
+      background-image: url('nossalogo.png'); /* Ícone da lua */
+      background-color: #000000; /* Cor do "dedo" do switch */
+  }
+  
+  input[type="checkbox"]:checked + .switch {
+      background-color: #ffffff; /* Cor de fundo para o modo escuro */
+  }
+  
+  
   
   .banner {
     margin-top: 5px;
@@ -478,7 +526,7 @@ left: 0;
     width: 16.5rem;
     height: 8.1rem;
     position: absolute ;
-    left: -6rem;
+    left: -1rem;
     top: 7rem;
     font-size: 6.4rem;
     font-weight: 400;
@@ -489,7 +537,7 @@ left: 0;
     display: flex;
     right: -100px;
     z-index: 7;
-
+    display: block;
   }
 
 
