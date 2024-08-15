@@ -58,16 +58,19 @@
         $serie = mysqli_real_escape_string($con, $_POST['serie']);
         $cpf = mysqli_real_escape_string($con, $_POST['cpf']);
         $datanasc = mysqli_real_escape_string($con, $_POST['datanasc']);
+        $cep = mysqli_real_escape_string($con, $_POST['cep']);
         $endereco = mysqli_real_escape_string($con, $_POST['endereco']);
+        $bairro = mysqli_real_escape_string($con, $_POST['bairro']);
+        $complemento = mysqli_real_escape_string($con, $_POST['complemento']);
         $telefone = mysqli_real_escape_string($con, $_POST['telefone']);
 
         // Verifica se todos os campos estão preenchidos
-        if (empty($nome) || empty($cursos) || empty($serie) || empty($cpf) || empty($datanasc) || empty($endereco) || empty($telefone)) {
-            echo "Por favor, preencha todos os campos.";
+        if (empty($nome) || empty($cursos) || empty($serie) || empty($cpf) || empty($datanasc) || empty($cep) || empty($endereco)|| empty($bairro) || empty($telefone)) {
+            echo "Por favor, preencha todos os campos obrigatorios.";
         } else {
             // Insere os dados no banco de dados
-            $sql = "INSERT INTO tb_alunos (nome, cursos, serie, cpf, datanasc, endereco, telefone) 
-                    VALUES ('$nome', '$cursos', '$serie', '$cpf', '$datanasc', '$endereco', '$telefone')";
+            $sql = "INSERT INTO tb_alunos (nome, cursos, serie, cpf, datanasc, cep, endereco, bairro, complemento, telefone) 
+                    VALUES ('$nome', '$cursos', '$serie', '$cpf', '$datanasc', '$cep', '$endereco','$bairro','$complemento', '$telefone')";
             
             if (!mysqli_query($con, $sql)) {
                 echo "Erro ao cadastrar os dados: " . mysqli_error($con);
@@ -87,7 +90,10 @@
                         <th>Série</th>
                         <th>CPF</th>
                         <th>Data de Nascimento</th>
+                        <th>CEP</th>
                         <th>Endereço</th>
+                        <th>Bairro</th>
+                        <th>Complemento</th>
                         <th>Telefone</th>
                     </tr>
                 </thead>
@@ -101,7 +107,10 @@
                     <td>" . htmlspecialchars($escrever['serie']) . "</td>
                     <td>" . htmlspecialchars($escrever['cpf']) . "</td>
                     <td>" . htmlspecialchars($escrever['datanasc']) . "</td>
+                     <td>" . htmlspecialchars($escrever['cep']) . "</td>
                     <td>" . htmlspecialchars($escrever['endereco']) . "</td>
+                     <td>" . htmlspecialchars($escrever['bairro']) . "</td>
+                      <td>" . htmlspecialchars($escrever['complemento']) . "</td>
                     <td>" . htmlspecialchars($escrever['telefone']) . "</td>
                   </tr>";
         }

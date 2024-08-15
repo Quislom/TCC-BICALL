@@ -8,7 +8,10 @@ id int auto_increment primary key ,
   serie varchar(10),
   cpf char(11),
   datanasc date,
+  cep char (8),
   endereco varchar(150),
+  bairro varchar(150),
+  complemento varchar(5),
   telefone varchar(20)
 ) ;
 
