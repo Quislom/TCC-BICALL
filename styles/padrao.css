@@ -580,7 +580,7 @@ left: 0;
     
   }
   .txtBanner:hover {
-    color: #000000; /* Alterar a cor do texto dos links quando o mouse passa por cima */
+    color:#40A2E3; /* Alterar a cor do texto dos links quando o mouse passa por cima */
     transform: scale(1.1); /* Aumentar ligeiramente o tamanho do link ao passar o mouse */
    
 }

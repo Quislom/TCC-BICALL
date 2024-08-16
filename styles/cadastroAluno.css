@@ -58,8 +58,31 @@ body
     flex-direction: column;
     background-color: #fff;
     padding: 3rem;
-    border: 1px solid black;            
+    border: 1px solid rgb(0, 0, 0);            
     overflow: auto; /* Permite rolagem se o conteúdo exceder o tamanho do formulário */
+
+}
+
+
+/*Css do form apagar aluno*/
+.formApagar {
+
+    position: relative;
+    border-radius: 0px 50px 50px 0px;
+    width: 250px; 
+    max-width: 50%; /* Limita a largura máxima a 50% */
+    display: flex;
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    flex-direction: column;
+    background-color: #fff;
+    padding: 3rem;
+    border: 1px solid rgb(0, 0, 0);            
+    overflow: auto; /* Permite rolagem se o conteúdo exceder o tamanho do formulário */
+    border-radius: 50px;
+    height: 250px;
+    margin-top: 120px;
+    left: 150px;
 }
 
 
@@ -214,7 +237,7 @@ color: #fff;
 
 .continue-button button:hover
 {
-    background-color: #6b63fff1;
+    background-color:#40A2E3; /*Cor do botão quando o mouse está em cima*/
     
 }
 
