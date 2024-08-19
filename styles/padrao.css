@@ -49,6 +49,7 @@
       border-radius: 30px;
       overflow: hidden;
       transition: background-color 0.3s ease;
+      top: 10px;
   }
   
   input[type="checkbox"] {

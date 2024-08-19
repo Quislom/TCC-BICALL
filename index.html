@@ -1,133 +1,113 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <link rel="icon" href="/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <title>Biometric Call</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A700"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C700"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo%3A400"/>
-  <link rel="stylesheet" href="./styles/padrao.css"/>
-  <link rel="stylesheet" href="./styles/slides.css"/>
-
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/cadastroAluno.css">
+    <link rel="stylesheet" href="styles/slides.css">
+    <link rel="stylesheet" href="./styles/padrao.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A700" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C700" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo%3A400" />
+    <script src="js/slides.js"></script>
+    <script src="menuHamburguer.js"></script>
+  
+    <title>Biometric Call</title>
 </head>
 <body>
-  <div class="fundo">
-    <div class="banner">
-      <div class="blocoAmareloLinks">
-        <div class="blocoAzulCima">
+    <div class="fundo">
+        <!-- Banner atualizado -->
+        <div class="banner">
+            <div class="blocoAmareloLinks">
+                <div class="blocoAzulCima"></div>
+                <div class="div1">
+                    <div class="div2">
+                        <p class="divTitulo">
+                            <img src="img/logo.png" alt="Biometric Call Logo" class="logo">
+                        </p>
+                        <p class="titulo1">BIOMETRIC</p>
+                        <p class="titulo2">CALL</p>
+                    </div>
+                    <p class="txtBanner"><a class="txtBanner" href="index.html">TELA PRINCIPAL</a></p>
+                    <p class="txtBanner"><a class="txtBanner" href="verificarchamada.html">VERIFICAR CHAMADA</a></p>
+                    <p class="txtBanner"><a class="txtBanner" href="atualizaraluno.html">ATUALIZAR ALUNO</a></p>
+                    <p class="txtBanner"><a class="txtBanner" href="apagaraluno.html">APAGAR ALUNO</a></p>
+
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="toggle-dark-mode">
+                        <label for="toggle-dark-mode" class="switch">
+                            <span class="toggle-thumb"></span>
+                        </label>
+                    </div>
+
+                    <!-- Menu hamburguer atualizado -->
+                    <div class="hamburguer">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+
+                    <div class="sidebar">
+                        <ul>
+                            <li class="listaSidebar"><a href="index.html" class="textoSidebar">TELA PRINCIPAL</a></li>
+                            <li class="listaSidebar"><a href="cadastroAluno.html" class="textoSidebar">CADASTRAR ALUNO</a></li>
+                            <li><a href="verificarchamada.html">VERIFICAR CHAMADA</a></li>
+                            <li><a href="atualizaraluno.html">ATUALIZAR ALUNO</a></li>
+                            <li><a href="apagaraluno.html">APAGAR ALUNO</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="blocoAzulMeio"></div>
+            </div>
         </div>
-        <div class="div1">
-          <div class="div2">
-            <p class="divTitulo">
-              <img src="img/logo.png" alt="Biometric Call Logo" class="logo"> <!-- Adicione essa linha -->
-            
-            </p>
-            <p class="titulo1">BICALL</p>
-          </div>
-          <p class="txtBanner"><a class="txtBanner" href="cadastroAluno.html">CADASTRAR ALUNO</a></p>
-          <p class="txtBanner"><a class="txtBanner" href="verificarchamada.html">VERIFICAR CHAMADA</a></p>
-          <p class="txtBanner"><a class="txtBanner" href= "atualizaraluno.html">ATUALIZAR ALUNO</a></p>
-          <p class="txtBanner"><a class="txtBanner" href= "apagaraluno.html">APAGAR ALUNO</a></p>
 
-          
- <!-- Adicionando o menu-hamburguer-->
-<div class="hamburguer">
-  <div class="line" id="line1"></div>
-  <div class="line" id="line2"></div>
-  <div class="line" id="line3"></div>
+        <!-- Conteúdo do carrossel (permanece o mesmo) -->
+        <div class="slider">
+            <div class="slides">
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+                <input type="radio" name="radio-btn" id="radio4">
 
-</div>
+                <!-- Carrossel de imagens -->
+                <div class="slide first">
+                    <img src="img/telaPrincipal.png" />
+                </div>
+                <div class="slide">
+                    <img src="https://www.youbilingue.com.br/blog/wp-content/uploads/2019/06/capa-blog-diferenciar-escola-min.png" />
+                </div>
+                <div class="slide">
+                    <img src="https://cdn.comerciariossp.com.br/upload/post/img1-Cerca-de-12-mil-alunos-trocam-escola-par-29781-1.jpg" />
+                </div>
+                <div class="slide">
+                    <img src="https://static.vecteezy.com/ti/vetor-gratis/p3/20438483-alunos-cumprimentar-as-escola-desenho-animado-vetor.jpg" />
+                </div>
 
+                <!-- Navegação automática -->
+                <div class="navegação-auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                    <div class="auto-btn4"></div>
+                </div>
+            </div>
 
-<!-- Colocando os links dentro do menu-hamburguer-->
-
-
-<div class="sidebar">
-    
-  <ul class="">
-
-
-
-
-      <li class="listaSidebar"><a href="index.html" class="textoSidebar">TELA PRINCIPAL</a></li>
-      <li class="listaSidebar"><a class="txtBanner" href="cadastroAluno.html">CADASTRAR ALUNO</a></li>
-      <li class=""><a href="verificarchamada.html" class="">VERIFICAR CHAMADA</a></li>
-      <li class=""><a href="atualizaraluno.html" class="">ATUALIZAR ALUNO</a></li>
-      <li class=""><a href="apagaraluno.html" class="">APAGAR ALUNO</a></li>
-  </ul>
-</div>
+            <!-- Navegação manual -->
+            <div class="manual-navegação">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+                <label for="radio4" class="manual-btn"></label>
+            </div>
         </div>
-      </div>
-      <div class="blocoAzulMeio">
-      </div>
-      
-    <div class="slider">
 
-      <div class="slides">
-
-      <input type="radio" name="radio-btn" id="radio1">
-      <input type="radio" name="radio-btn" id="radio2">
-      <input type="radio" name="radio-btn" id="radio3">
-      <input type="radio" name="radio-btn" id="radio4">
-      
-      <!-- Carrossel de imagens -->
-      <div class="slide first">
-       <img src="https://static.escolakids.uol.com.br/2020/08/licoes-importantes-escola.jpg"/>
-      </div>
-
-      <div class="slide">
-        <img src="https://www.youbilingue.com.br/blog/wp-content/uploads/2019/06/capa-blog-diferenciar-escola-min.png"/>
-       </div>
-
-       <div class="slide">
-        <img src="https://cdn.comerciariossp.com.br/upload/post/img1-Cerca-de-12-mil-alunos-trocam-escola-par-29781-1.jpg"/>
-       </div>
-
-       <div class="slide">
-        <img src="https://static.vecteezy.com/ti/vetor-gratis/p3/20438483-alunos-cumprimentar-as-escola-desenho-animado-vetor.jpg"/>  
-
-       <!--navegação-->
-       <div class="navegação-auto">
-
-<div class="auto-btn1"></div>
-<div class="auto-btn2"></div>
-<div class="auto-btn3"></div>
-<div class="auto-btn4"></div>
-       </div>
-
+        <!-- Rodapé atualizado -->
+        <div class="divRodape">
+            <div class="blocoAmareloRodape"></div>
+            <div class="blocoAzulRodape"></div>
+        </div>
     </div>
-      
-<div class="manual-navegação">
-  <label for="radio1" class="manual-btn"></label>
-  <label for="radio2" class="manual-btn"></label>
-  <label for="radio3" class="manual-btn"></label>
-  <label for="radio4" class="manual-btn"></label>
-</div>
-
-    </div>
-
-    </div>
-  <div class="divFormCad">
-    
-     
-   </div>
-    
-  </div>
-  
-  <div class="divRodape">
-    <div class="blocoAmareloRodape">
-    </div>
-    <div class="blocoAzulRodape">
-    </div>
-  </div>
-</div>
-<!--Inserindo o JavaScript-->
-<script src="js/slide.js"></script>
-<script src="menuHamburguer.js"></script>
-
 </body>
+</html>
+
+
