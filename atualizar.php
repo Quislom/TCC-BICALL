@@ -1,33 +1,42 @@
 <?php
-$host = "localhost:3306";
+$host = "localhost";
 $user = "root";
-$pass = "root";
+$pass = "";
 $base = "tcc";
 $con = mysqli_connect($host, $user, $pass, $base);
 
-// Código para inserir novos dados
+// Verificar a conexão
+if (!$con) {
+    die("Falha na conexão: " . mysqli_connect_error());
+}
 
-
-$nome = $_POST['cxnomealuno'];
+// Receber dados do formulário
+$cpf = $_POST['cpf'];
+$nome = $_POST['txtBoxNomeA'];
 $cursos = $_POST['curso'];
 $serie = $_POST['serie'];
 
+// Buscar o ID do aluno pelo CPF
+$id_query = "SELECT id FROM tb_alunos WHERE cpf = '$cpf'";
+$id_result = mysqli_query($con, $id_query);
+if ($id_result && mysqli_num_rows($id_result) > 0) {
+    $id_row = mysqli_fetch_assoc($id_result);
+    $id = $id_row['id'];
 
-
-$sql = "UPDATE tb_alunos SET nome = '$nome', Cursos = '$cursos', serie = '$serie' WHERE id = 1";
-$query = mysqli_query($con, $sql);
-
-    echo "<script>
-            alert ('Dados atualizados com sucesso');
-          </script>";
-
-    // Exibir dados após a inserção
-    $res = mysqli_query($con, "select * from tb_alunos");
-    echo "<table border=3px><tr><td> Código do Aluno</td><td> Nome do Aluno</td> <td>Curso do Aluno</td> <td> Serie do Aluno</td> </tr>";
-    while ($escrever = mysqli_fetch_array($res)) {
-        echo "</td><td> " . $escrever['id'] . "</td><td> " . $escrever['nome'] . "</td><td>" . $escrever['Cursos'] . "</td><td>" . $escrever['serie'] . "</td>   </tr>";
+    // Atualizar os dados do aluno
+    $sql = "UPDATE tb_alunos SET nome = '$nome', Cursos = '$cursos', serie = '$serie' WHERE id = $id";
+    if (mysqli_query($con, $sql)) {
+        echo "<script>
+                alert('Dados atualizados com sucesso');
+                window.location.href = 'tabela-alunos.php'; // Atualiza a página para mostrar as mudanças
+              </script>";
+    } else {
+        echo "<script>alert('Erro ao atualizar dados: " . mysqli_error($con) . "');</script>";
     }
-    echo "</table>";
-    echo "</br></br>";
+} else {
+    echo "<script>alert('Aluno não encontrado');</script>";
+}
 
+// Fechar a conexão
+mysqli_close($con);
 ?>

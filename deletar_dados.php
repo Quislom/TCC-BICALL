@@ -8,7 +8,12 @@ if ($_POST['cpf'] != "") {
     $query_excluir = mysqli_query($conn, $sql_excluir);
  
     if ($query_excluir) {
+
         echo "<script>alert('Dados excluídos com sucesso!');</script>";
+
+        header("Location: apagaraluno.html");
+
+
     } else {
         echo "<script>alert('Erro ao excluir dados.');</script>";
     }
