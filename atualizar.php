@@ -27,7 +27,7 @@ if ($id_result && mysqli_num_rows($id_result) > 0) {
     $sql = "UPDATE tb_alunos SET nome = '$nome', Cursos = '$cursos', serie = '$serie' WHERE id = $id";
     if (mysqli_query($con, $sql)) {
         echo "<script>
-                alert('Dados atualizados com sucesso');
+                alert('Operação realizada com sucesso');
                 window.location.href = 'tabela-alunos.php'; // Atualiza a página para mostrar as mudanças
               </script>";
     } else {

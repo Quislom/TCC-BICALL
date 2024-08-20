@@ -1,33 +1,16 @@
 <?php
-$host = "localhost:3306";
+$host = "localhost";
 $user = "root";  
 $pass = "";    
 $base = "tcc";    
  
- 
 $con = mysqli_connect($host, $user, $pass, $base);
  
- 
-if ($con) {
-    $message = "Conexão Realizada com sucesso!";
+if (!$con) {
+    die("Erro na conexão: " . mysqli_connect_error());
 } else {
-    $message = "Erro na conexão: " . mysqli_connect_error();
+    echo "Conexão realizada com sucesso!";
 }
- 
  
 mysqli_close($con);
 ?>
- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testar Conexão</title>
-</head>
-<body>
- 
-<script>
-    alert("<?php echo $message; ?>");
-</script>
-

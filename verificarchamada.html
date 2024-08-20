@@ -6,149 +6,132 @@
     <link rel='stylesheet' href="styles/cadastroAluno.css">
     <link rel="stylesheet" href="./styles/padrao.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A700" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C700" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo%3A400" />
-    <title>Formulário de Cadastro</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C700" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo%3A400" />
+    <script src="js/apicep.js"></script>
+    <title>Formulário de Atualização</title>
 </head>
 <body>
     <div class="fundo">
         <div class="banner">
-          <div class="blocoAmareloLinks">
-            <div class="blocoAzulCima">
-            </div>
-            <div class="div1">
-              <div class="div2">
-                <p class="divTitulo">
-                  <img src="img/logo.png" alt="Biometric Call Logo" class="logo"> <!-- Adicione essa linha -->
-    
-                </p>
-                <p class="titulo1">BICALL</p>
-              </div>    
-              <p class="txtBanner"><a class="txtBanner" href="index.html">TELA PRINCIPAL</a></p>
-              <p class="txtBanner"><a class="txtBanner" href="cadastroAluno.html">CADASTRAR ALUNO</a></p>
-              <p class="txtBanner"><a class="txtBanner" href="atualizaraluno.html ">ATUALIZAR ALUNO</a></p>
-              <p class="txtBanner"><a class="txtBanner" href="apagaraluno.html">APAGAR ALUNO</a></p>
+            <div class="blocoAmareloLinks">
+                <div class="blocoAzulCima"></div>
+                <div class="div1">
+                    <div class="div2">
+                        <p class="divTitulo">
+                            <img src="img/logo.png" alt="Biometric Call Logo" class="logo">
+                        </p>
+                        <p class="titulo1">BIOMETRIC</p>
+                        <p class="titulo2">CALL</p>
+                    </div>
+                    <p class="txtBanner"><a class="txtBanner" href="index.html">TELA PRINCIPAL</a></p>
+                    <p class="txtBanner"><a class="txtBanner" href="atualizaraluno.html">ATUALIZAR ALUNO</a></p>
+                    <p class="txtBanner"><a class="txtBanner" href="cadastroAluno.html">CADASTRAR ALUNO</a></p>
+                    <p class="txtBanner"><a class="txtBanner" href="apagaraluno.html">APAGAR ALUNO</a></p>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="toggle-dark-mode">
+                        <label for="toggle-dark-mode" class="switch">
+                            <span class="toggle-thumb"></span>
+                        </label>
+                    </div>
+                    <div class="hamburguer">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
 
-              
- <!-- Adicionando o menu-hamburguer-->
-<div class="hamburguer">
-    <div class="line" id="line1"></div>
-    <div class="line" id="line2"></div>
-    <div class="line" id="line3"></div>
-
-</div>
-
- <!-- Colocando os links dentro do menu-hamburguer-->
-
-
-<div class="sidebar">
-    
-    <ul class="">
-  
-  
-  
-        <li class="listaSidebar"><a href="index.html" class="textoSidebar">TELA PRINCIPAL</a></li>
-        <li class="listaSidebar"><a class="txtBanner" href="cadastroAluno.html">CADASTRAR ALUNO</a></li>
-        <li class=""><a href="verificarchamada.html" class="">VERIFICAR CHAMADA</a></li>
-        <li class=""><a href="atualizaraluno.html" class="">ATUALIZAR ALUNO</a></li>
-        <li class=""><a href="apagaraluno.html" class="">APAGAR ALUNO</a></li>
-  
-       
-    </ul>
-  </div>
-            </div>
-          </div>
-          <div class="blocoAzulMeio">
-          </div>
-        </div>
-        
-        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-        
-        
-    <div class ="container">
-        <div class = "form-image">
-            <img src = "img/undraw_mathematics_-4-otb (1).svg">
-        </div>
-
-        <div class="form">
-            <form action="#">
-                <div class = "form-header">
-                    <div class="title">
-                        <h1>Verificar Chamada</h1>
+                    <div class="sidebar">
+                        <ul class="">
+                            <li class="listaSidebar"><a href="index.html" class="textoSidebar">TELA PRINCIPAL</a></li>
+                            <li class="listaSidebar"><a class="txtBanner" href="cadastroAluno.html">CADASTRAR ALUNO</a></li>
+                            <li class=""><a href="verificarchamada.html" class="">VERIFICAR CHAMADA</a></li>
+                            <li class=""><a href="atualizaraluno.html" class="">ATUALIZAR ALUNO</a></li>
+                            <li class=""><a href="apagaraluno.html" class="">APAGAR ALUNO</a></li>
+                        </ul>
                     </div>
                 </div>
-                <!--agrupando os conteudos do formulário-->
-                <div class="input-group">
-                    <div class = "input-box">
-                
+                <div class="blocoAzulMeio"></div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="form-image">
+                <img src="img/undraw_mathematics_-4-otb (1).svg" alt="Mathematics Image">
+            </div>
+
+            <!-- Início do formulário de atualização -->
+            <div class="form">
+                <form name="formAluno" action="verificarChamada.php" method="POST">
+                    <div class="form-header">
+                        <div class="title">
+                            <h1>Verificar Aluno</h1>
+                        </div>
                     </div>
-                    
-                    <div class="serie-inputs">
-
-                                <div class = "input-box">
-                                    <label for="txtBoxNomeA">Selecione a série do aluno:</label>
-                                </div>
-
-                            <div class="serie-group">
-                                <div class="serie-input">
-                                    <input id="s1" type="radio" name="gender">
-                                    <label for="s1">1º ano</label>
-                                </div>
-        
-                                <div class="serie-input">
-                                    <input id="s2" type="radio" name="gender">
-                                    <label for="s2">2º ano</label>
-                                </div>
-        
-                                <div class="serie-input">
-                                    <input id="s3" type="radio" name="gender">
-                                    <label for="s3">3º ano</label>
-                                </div>
-                            
-                            </div>
-                            <div class="serie-inputs">
-
-                                <div class = "input-box">
-                                    <label for="txtBoxNomeA">Selecione o curso do aluno:</label>
-                                </div>
-
-                            <div class="serie-group">
-                                <div class="serie-input">
-                                    <input id="s1" type="radio" name="gender">
-                                    <label for="s1">ADM</label>
-                                </div>
-        
-                                <div class="serie-input">
-                                    <input id="s2" type="radio" name="gender">
-                                    <label for="s2">DS</label>
-                                </div>
-        
-                                <div class="serie-input">
-                                    <input id="s3" type="radio" name="gender">
-                                    <label for="s3">LOG</label>
-                                </div>
-                            
-                            </div>
-                            
+                    <div class="input-group">
+                        <div class="input-box">
+                            <label for="cpf">CPF do aluno</label>
+                            <input class="txts" type="text" name="cpf" title="Apenas números são permitidos, e deve conter exatamente 11 dígitos" pattern="\d{11}" placeholder="Digite o CPF para localizar o aluno" maxlength="11" required>
                         </div>
 
+                        <div class="input-box">
+                            <label for="cxnomealuno">Nome do aluno</label>
+                            <input class="txts" type="text" name="cxnomealuno" placeholder="Digite o nome do aluno" required>
                         </div>
-                </div>
-                <div class="continue-button">
-                    <button><a href="#">Atualizar</a></button>
-                </div>
 
-            </form>
-        </div>
-    </div>
-    <div class="divRodape">
-        <div class="blocoAmareloRodape">
-        </div>
-        <div class="blocoAzulRodape">
-        </div>
+                        <div class="serie-inputs">
+                            <div class="input-box">
+                                <label for="serie">Selecione a série do aluno:</label>
+                            </div>
+                            <div class="serie-group">
+                                <div class="serie-input">
+                                    <input type="radio" name="serie" value="1º ANO" class="sc" required>
+                                    <p class="rb1">1º ANO</p>
+                                </div>
+                                <div class="serie-input">
+                                    <input type="radio" name="serie" value="2º ANO" class="sc" />
+                                    <p class="rb2">2º ANO</p>
+                                </div>
+                                <div class="serie-input">
+                                    <input type="radio" name="serie" value="3º ANO" class="sc" />
+                                    <p class="rb3">3º ANO</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="serie-inputs">
+                            <div class="input-box">
+                                <label for="curso">Selecione o curso do aluno:</label>
+                            </div>
+                            <div class="serie-group">
+                                <div class="serie-input">
+                                    <input type="radio" name="curso" value="Administração" class="sc" />
+                                    <p class="rbAdm">ADM</p>
+                                </div>
+                                <div class="serie-input">
+                                    <input type="radio" name="curso" value="Desenvolvimento de Sistemas" class="sc" />
+                                    <p class="rbDs">DS</p>
+                                </div>
+                                <div class="serie-input">
+                                    <input type="radio" name="curso" value="Logística" class="sc" />
+                                    <p class="rbLog">LOG</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="continue-button">
+                        <button type="submit">Verificar</button>
+                    </div>
+                </form>
+            </div>
         </div>
 
+        <div class="divRodape">
+            <div class="blocoAmareloRodape"></div>
+            <div class="blocoAzulRodape"></div>
+        </div>
+        
         <script src="menuHamburguer.js"></script>
-
+    </div>
 </body>
 </html>
+
