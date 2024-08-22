@@ -9,6 +9,7 @@ $base = "tcc";
 $conn = new mysqli($host, $user, $pass, $base);
 
 // Verificar a conexão
+
 if ($conn->connect_error) {
     die("Conexão falhou: " . $conn->connect_error);
 }

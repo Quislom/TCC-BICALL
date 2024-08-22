@@ -30,9 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (mysqli_num_rows($result) == 1) {
             // Login bem-sucedido
-            header("Location: index.html");
-                        // Redirecionar para uma página protegida ou inicial
-            // header("Location: pagina_protegida.php");
+            header("Location: inicio.html");
+                        // Redirecionar para uma a página inicio
             exit();
         } else {
             // Credenciais inválidas

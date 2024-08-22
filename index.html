@@ -1,113 +1,187 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/cadastroAluno.css">
-    <link rel="stylesheet" href="styles/slides.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>index</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="./styles/padrao.css"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A700" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C700" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo%3A400" />
-    <script src="js/slide.js"></script>
-    <script src="menuHamburguer.js"></script>
-  
-    <title>Biometric Call</title>
-</head>
-<body>
-    <div class="fundo">
-        <!-- Banner atualizado -->
-        <div class="banner">
-            <div class="blocoAmareloLinks">
-                <div class="blocoAzulCima"></div>
-                <div class="div1">
-                    <div class="div2">
-                        <p class="divTitulo">
-                            <img src="img/logo.png" alt="Biometric Call Logo" class="logo">
-                        </p>
-                        <p class="titulo1">BIOMETRIC</p>
-                        <p class="titulo2">CALL</p>
-                    </div>
-                    <p class="txtBanner"><a class="txtBanner" href="cadastroALuno.html">CADASTRAR ALUNO</a></p>
-                    <p class="txtBanner"><a class="txtBanner" href="verificarchamada.html">VERIFICAR CHAMADA</a></p>
-                    <p class="txtBanner"><a class="txtBanner" href="atualizaraluno.html">ATUALIZAR ALUNO</a></p>
-                    <p class="txtBanner"><a class="txtBanner" href="apagaraluno.html">APAGAR ALUNO</a></p>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A700" />
+    <link rel="stylesheet" href="./styles/inicio.css" />
+  </head>
+  <body>
+    <div class="index">
+      <img class="index-img" src="img/time.svg" />
+      <div class="logoIndex">
+        <img class="logo-img" src="img/logo.png" />
+      </div>
+      <div class="">
+        <div class="btn-con">
 
-                    <div class="toggle-switch">
-                        <input type="checkbox" id="toggle-dark-mode">
-                        <label for="toggle-dark-mode" class="switch">
-                            <span class="toggle-thumb"></span>
-                        </label>
-                    </div>
+          <!--Input Que redireciona para a página de loginProfessor-->
 
-                    <!-- Menu hamburguer atualizado -->
-                    <div class="hamburguer">
-                        <div class="line"></div>
-                        <div class="line"></div>
-                        <div class="line"></div>
-                    </div>
-
-                    <div class="sidebar">
-                        <ul>
-                            <li class="listaSidebar"><a href="index.html" class="textoSidebar">TELA PRINCIPAL</a></li>
-                            <li class="listaSidebar"><a href="cadastroAluno.html" class="textoSidebar">CADASTRAR ALUNO</a></li>
-                            <li><a href="verificarchamada.html">VERIFICAR CHAMADA</a></li>
-                            <li><a href="atualizaraluno.html">ATUALIZAR ALUNO</a></li>
-                            <li><a href="apagaraluno.html">APAGAR ALUNO</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="blocoAzulMeio"></div>
-            </div>
+          <input class="conectarProfessor" type="button" value="Conectar" id="login" name="login" onclick="window.location.href='conectarprofessor.html'">
+          
         </div>
-
-        <!-- Conteúdo do carrossel (permanece o mesmo) -->
-        <div class="slider">
-            <div class="slides">
-                <input type="radio" name="radio-btn" id="radio1">
-                <input type="radio" name="radio-btn" id="radio2">
-                <input type="radio" name="radio-btn" id="radio3">
-                <input type="radio" name="radio-btn" id="radio4">
-
-                <!-- Carrossel de imagens -->
-                <div class="slide first">
-                    <img src="img/slide1.png" />
-                </div>
-                <div class="slide">
-                    <img src="img/slide2.png" />
-                </div>
-                <div class="slide">
-                    <img src="img/slide3.png" />
-                </div>
-                <div class="slide">
-                    <img src="img/slide4.png" />
-                </div>
-
-                <!-- Navegação automática -->
-                <div class="navegação-auto">
-                    <div class="auto-btn1"></div>
-                    <div class="auto-btn2"></div>
-                    <div class="auto-btn3"></div>
-                    <div class="auto-btn4"></div>
-                </div>
-            </div>
-
-            <!-- Navegação manual -->
-            <div class="manual-navegação">
-                <label for="radio1" class="manual-btn"></label>
-                <label for="radio2" class="manual-btn"></label>
-                <label for="radio3" class="manual-btn"></label>
-                <label for="radio4" class="manual-btn"></label>
-            </div>
+        <div class="container">
+          <span class="txt-bio">
+          BIOMETRIC
+          </span>
+          <div class="titulo">
+            <span class="txt-call">
+            CALL
+            </span>
+          </div>
         </div>
-
-        <!-- Rodapé atualizado -->
-        <div class="divRodape">
-            <div class="blocoAmareloRodape"></div>
-            <div class="blocoAzulRodape"></div>
+        <div class="txt-index">
+        Não perca o tempo que poderia ser utilizado na educação dos estudantes.
         </div>
+        <div class="container-2">
+          <div class="btn-who">
+            <span class="quem-somos">
+            Quem somos?
+            </span>
+          </div>
+          <div class="btn-more">
+            <span class="saiba-mais">
+            Saiba Mais
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
+
+
+
+
+
+
+    <div id='quemsomos' class='quemsomos'>
+      <div id='txtindex' class='txtindex'>
+      A Biometric Call (BiCall) é uma empresa dedicada a modernizar a gestão de presença em instituições de ensino. 
+      </div>
+      <div id='txtcall' class='txtcall'>
+      Quem Somos?</div>
+      <img id='undraw_website_ij0l-11' class='undraw_website_ij0l-11' src='img/pc.png'/>
+      </img>
+      <div id='rectangle1' class='rectangle1'>
+      </div>
+      <div id='txtindex2' class='txtindex2'>
+      Com a tecnologia biométrica para automatizar o registro de alunos, o processo torna-se mais rápido, preciso e seguro.</div>
+      <div id='txtindex3' class='txtindex3'>
+      Com a tecnologia biométrica para automatizar o registro de alunos, o processo torna-se mais rápido, preciso e seguro.</div>
+      <div id='txtcall2' class='txtcall2'>
+      A Tecnologia</div>
+      <img id='image' class='image' src='img/bio.png'/>
+      </img>
+      </div>
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div id='saibamais1' class='saibamais1'>
+        <div id='txtcall1' class='txtcall1'>
+        Aplicativo Mobile</div>
+        <div id='txtindex1' class='txtindex1'>
+        Disponível na versão</div>
+        <div id='btnmore1' class='btnmore1'>
+        <div id='baixar1' class='baixar1'>
+        Baixar</div>
+        </div>
+        <img id='undraw_mobile_app_re_catg1' class='undraw_mobile_app_re_catg11' src=''/>
+        </img>
+        <div id='txtindex21' class='txtindex21'>
+        Ficou muito mais fácil</div>
+        <div id='txtcall21' class='txtcall21'>
+        Matricular alunos</div>
+        <img id='undraw_publish_article_re_3x8h1' class='undraw_publish_article_re_3x8h11' src=''/>
+        </img>
+        </div>
+      
+        
+
+
+
+
+
+
+
+
+      <div class="sai">
+
+        
+          <span class="dis">
+          Disponível na versão
+          </span>
+          <span class="appmob">
+            Aplicativo Mobile
+            </span>
+            
+            <button class="baixar">
+              <span class="">
+              Baixar
+              </span>
+            </button>
+            <img class='imgcel' src='img/cel.png'/>
+          </img>
+          <img class='telaimg' src='img/telaimg.png'/>
+          </img>
+          <span class="matri">
+            Matrícular alunos
+            </span>
+            
+            <span class="txtfacil">
+              Ficou muito mais fácil
+              </span>
+
+              
+      </div>
+
+<div class="crud">
+  <img class='telaimg2' src='img/telaimg2.png'/>
+</img>
+
+<span class="txtcrud">
+  Sistema CRUD
+  </span>
+
+  <span class="txtcrud2">
+    Esse tipo de sistema permite ao usuário a alteração dos dados cadastrados.
+    </span>
+
+    <img class='crudimg' src='img/crud.png'/>
+</img>
+</div>
+
+      
+<div class="crud"> <img class='telaimg2' src='img/telaimg2.png'/> </img> <span class="txtcrud"> Sistema CRUD </span> <span class="txtcrud2"> Esse tipo de sistema permite ao usuário a alteração dos dados cadastrados. </span> <img class='crudimg' src='img/crud.png'/> </img> <footer class="footer"> <div class="footer-content"> <div class="footer-section about"> <h2>Sobre Nós</h2> <p>Somos uma empresa dedicada a modernizar a gestão de presença em instituições de ensino.</p> </div> <div class="footer-section links"> <h2>Links Úteis</h2> <ul> <li><a href="#quem-somos">Quem Somos</a></li> <li><a href="#contato">Contato</a></li> <li><a href="#saiba-mais">Saiba Mais</a></li> </ul> </div> <div class="footer-section contact"> <h2>Contato</h2> <p>Email: contato@example.com</p> <p>Telefone: (11) 1234-5678</p> </div> </div> <div class="footer-bottom"> <p>&copy; 2024 Sua Empresa. Todos os direitos reservados.</p> </div> </footer> </div>
+
+
+
+
+  </body>
 </html>
-
-

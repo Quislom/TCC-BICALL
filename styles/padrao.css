@@ -1406,6 +1406,23 @@ left: 0;
   position: relative;
 }
 
+.Conectar {
+  font-family: 'Inter';
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1.333;
+  color:white;
+  margin-top: 30px;
+  position: relative;
+}
+
+.Conectar:hover {
+  color:#40A2E3; /* Alterar a cor do texto dos links quando o mouse passa por cima */
+  transform: scale(1.1); /* Aumentar ligeiramente o tamanho do link ao passar o mouse */
+ 
+}
+
+
 .txtConta {
   width: 486px;
   font-family: 'Inter';
@@ -1573,7 +1590,25 @@ height: 30px;
   text-align: center;
 }
 
-
+/*Botao conectar na página index*/
+.conectarProfessor {
+  position: absolute;
+  left: 20px;
+  bottom: 35px;
+  border-radius: 20px;
+  background: #40a2e3;
+  position: relative;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 16px 6px 16px 0;
+  width: 480px;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-weight: bold; /* Adicionado para texto em negrito */
+  color: white; /* Adicionado para texto branco */
+}
 
 
 
