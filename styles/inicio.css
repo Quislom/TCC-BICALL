@@ -155,6 +155,7 @@
   }
   .index {
     background: #FFFFFF;
+    
   }
   
 
@@ -550,3 +551,98 @@ line-height: 77px;
 color: #FFFFFF;
 
 }
+
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 20px 20px 20px; /* Adiciona padding no topo e mantém os outros */
+  font-family: Arial, sans-serif;
+  margin-top: 1080px; /* Espaçamento extra no topo */
+}
+
+
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 10px;
+}
+
+.footer-section h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #f1f1f1;
+}
+
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #ffdd57;
+}
+
+.footer-section.about p {
+  margin-bottom: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid #555;
+  margin-top: 20px;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.footer-section.contact p {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-section {
+    margin-bottom: 20px;
+  }
+}
+
+
+
+
+body {
+   margin: 0; height: 4320px; /* Garantir que o body tenha altura total da viewport */
+   position: relative; /* Permite que o elemento absoluto se posicione relativamente ao body */ 
+  }
