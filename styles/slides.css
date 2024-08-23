@@ -3,7 +3,7 @@
     top: -129px;
     margin: 100px;
     width: 100%;
-    height: 800px;
+    height: 1000px;
     overflow: hidden;
    
 
@@ -11,7 +11,7 @@
 
 .slides{
 width: 400%;
-height: 800px;
+height: 1000px;
 display: flex;
 }
 
@@ -24,6 +24,7 @@ display: flex;
     width: 25%;
     position: relative;
     transition: 2s;
+    height: 100%;
 }
 
 .slide img{

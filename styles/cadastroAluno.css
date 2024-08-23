@@ -45,7 +45,7 @@ body
 
 .form-image img 
 {
-    width: 31rem;
+    width: 51rem;
 }
 
 .form {
@@ -223,34 +223,40 @@ color: #fff;
 }
 
 /*botão formulário*/
-.continue-button button
-{
-    width: 40%;
-    margin-top: 2.5rem;
+.continue-button {
+    text-align: center; /* Centraliza o botão dentro do contêiner */
+    margin-top: 20px;
+  }
+  
+  .btnform {
+    background-color: #40A2E3; /* Cor verde para o botão */
+    color: white;
     border: none;
-    background-color: #ffa404;
-    padding: 0.80rem;
-    border-radius: 5px;
+    border-radius: 50px;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
     cursor: pointer;
-    
-}
-
-.continue-button button:hover
-{
-    background-color:#40A2E3; /*Cor do botão quando o mouse está em cima*/
-    
-}
-
-.continue-button button a
-{
-    
-    
-    text-decoration: none;
-    font-size:17px;
-    font-weight: 580;
-    color:#fff;
-}
-
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 200px;
+  }
+  
+  .btnform:hover {
+    background-color: #ffa404; /* Tom mais escuro para o hover */
+    transform: translateY(-2px); /* Leve elevação no hover */
+  }
+  
+  .btnform:active {
+    background-color: #000000; /* Tom mais escuro no clique */
+    transform: translateY(1px); /* Efeito de pressão no clique */
+  }
+  
+  .btnform:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.5); /* Destaque no foco */
+  }
+  
 /*deixando o site responsivo*/
 
 @media screen and (max-width: 1330px) 

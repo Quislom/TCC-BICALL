@@ -50,6 +50,7 @@
       overflow: hidden;
       transition: background-color 0.3s ease;
       top: 10px;
+      left: 10px;
   }
   
   input[type="checkbox"] {
@@ -1482,6 +1483,7 @@ height: 30px;
   align-items: center;
 }
 .txtBoxNP {
+  font-size: 20px;
   border-radius: 20px;
   background: #ffffff;
   margin-bottom: 4px;
@@ -1494,6 +1496,7 @@ height: 30px;
   font-size:15px;
 }
 .txtBoxEP {
+  font-size: 20px;
     border-radius: 20px;
   background: #FFFFFF;
   margin-top: 45px;
@@ -1532,7 +1535,7 @@ height: 30px;
   align-items: center;
 }
 .btnCadProfessor {
-  border-radius: 20px;
+  border-radius: 50px;
   background: #ECF5E0;
   position: relative;
   margin-top: 50px;
@@ -1540,8 +1543,37 @@ height: 30px;
   flex-direction: row;
   justify-content: center;
   padding: 16px 6px 16px 0;
-  width: 480px;
+  width: 200px;
+  left: 150px;
   box-sizing: border-box;
+}
+
+.btnCadProfessor {
+  background-color: #007BFF; /* Cor azul para o botão */
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btnCadProfessor:hover {
+  background-color: #FFA404; /* Tom mais escuro para o hover */
+  transform: translateY(-2px); /* Leve elevação no hover */
+}
+
+.btnCadProfessor:active {
+  background-color: #00408d; /* Tom mais escuro no clique */
+  transform: translateY(1px); /* Efeito de pressão no clique */
+}
+
+.btnCadProfessor:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Destaque no foco */
 }
 
 .digitarnomeatt{
