@@ -6,6 +6,10 @@
     height: 500px;
     
   }
+/*Fazer a rolagem suave na navegação da página*/
+  html{
+    scroll-behavior: smooth;
+  }
    .logo {
 
     position: absolute;
