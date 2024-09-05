@@ -12,7 +12,7 @@ if (!$con) {
 
 // Receber dados do formulário
 $cpf = $_POST['cpf'];
-$nome = $_POST['txtBoxNomeA'];
+$nome = $_POST['cxnomealuno'];
 $cursos = $_POST['curso'];
 $serie = $_POST['serie'];
 
@@ -24,7 +24,7 @@ if ($id_result && mysqli_num_rows($id_result) > 0) {
     $id = $id_row['id'];
 
     // Atualizar os dados do aluno
-    $sql = "UPDATE tb_alunos SET nome = '$nome', Cursos = '$cursos', serie = '$serie' WHERE id = $id";
+    $sql = "UPDATE tb_alunos SET nome = '$nome', cursos = '$cursos', serie = '$serie' WHERE id = $id";
     if (mysqli_query($con, $sql)) {
         echo "<script>
                 alert('Operação realizada com sucesso');
