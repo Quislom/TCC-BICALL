@@ -1377,25 +1377,96 @@ left: 0;
   font-size: 32px;
   letter-spacing: 13.8px;
   color: #6D460C;
+  display: block;
+
 }
 .txtBio {
   position: absolute;
-  left: 317px;
+  left: 310px;
   top: 353px;
   overflow-wrap: break-word;
   font-family: 'Baloo', 'Roboto Condensed';
   font-weight: 400;
   font-size: 64px;
   color: #FFFFFF;
+  display: block;
+
 }
+
 .divAmarelaCentro {
-    width: 55%;
-    left:0%;
-    top: 0%;
-    bottom: 0%;
-    background-color: #FFA404;
-    position: absolute;
+  width: 55%;
+  left:0%;
+  top: 0%;
+  bottom: 0%;
+  background-color: #FFA404;
+  position: absolute;
+  display: block;
 }
+
+
+@media screen and (max-width: 1500px) {
+  .txtBio {
+    left: 100px;
+
+  }
+
+  .txtCALL{
+    left: 320px;
+
+  }
+  
+  
+}
+
+@media screen and (max-width: 1344px) {
+  .divAmarelaCentro{
+    width: 50%;
+
+  }
+  
+}
+
+@media screen and (max-width: 1120px) {
+  .divAmarelaCentro{
+    width: 40%;
+
+  }
+
+  .txtBio {
+    left: 10px;
+
+  }
+
+  .txtCALL{
+    left: 220px;
+
+  }
+  
+}
+
+@media screen and (max-width: 855px) {
+  .divAmarelaCentro{
+    width: 40%;
+    display: none;
+
+
+  }
+
+  .txtBio {
+    left: 10px;
+    display: none;
+
+
+  }
+
+  .txtCALL{
+    left: 220px;
+    display: none;
+
+  }
+
+}
+
 
 .txtConectar {
   font-family: 'Inter';
@@ -1491,9 +1562,17 @@ height: 30px;
   width: 486px;
   box-sizing: border-box;
   height: 60px;
+  position: relative;
 }
+
+
+
+
+
+
 .h1{
   font-size:15px;
+  position: relative;
 }
 .txtBoxEP {
   font-size: 20px;
@@ -1642,6 +1721,59 @@ height: 30px;
   color: white; /* Adicionado para texto branco */
 }
 
+.loginh1{
+  position: relative;
+}
+
+/* label email e senha*/
+.labelemailANDpassword{
+  position: relative;
+}
 
 
+@media screen and (max-width: 855px){
+
+  .txtBoxNP{
+    right: 150px;
+    padding: 20px;
+    
+  }
+  .btnCadProfessor{
+    left: -20px;
+  }
+  .txtConta{
+    left: -20px;
+  }
+
+  .labelemailANDpassword{
+    left: -140px;
+  }
+
+  .loginh1{
+    left: 50px;
+  }
+  
+}
+
+@media screen and (max-width: 600px){
+
+  .txtBoxNP{
+    padding: 20px;
+    right: 80px;
+  }
+  .btnCadProfessor{
+    left: 50px;
+  }
+  .txtConta{
+    left: 50px;
+  }
+
+  .labelemailANDpassword{
+    left: -70px;
+  }
+  
+  .loginh1{
+    left: 110px;
+  }
+}
 

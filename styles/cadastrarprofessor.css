@@ -97,3 +97,7 @@ input {
   color: #1236b5;
   font-family: Inter, 'Source Sans Pro';
 }
+
+@media screen and (min-width: 1500px)  {
+  
+}
