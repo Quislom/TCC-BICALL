@@ -50,18 +50,109 @@ body
 
 .form {
     border-radius: 0px 50px 50px 0px;
-    width: 100%; 
+    width: 750px; 
     max-width: 50%; /* Limita a largura máxima a 50% */
     display: flex;
     justify-content: flex-start; 
     align-items: flex-start; 
     flex-direction: column;
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 3rem;
     border: 1px solid rgb(0, 0, 0);            
     overflow: auto; /* Permite rolagem se o conteúdo exceder o tamanho do formulário */
+    position: relative;
 
 }
+
+@media screen and (min-width: 1329px) {
+    .form{
+        
+        max-width: none;
+     
+     
+    }
+
+    
+}
+
+@media screen and (max-width: 1329px) {
+    .form{
+        
+        max-width: 75%;
+     
+     
+    }
+
+    
+}
+
+@media screen and (max-width: 1259px) {
+    .form{
+        
+        max-width: 75%;
+     
+     
+    }
+
+    
+}
+
+@media screen and (max-width: 1235px) {
+    .form{
+        
+        max-width: 80%;
+     
+     
+    }
+
+    
+}
+
+@media screen and (max-width: 1159px) {
+    .form{
+        
+        max-width: 85%;
+     
+     
+    }
+
+    
+}
+
+@media screen and (max-width:1064px) {
+    .form{
+        
+        max-width: 50%;
+        left: 170px;
+     
+     
+    }
+
+    
+}
+
+
+@media screen  and (max-width: 971px ) {
+    .form{
+    
+        left: 170px;
+        
+    
+    }
+
+    .form{
+        
+        max-width: 60%;
+        left: 100px;
+     
+     
+    }
+
+
+   
+}
+
+
 
 
 /*Css do form apagar aluno*/
