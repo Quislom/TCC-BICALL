@@ -529,13 +529,17 @@ left: 0;
 
   @media screen and (max-width: 704px) {
     .titulo1 {
-      left: -10rem;
+      left: -12rem;
 
     }
 
     .titulo2 {
-      left: -10rem;
+      left: -12rem;
 
+    }
+
+    .logo {
+      display: none;
     }
     
     
