@@ -890,7 +890,82 @@ left: 0;
  border-radius: 10px;
  box-shadow: 1px 1px 6px #000000c1; 
  font-size: 1.8rem;
+ position: relative;
 }
+
+/*Responsividade inputs do formulário*/
+
+@media screen and (max-width: 507px) {
+  .txts {
+    width: 270px ;
+    left: 2px;
+
+  }
+
+}
+
+@media  screen and  (max-width: 1064px ) {
+  .txts{
+      left: 2px;
+
+  }
+
+}
+
+@media  screen and  (max-width: 807px ) {
+  .txts{
+      left: 2px;
+      width: 390px ;
+
+  }
+
+}
+
+@media  screen and  (max-width: 717px ) {
+  .txts{
+      left: 2px;
+      width: 360px ;
+
+  }
+
+}
+@media  screen and  (max-width: 660px ) {
+  .txts{
+      left: 2px;
+      width: 330px ;
+
+  }
+
+}
+@media  screen and  (max-width: 606px ) {
+  .txts{
+      left: 2px;
+      width: 300px ;
+
+  }
+
+}
+
+@media  screen and  (max-width: 552px ) {
+  .txts{
+      left: 2px;
+      width: 270px ;
+
+  }
+
+}
+
+@media  screen and  (max-width: 497px ) {
+  .txts{
+      left: 2px;
+      width: 240px ;
+
+  }
+
+}
+
+
+
 
 
   /*divs*/
