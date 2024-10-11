@@ -386,6 +386,15 @@ color: #fff;
 
   }
   
+   
+  @media  screen and  (max-width: 550px ) {
+    .btnform{
+        left: 75px;
+
+    }
+
+  }
+  
   
     
   
