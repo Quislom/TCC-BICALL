@@ -1876,3 +1876,7 @@ height: 30px;
   }
 }
 
+.arquivar-img{
+  position: relative;
+  bottom: -60px;
+}
