@@ -1,4 +1,4 @@
-
+// API CEP para preenchimento automatico no formulario
 async function buscarCEP() {
     const cep = document.getElementById('cep').value;
     if (cep.length !== 8 || isNaN(cep)) {

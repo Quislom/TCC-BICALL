@@ -1,3 +1,5 @@
+
+//alerta para o cadastro de gestores academicos
 function validarFormulario() {
     var nome = document.forms["formProf"]["nome"].value;
     var email = document.forms["formProf"]["email"].value;

@@ -1,3 +1,4 @@
+// Função para a troca de slides 
 let counter = 1;
         setInterval(function () {
             document.getElementById('radio' + counter).checked = true;
