@@ -4,7 +4,7 @@
 <?php
 $host = "localhost";
 $user = "root";
-$pass = "";
+$pass = "23082006";
 $base = "tcc";
 
 // Conecta ao banco de dados
