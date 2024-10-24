@@ -371,7 +371,6 @@ width: 1134px;
 height: 204px;
 left: 193px;
 top: 143px;
-
 font-family: 'Inter';
 font-style: normal;
 font-weight: 400;
@@ -379,7 +378,7 @@ font-size: 64px;
 line-height: 66px;
 /* or 103% */
 letter-spacing: -0.02em;
-color: #000000;
+color: #ffffff;
 }
   
 
@@ -510,7 +509,7 @@ font-size: 64px;
 line-height: 66px;
 /* or 103% */
 letter-spacing: -0.02em;
-color: #000000;
+color: #ffffff;
   padding: 10px;
   text-align: center; 
   box-sizing: border-box; 
