@@ -47,6 +47,8 @@
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  
 }
 
 .conectarProfessor:hover {
@@ -714,6 +716,311 @@ color: #FFFFFF;
     margin-bottom: 20px;
   }
 }
+
+@media screen and (max-width:1669px ){
+  
+  .conectarProfessor{
+    left: -230px;
+
+  }
+
+}
+
+@media screen and (max-width:1661px ){
+  
+  .conectarProfessor{
+    left: -260px;
+
+  }
+  
+}
+
+
+@media screen and (max-width:1630px ){
+  
+  .conectarProfessor{
+    left: -290px;
+
+  }
+  
+}
+
+@media screen and (max-width:1604px ){
+  
+  .conectarProfessor{
+    left: -320px;
+
+  }
+
+}
+
+@media screen and (max-width:1573px ){
+  
+  .conectarProfessor{
+    left: -350px;
+
+  }
+
+}
+
+@media screen and (max-width:1540px ){
+  
+  .conectarProfessor{
+    left: -380px;
+
+  }
+
+}
+
+@media screen and (max-width:1509px ){
+  
+  .conectarProfessor{
+    left: -420px;
+
+  }
+  
+}
+
+@media screen and (max-width:1472px ){
+  
+  .conectarProfessor{
+    left: -450px;
+
+  }
+
+}
+
+@media screen and (max-width:px ){
+  
+  .conectarProfessor{
+    left: -480px;
+
+  }
+
+}
+
+@media screen and (max-width:1403px ){
+  
+  .conectarProfessor{
+    left: -510px;
+
+  }
+
+}
+
+@media screen and (max-width:1380px ){
+  
+  .conectarProfessor{
+    left: -540px;
+
+  }
+
+}
+
+@media screen and (max-width:1350px ){
+  
+  .conectarProfessor{
+    left: -580px;
+
+  }
+
+}
+
+@media screen and (max-width:1312px ){
+  
+  .conectarProfessor{
+    left: -620px;
+
+  }
+
+}
+
+@media screen and (max-width:1270px ){
+  
+  .conectarProfessor{
+    left: -650px;
+
+  }
+
+}
+
+@media screen and (max-width:px ){
+  
+  .conectarProfessor{
+    left: -480px;
+
+  }
+
+}
+
+@media screen and (max-width:1401px ){
+  
+  .conectarProfessor{
+    left: -520px;
+
+  }
+
+}
+
+@media screen and (max-width:1370px ){
+  
+  .conectarProfessor{
+    left: -550px;
+
+  }
+
+}
+
+@media screen and (max-width:1338px ){
+  
+  .conectarProfessor{
+    left: -590px;
+
+  }
+
+}
+
+@media screen and (max-width:1300px ){
+  
+  .conectarProfessor{
+    left: -620px;
+
+  }
+
+}
+@media screen and (max-width:1442px ){
+  
+  .conectarProfessor{
+    left: -500px;
+
+  }
+
+}
+@media screen and (max-width:1391px ){
+  
+  .conectarProfessor{
+    left: -540px;
+
+  }
+
+}
+@media screen and (max-width:1352px ){
+  
+  .conectarProfessor{
+    left: -580px;
+
+  }
+
+}
+@media screen and (max-width:1312px ){
+  
+  .conectarProfessor{
+    left: -620px;
+
+  }
+
+}
+@media screen and (max-width:1270px ){
+  
+  .conectarProfessor{
+    left: -660px;
+
+  }
+
+}
+@media screen and (max-width:1230px ){
+  
+  .conectarProfessor{
+    left: -690px;
+
+  }
+
+}
+@media screen and (max-width:1200px ){
+  
+  .conectarProfessor{
+    left: -730px;
+
+  }
+
+}
+@media screen and (max-width:1660px ){
+  
+  .conectarProfessor{
+    left: -770px;
+
+  }
+
+}
+
+@media screen and (max-width:1120px ){
+  
+  .conectarProfessor{
+    left: -800px;
+
+  }
+
+}
+
+@media screen and (max-width:1090px ){
+  
+  .conectarProfessor{
+    left: -840px;
+
+  }
+
+}
+
+@media screen and (max-width:1050px ){
+  
+  .conectarProfessor{
+    left: -880px;
+
+  }
+
+}
+
+@media screen and (max-width:1010px ){
+  
+  .conectarProfessor{
+    left: -910px;
+
+  }
+
+}
+
+@media screen and (max-width:980px ){
+  
+  .conectarProfessor{
+    left: -950px;
+
+  }
+
+}
+
+@media screen and (max-width:940px ){
+  
+  .conectarProfessor{
+    left: -990px;
+
+  }
+
+}
+
+@media screen and (max-width:900px ){
+  
+  .conectarProfessor{
+    left: -1020px;
+
+  }
+
+}
+
+
+
+
+
+
 
 
 
