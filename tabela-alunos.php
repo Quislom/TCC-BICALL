@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sua Página</title>
     <style>
+        /* estilo da exibição dos dados */
         .styled-table {
             width: 100%;
             border-collapse: collapse;
@@ -39,6 +40,7 @@
 </head>
 <body>
     <?php
+     /* conexao bd  */
     $host = "localhost";
     $user = "root";
     $pass = "";

@@ -1,4 +1,4 @@
-
+/*titulo do formulario */
 .title
 {
     font-size: 15px;
@@ -9,6 +9,7 @@
     
 }
 
+/* */
 .obs
 {
     color:#a8a8a8;
@@ -18,6 +19,7 @@
     font-family:Arial, Helvetica, sans-serif;
 }
 
+/* */
 body
 {
     /*tela toda*/
@@ -29,6 +31,7 @@ body
     background: #ABCFD8;
 }
 
+/*container do formulario */
 .container {
    width: 80%;
    height: 80vh; 
@@ -39,7 +42,7 @@ body
     
    
 }
-
+/*fundo do formulario onde fica a imagem */
 .form-image{
     border-radius: 50px 0px 0px 50px ;
     width: 50%;
@@ -51,12 +54,13 @@ body
     border: 1px solid black; 
     
 }
-
+/*largura da imagem */
 .form-image img 
 {
     width: 51rem;
 }
 
+/*formulario principal */
 .form {
     border-radius: 0px 50px 50px 0px;
     width: 750px; 
@@ -73,6 +77,7 @@ body
 
 }
 
+/*responsividade do formulario da imagem */
 @media screen and (min-width: 1329px) {
     .form{
         
@@ -184,7 +189,7 @@ body
     left: 15px;
 }
 
-
+/*espaçamento das info no formulario */
 .form-header 
 {
     
@@ -195,34 +200,7 @@ body
     
 }
 
-
-.login-button
-{
-   display:flex;
-   align-items: center;
-}
-
-.login-button button 
-{
-    border:none;
-    background-color: #6c63ff;
-    padding: 0.4rem 1rem;
-    border-radius: 5px;
-    cursor:pointer;
-}
-
-.login-button button:hover
-{
-    background-color: #6b63fff1;
-}
-
-.login-button button a
-{
-text-decoration:none;
-font-weight: 500;
-color: #fff;
-}
-
+/* */
 .form-header h1::after 
 {
 
@@ -235,6 +213,8 @@ color: #fff;
     border-radius: 10px;
 }
 
+
+/* agrupar infos do form */
 .input-group
 {
      
@@ -242,7 +222,7 @@ color: #fff;
     justify-content: space-between;
     padding: 1rem 0;
 }
-
+/* organização da box de infos no form */
 .input-box
 {
     
@@ -252,6 +232,7 @@ color: #fff;
     margin-bottom: 1.1rem;
 }
 
+/* configuração dos inputs do form */
 .input-box input
 {
  margin: 0.6rem 0;
@@ -261,10 +242,10 @@ color: #fff;
  box-shadow: 1px 1px 6px #000000c1; 
  text-align: left;
 }
-
+/* cor do input ao pressiona-lo  */
 .input-box input:hover 
 {
-    background-color: #eeeeee75;
+    background-color: #ffa404;
 }
 
 .input-box input :focus-visible
@@ -272,6 +253,7 @@ color: #fff;
     outline: 1px solid #6c63ff;
 }
 
+/* titulos de cada input do form */
 .input-box label, .gender-title h6 
 {
     font-family: inherit, Arial, Helvetica, sans-serif;
@@ -280,11 +262,13 @@ color: #fff;
     color:#000000c0;
 }
 
+/* config do placehplder do form  */
 .input-box input::placeholder
 {
     color: #000000be
 }
 
+/* config radio button serie  */
 .serie-group
 {
    
@@ -292,7 +276,7 @@ color: #fff;
     margin-top: 0.62rem;
     padding: 0 0.5rem;
 }
-
+/* config radio serie  */
 .serie-input
 {
     display: flex;
@@ -314,6 +298,7 @@ color: #fff;
     margin-bottom: 5px;
 }
 
+/* botão formulário */
 .continue-button
 {
     display:flex;
@@ -329,6 +314,7 @@ color: #fff;
     
   }
   
+  /* estilo do botao do formulario */
   .btnform {
     background-color: #40A2E3; /* Cor verde para o botão */
     color: white;
@@ -345,6 +331,7 @@ color: #fff;
     
   }
 
+  /* responsividade */
   @media  screen and  (max-width: 1064px ) {
     .btnform{
         left: 150px;
@@ -407,7 +394,7 @@ color: #fff;
   
     
   
-  
+  /* botao formulario caso passe o mouse em cima  */
   .btnform:hover {
     background-color: #ffa404; /* Tom mais escuro para o hover */
     transform: translateY(-2px); /* Leve elevação no hover */
@@ -420,7 +407,7 @@ color: #fff;
   
   .btnform:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.5); /* Destaque no foco */
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5); /* Destaque no foco */
   }
   
 /*deixando o site responsivo*/

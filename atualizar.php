@@ -1,4 +1,6 @@
+
 <?php
+//conexao bd
 $host = "localhost";
 $user = "root";
 $pass = "";

@@ -1,4 +1,5 @@
 <?php
+/* excluir dados */
 if ($_POST['cpf'] != "") {
     include_once 'conexao_bd.php';
  

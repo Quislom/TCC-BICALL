@@ -9,32 +9,41 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C700" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo%3A400" />
     <script src="js/apicep.js"></script>
+    <script src="js/formatartelefone.js"></script>
   
     <title>Formulário de Cadastro</title>
 </head>
 <body>
+    <!-- fundo do site -->
     <div class="fundo">
+        <!-- menu do site -->
         <div class="banner">
+            <!-- alojamento dos links -->
             <div class="blocoAmareloLinks">
+                <!-- retangulo branco -->
                 <div class="blocoAzulCima"></div>
                 <div class="div1">
                     <div class="div2">
+                        <!--titulo e imagem banner -->
                         <p class="divTitulo">
                             <img src="img/logo.png" alt="Biometric Call Logo" class="logo">
                         </p>
                         <p class="titulo1">BIOMETRIC</p>
                         <p class="titulo2">CALL</p>
                     </div>    
+                    <!-- links do banner -->
                     <p class="txtBanner"><a class="txtBanner" href="inicio.html">TELA PRINCIPAL</a></p>
                     <p class="txtBanner"><a class="txtBanner" href="verificarchamada.html">VERIFICAR CHAMADA</a></p>
                     <p class="txtBanner"><a class="txtBanner" href="atualizaraluno.html">ATUALIZAR DADOS</a></p>
                     <p class="txtBanner"><a class="txtBanner" href="apagaraluno.html">DESVINCULAR ALUNO</a></p>
+                    <!-- modo dark -->
                       <div class="toggle-switch">
                     <input type="checkbox" id="toggle-dark-mode">
                     <label for="toggle-dark-mode" class="switch">
                         <span class="toggle-thumb"></span>
                     </label>
                 </div>
+                <!-- sidebar lateral -->
                     <div class="hamburguer">
                         <div class="line"></div>
                         <div class="line"></div>
@@ -55,7 +64,7 @@
                 <div class="blocoAzulMeio"></div>
             </div>
         </div>
-
+<!-- form imagem -->
         <div class ="container">
             <div class="form-image">
                 <img src="img/imgcad.svg">
@@ -64,7 +73,7 @@
                             <!--Inicio do form de cadastroAluno-->
 
             <div class="form">
-
+                        <!-- validar form -->
                 <form name="formAluno" action="tabela-alunos.php" method="POST" onsubmit="return validarFormulario()">
                     <div class="form-header">
                         <div class="title">
@@ -95,9 +104,10 @@
                             <input class="txts" type="text" name="complemento" placeholder="Digite o complemento">
 
                             <label for="telefone">Telefone para contato</label>
-                            <input class="txts" type="tel" name="telefone" placeholder="(XX) XXXXX-XXXX" pattern="\(\d{2}\) \d{5}-\d{4}" required>
-                        </div>
+                            <input class="txts"  type="tel" id="telefone"name="telefone" placeholder="(XX) XXXXX-XXXX" pattern="\(\d{2}\) \d{5}-\d{4}" maxlength="15"required oninput="formatarTelefone(this)">
 
+                        </div>
+                        <!-- radios buttons -->
                         <div class="serie-inputs">
                             <div class="input-box">
                                 <label for="serie">Selecione a série do aluno:</label>
@@ -138,6 +148,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- botao cadastro -->
                     <div class="continue-button">
                         <button type="submit" class="btnform">Cadastrar</button>
                       </div>
@@ -145,7 +156,7 @@
                 </form>
             </div>
         </div>
-
+           <!-- rodape -->
         <div class="divRodape">
             <div class="blocoAmareloRodape">
 
@@ -154,7 +165,7 @@
             </div>
             <div class="blocoAzulRodape"></div>
         </div>
-        
+        <!-- script sidebar -->
         <script src="js/menuHamburguer.js"></script>
 
         
