@@ -1,462 +1,372 @@
-/*titulo do formulario */
-.title
-{
-    font-size: 15px;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family:Arial, Helvetica, sans-serif;
-    
+/* Estilo do título do formulário */
+.title {
+    font-size: 15px; /* Tamanho da fonte para o título */
+    padding: 0; /* Remove espaçamento interno */
+    margin: 0; /* Remove espaçamento externo */
+    box-sizing: border-box; /* Inclui padding e bordas no tamanho total do elemento */
+    font-family: Arial, Helvetica, sans-serif; /* Define a fonte do título */
 }
 
-/* */
-.obs
-{
-    color:#a8a8a8;
-    font-size: 20px;
-    margin-left: 40px;
-    margin-right: 40px;
-    font-family:Arial, Helvetica, sans-serif;
+/* Estilo do texto de observação */
+.obs {
+    color: #a8a8a8; /* Cor do texto */
+    font-size: 20px; /* Tamanho da fonte */
+    margin-left: 40px; /* Espaçamento à esquerda */
+    margin-right: 40px; /* Espaçamento à direita */
+    font-family: Arial, Helvetica, sans-serif; /* Define a fonte */
 }
 
-/* */
-body
-{
-    /*tela toda*/
-    width: 100%;
-    height: -100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #ABCFD8;
+/* Estilo geral do corpo da página */
+body {
+    width: 100%; /* Largura total da tela */
+    height: -100vh; /* Altura da tela (possível erro, pois o valor deveria ser positivo) */
+    display: flex; /* Alinha conteúdo usando o modelo flexbox */
+    justify-content: center; /* Centraliza conteúdo horizontalmente */
+    align-items: center; /* Centraliza conteúdo verticalmente */
+    background: #ABCFD8; /* Cor de fundo da página */
 }
 
-/*container do formulario */
+/* Container principal do formulário */
 .container {
-   width: 80%;
-   height: 80vh; 
-   display: flex;
-   margin-bottom: 20%;
-   overflow: hidden; /* Oculta o conteúdo que exceder o tamanho do container */
-   
-    
-   
-}
-/*fundo do formulario onde fica a imagem */
-.form-image{
-    border-radius: 50px 0px 0px 50px ;
-    width: 50%;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #40A2E3;
-    padding: 1rem;
-    border: 1px solid black; 
-    
-}
-/*largura da imagem */
-.form-image img 
-{
-    width: 51rem;
+   width: 80%; /* Largura do container, ocupando 80% da tela */
+   height: 80vh; /* Altura do container, ocupando 80% da altura da viewport */
+   display: flex; /* Exibe o conteúdo em linha usando flexbox */
+   margin-bottom: 20%; /* Espaço inferior abaixo do container */
+   overflow: hidden; /* Oculta conteúdo que excede o tamanho do container */
 }
 
-/*formulario principal */
+/* Área do formulário que exibe a imagem */
+.form-image {
+    border-radius: 50px 0px 0px 50px; /* Define bordas arredondadas à esquerda */
+    width: 50%; /* Ocupa metade da largura do container */
+    display: flex; /* Exibe conteúdo em linha usando flexbox */
+    justify-content: center; /* Centraliza conteúdo horizontalmente */
+    align-items: center; /* Centraliza conteúdo verticalmente */
+    background-color: #40A2E3; /* Cor de fundo */
+    padding: 1rem; /* Espaçamento interno ao redor da imagem */
+    border: 1px solid black; /* Borda preta ao redor da área */
+}
+
+/* Define a largura da imagem dentro do .form-image */
+.form-image img {
+    width: 51rem; /* Largura da imagem */
+}
+
+/* Estilo do formulário principal */
 .form {
-    border-radius: 0px 50px 50px 0px;
-    width: 750px; 
-    max-width: 50%; /* Limita a largura máxima a 50% */
-    display: flex;
-    justify-content: flex-start; 
-    align-items: flex-start; 
-    flex-direction: column;
-    background-color: #ffffff;
-    padding: 3rem;
-    border: 1px solid rgb(0, 0, 0);            
-    overflow: auto; /* Permite rolagem se o conteúdo exceder o tamanho do formulário */
-    position: relative;
-
+    border-radius: 0px 50px 50px 0px; /* Bordas arredondadas à direita */
+    width: 750px; /* Largura fixa do formulário */
+    max-width: 50%; /* Largura máxima de 50% do container */
+    display: flex; /* Exibe o conteúdo em coluna usando flexbox */
+    justify-content: flex-start; /* Alinha conteúdo ao início do eixo horizontal */
+    align-items: flex-start; /* Alinha conteúdo ao início do eixo vertical */
+    flex-direction: column; /* Coloca os elementos do formulário em coluna */
+    background-color: #ffffff; /* Fundo branco */
+    padding: 3rem; /* Espaçamento interno ao redor do conteúdo */
+    border: 1px solid rgb(0, 0, 0); /* Borda preta */
+    overflow: auto; /* Permite rolagem se o conteúdo exceder o tamanho */
+    position: relative; /* Posiciona o formulário em relação ao container */
 }
 
-/*responsividade do formulario da imagem */
+/* Responsividade para o formulário */
 @media screen and (min-width: 1329px) {
-    .form{
-        
-        max-width: none;
-     
-     
+    .form {
+        max-width: none; /* Remove a restrição de largura máxima */
     }
-
-    
 }
 
-@media screen and (max-width: 1329px) {
-    .form{
-        
-        max-width: 75%;
-     
-     
-    }
+/* Responsividade para tamanhos de tela específicos */
+@media screen and (max-width: 1329px) { .form { max-width: 75%; } }
+@media screen and (max-width: 1259px) { .form { max-width: 75%; } }
+@media screen and (max-width: 1235px) { .form { max-width: 80%; } }
+@media screen and (max-width: 1159px) { .form { max-width: 85%; } }
+@media screen and (max-width:1064px) { .form { max-width: 50%; left: 170px; } }
+@media screen and (max-width: 971px) { .form { max-width: 60%; left: 100px; } }
 
-    
-}
-
-@media screen and (max-width: 1259px) {
-    .form{
-        
-        max-width: 75%;
-     
-     
-    }
-
-    
-}
-
-@media screen and (max-width: 1235px) {
-    .form{
-        
-        max-width: 80%;
-     
-     
-    }
-
-    
-}
-
-@media screen and (max-width: 1159px) {
-    .form{
-        
-        max-width: 85%;
-     
-     
-    }
-
-    
-}
-
-@media screen and (max-width:1064px) {
-    .form{
-        
-        max-width: 50%;
-        left: 170px;
-     
-     
-    }
-
-    
-}
-
-
-@media screen  and (max-width: 971px ) {
-    .form{
-    
-        left: 170px;
-        
-    
-    }
-
-    .form{
-        
-        max-width: 60%;
-        left: 100px;
-     
-     
-    }
-
-
-   
-}
-
-
-
-
-/*Css do form apagar aluno*/
+/* Formulário para apagar aluno */
 .formApagar {
-
-    position: relative;
-    border-radius: 0px 50px 50px 0px;
-    width: 250px; 
-    max-width: 50%; /* Limita a largura máxima a 50% */
-    display: flex;
-    justify-content: flex-start; 
-    align-items: flex-start; 
-    flex-direction: column;
-    background-color: #fff;
-    padding: 3rem;
-    border: 1px solid rgb(0, 0, 0);            
-    border-radius: 50px;
-    height: 340px;
-    margin-top: 120px;
-    left: 15px;
+    position: relative; /* Posiciona o formulário em relação ao container */
+    border-radius: 50px; /* Bordas arredondadas em todos os lados */
+    width: 250px; /* Largura fixa */
+    max-width: 50%; /* Largura máxima de 50% do container */
+    display: flex; /* Exibe o conteúdo em coluna usando flexbox */
+    justify-content: flex-start; /* Alinha conteúdo ao início do eixo horizontal */
+    align-items: flex-start; /* Alinha conteúdo ao início do eixo vertical */
+    flex-direction: column; /* Coloca os elementos em coluna */
+    background-color: #fff; /* Fundo branco */
+    padding: 3rem; /* Espaçamento interno ao redor do conteúdo */
+    border: 1px solid rgb(0, 0, 0); /* Borda preta */
+    height: 340px; /* Altura fixa do formulário */
+    margin-top: 120px; /* Espaço superior */
+    left: 15px; /* Distância da borda esquerda */
 }
 
-/*espaçamento das info no formulario */
-.form-header 
-{
-    
-    margin-bottom: 3rem;
-    display: flex;
-    justify-content: space-between;
- 
-    
+/* Espaçamento entre as informações no formulário */
+.form-header {
+    margin-bottom: 3rem; /* Espaço inferior entre os elementos */
+    display: flex; /* Exibe os elementos em linha usando flexbox */
+    justify-content: space-between; /* Espaça os elementos igualmente */
 }
 
-/* */
-.form-header h1::after 
-{
-
-    content:'';
-    display:block;
-    width: 23rem;
-    height: 0.3rem;
-    background-color: #ffa404;
-    margin: 0 auto;
-    border-radius: 10px;
+/* Linha decorativa abaixo do título */
+.form-header h1::after {
+    content: ''; /* Insere uma linha vazia */
+    display: block; /* Exibe a linha como bloco */
+    width: 23rem; /* Largura da linha */
+    height: 0.3rem; /* Altura da linha */
+    background-color: #ffa404; /* Cor da linha */
+    margin: 0 auto; /* Centraliza a linha */
+    border-radius: 10px; /* Bordas arredondadas na linha */
 }
 
-
-/* agrupar infos do form */
-.input-group
-{
-     
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 1rem 0;
-}
-/* organização da box de infos no form */
-.input-box
-{
-    
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1.1rem;
+/* Agrupa os campos do formulário */
+.input-group {
+    flex-wrap: wrap; /* Permite quebra de linha */
+    justify-content: space-between; /* Espaça os campos igualmente */
+    padding: 1rem 0; /* Espaçamento interno acima e abaixo */
 }
 
-/* configuração dos inputs do form */
-.input-box input
-{
- margin: 0.6rem 0;
- padding: 0.8rem 1.2rem;
- border:none;
- border-radius: 17px;
- box-shadow: 1px 1px 6px #000000c1; 
- text-align: left;
-}
-/* cor do input ao pressiona-lo  */
-.input-box input:hover 
-{
-    background-color: #ffa404;
+/* Organização dos campos no formulário */
+.input-box {
+    font-family: Arial, Helvetica, sans-serif; /* Fonte do campo */
+    display: flex; /* Exibe conteúdo em coluna */
+    flex-direction: column; /* Coloca o label e o input em coluna */
+    margin-bottom: 1.1rem; /* Espaçamento inferior */
 }
 
-.input-box input :focus-visible
-{
-    outline: 1px solid #6c63ff;
+/* Estilo dos campos de entrada do formulário */
+.input-box input {
+    margin: 0.6rem 0; /* Espaçamento ao redor do campo */
+    padding: 0.8rem 1.2rem; /* Espaçamento interno */
+    border: none; /* Remove a borda */
+    border-radius: 17px; /* Bordas arredondadas */
+    box-shadow: 1px 1px 6px #000000c1; /* Sombra ao redor do campo */
+    text-align: left; /* Alinha o texto à esquerda */
 }
 
-/* titulos de cada input do form */
-.input-box label, .gender-title h6 
-{
-    font-family: inherit, Arial, Helvetica, sans-serif;
-    font-size: 17px;
-    font-weight: 600;
-    color:#000000c0;
+/* Alteração de cor ao passar o mouse */
+.input-box input:hover {
+    background-color: #ffa404; /* Cor de fundo ao passar o mouse */
 }
 
-/* config do placehplder do form  */
-.input-box input::placeholder
-{
-    color: #000000be
+/* Destaque ao focar no campo */
+.input-box input:focus-visible {
+    outline: 1px solid #6c63ff; /* Cor da borda ao focar */
 }
 
-/* config radio button serie  */
-.serie-group
-{
-   
-    justify-content: space-between;
-    margin-top: 0.62rem;
-    padding: 0 0.5rem;
-}
-/* config radio serie  */
-.serie-input
-{
-    display: flex;
-    align-items: center;
+/* Títulos dos campos */
+.input-box label, .gender-title h6 {
+    font-family: inherit, Arial, Helvetica, sans-serif; /* Fonte */
+    font-size: 17px; /* Tamanho da fonte */
+    font-weight: 600; /* Negrito */
+    color: #000000c0; /* Cor do texto */
 }
 
-.serie-input input
-{
-    margin-right: 0.35rem;
-    
+/* Configuração do placeholder */
+.input-box input::placeholder {
+    color: #000000be; /* Cor do texto do placeholder */
 }
 
-.serie-input label
-{
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: 17px;
-   
-    color: #000000c0;
-    margin-bottom: 5px;
+/* Agrupamento dos botões de opção da série */
+.serie-group {
+    justify-content: space-between; /* Espaça os botões igualmente */
+    margin-top: 0.62rem; /* Espaço superior */
+    padding: 0 0.5rem; /* Espaço interno lateral */
 }
 
-/* botão formulário */
-.continue-button
-{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    
+/* Estilo dos botões de opção da série */
+.serie-input {
+    display: flex; /* Exibe o rótulo e o botão juntos */
+    align-items: center; /* Centraliza verticalmente */
 }
 
-/*botão formulário*/
+/* Estilo do botão de rádio da série */
+.serie-input input {
+    margin-right: 0.35rem; /* Espaçamento à direita */
+}
+/* Rótulo do botão de rádio da série */
+.serie-input label {
+    font-family: Arial, Helvetica, sans-serif; /* Define a fonte para o rótulo */
+    font-size: 17px; /* Tamanho da fonte do rótulo */
+    color: #000000c0; /* Cor do texto do rótulo */
+    margin-bottom: 5px; /* Espaço inferior abaixo do rótulo */
+}
+
+/* Botões do formulário */
+.form-button {
+    width: 100%; /* Largura total do botão */
+    padding: 0.8rem; /* Espaçamento interno do botão */
+    margin: 1rem 0; /* Espaçamento acima e abaixo */
+    border: none; /* Remove a borda do botão */
+    border-radius: 20px; /* Bordas arredondadas */
+    color: #ffffff; /* Cor do texto do botão */
+    background-color: #ffa404; /* Cor de fundo do botão */
+    font-size: 17px; /* Tamanho da fonte */
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+    transition: background-color 0.3s ease; /* Anima a mudança de cor de fundo */
+}
+
+/* Cor de fundo do botão ao passar o mouse */
+.form-button:hover {
+    background-color: #ff8c00; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilo do botão de exclusão */
+.delete-button {
+    background-color: #ff4c4c; /* Cor de fundo vermelho para exclusão */
+}
+
+/* Cor de fundo do botão de exclusão ao passar o mouse */
+.delete-button:hover {
+    background-color: #ff0000; /* Vermelho mais intenso ao passar o mouse */
+}
+
+/* Estilo dos ícones dentro do formulário */
+.form-icon {
+    margin-right: 0.5rem; /* Espaço à direita do ícone */
+    color: #ffa404; /* Cor do ícone */
+}
+
+/* Estilo das mensagens de erro */
+.error-message {
+    color: #ff4c4c; /* Cor vermelha para indicar erro */
+    font-size: 14px; /* Tamanho menor para a mensagem de erro */
+    margin-top: 0.5rem; /* Espaço superior acima da mensagem */
+    font-family: Arial, Helvetica, sans-serif; /* Define a fonte da mensagem */
+}
+
+/* Estilo das mensagens de sucesso */
+.success-message {
+    color: #4caf50; /* Cor verde para indicar sucesso */
+    font-size: 14px; /* Tamanho menor para a mensagem de sucesso */
+    margin-top: 0.5rem; /* Espaço superior acima da mensagem */
+    font-family: Arial, Helvetica, sans-serif; /* Define a fonte da mensagem */
+}
+
+/* Botão principal de envio do formulário */
 .continue-button {
+    display: flex; /* Exibe o botão como um item flexível */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
     text-align: center; /* Centraliza o botão dentro do contêiner */
-    margin-top: 20px;
-    
-  }
-  
-  /* estilo do botao do formulario */
-  .btnform {
-    background-color: #40A2E3; /* Cor verde para o botão */
-    color: white;
-    border: none;
-    border-radius: 50px;
-    padding: 12px 24px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 200px;
-    position: absolute;
-    
-  }
-
-  /* responsividade */
-  @media  screen and  (max-width: 1064px ) {
-    .btnform{
-        left: 150px;
-
-    }
-
-  }
-
-  
-  @media  screen and  (max-width: 783px ) {
-    .btnform{
-        left: 130px;
-
-    }
-
-  }
-
-  @media  screen and  (max-width: 663px ) {
-    .btnform{
-        left: 110px;
-
-    }
-
-  }
-
-  
-  @media  screen and  (max-width: 590px ) {
-    .btnform{
-        left: 90px;
-
-    }
-
-  }
-
-  @media  screen and  (max-width: 530px ) {
-    .btnform{
-        left: 80px;
-
-    }
-
-  }
-  
-  @media  screen and  (max-width: 507px ) {
-    .btnform{
-        left: 65px;
-
-    }
-
-  }
-  
-   
-  @media  screen and  (max-width: 550px ) {
-    .btnform{
-        left: 75px;
-
-    }
-
-  }
-  
-  
-    
-  
-  /* botao formulario caso passe o mouse em cima  */
-  .btnform:hover {
-    background-color: #ffa404; /* Tom mais escuro para o hover */
-    transform: translateY(-2px); /* Leve elevação no hover */
-  }
-  
-  .btnform:active {
-    background-color: #000000; /* Tom mais escuro no clique */
-    transform: translateY(1px); /* Efeito de pressão no clique */
-  }
-  
-  .btnform:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5); /* Destaque no foco */
-  }
-  
-/*deixando o site responsivo*/
-
-@media screen and (max-width: 1330px) 
-{
-    .form-image
-    {
-        display: none;
-    }
-    .container
-    {
-        width: 50%;
-    }
-    .form
-    {
-        width: 100%;
-        border-radius: 50px 50px 50px 50px ;
-
-    }
-
+    margin-top: 20px; /* Espaço superior entre o botão e outros elementos */
 }
+
+/* Estilo do botão do formulário */
+.btnform {
+    background-color: #40A2E3; /* Cor de fundo azul */
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove a borda padrão */
+    border-radius: 50px; /* Bordas arredondadas */
+    padding: 12px 24px; /* Espaçamento interno no botão */
+    font-size: 18px; /* Tamanho da fonte do botão */
+    font-weight: bold; /* Define o texto como negrito */
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Anima a mudança de cor e elevação */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra abaixo do botão */
+    width: 200px; /* Largura do botão */
+    position: absolute; /* Define o posicionamento como absoluto */
+}
+
+/* Efeito de hover para o botão do formulário */
+.btnform:hover {
+    background-color: #ffa404; /* Muda a cor de fundo ao passar o mouse */
+    transform: translateY(-2px); /* Elevação leve no hover */
+}
+
+/* Efeito de clique para o botão do formulário */
+.btnform:active {
+    background-color: #000000; /* Muda para preto ao clicar */
+    transform: translateY(1px); /* Efeito de pressão ao clicar */
+}
+
+/* Efeito de foco para o botão do formulário */
+.btnform:focus {
+    outline: none; /* Remove a borda de foco padrão */
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5); /* Destaque no foco */
+}
+
+/* Responsividade do botão do formulário para telas menores */
+@media screen and (max-width: 1064px) {
+    .btnform {
+        left: 150px; /* Ajusta a posição horizontal do botão */
+    }
+}
+
+/* Responsividade adicional para diferentes larguras de tela */
+@media screen and (max-width: 783px) {
+    .btnform {
+        left: 130px; /* Ajuste de posição do botão */
+    }
+}
+
+@media screen and (max-width: 663px) {
+    .btnform {
+        left: 110px; /* Ajuste de posição do botão */
+    }
+}
+
+@media screen and (max-width: 590px) {
+    .btnform {
+        left: 90px; /* Ajuste de posição do botão */
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .btnform {
+        left: 80px; /* Ajuste de posição do botão */
+    }
+}
+
+@media screen and (max-width: 507px) {
+    .btnform {
+        left: 65px; /* Ajuste de posição do botão */
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .btnform {
+        left: 75px; /* Ajuste de posição do botão */
+    }
+}
+
+/* Tornando o layout responsivo para dispositivos menores */
+@media screen and (max-width: 1330px) {
+    .form-image {
+        display: none; /* Oculta a imagem para melhor visualização em telas menores */
+    }
+    .container {
+        width: 50%; /* Reduz a largura do contêiner */
+    }
+    .form {
+        width: 100%; /* Altera a largura do formulário para preencher o contêiner */
+        border-radius: 50px 50px 50px 50px; /* Bordas arredondadas uniformes */
+    }
+}
+
 @media screen and (max-width: 1064px) {
     .container {
-        width: 90%;
-        height: auto;
+        width: 90%; /* Aumenta a largura do contêiner para caber melhor na tela */
+        height: auto; /* Ajusta a altura para conteúdo variável */
     }
     .input-group {
-        flex-direction: column;
-        z-index: 5;
-        padding-right: 5rem;
-        max-height: 10rem;
-        overflow-y: scroll;
-        flex-wrap: nowrap;
+        flex-direction: column; /* Exibe os inputs verticalmente */
+        z-index: 5; /* Define a ordem de empilhamento */
+        padding-right: 5rem; /* Espaço interno à direita */
+        max-height: 10rem; /* Altura máxima para limitar o conteúdo */
+        overflow-y: scroll; /* Ativa a rolagem se o conteúdo for muito longo */
+        flex-wrap: nowrap; /* Impede que os inputs quebrem para uma nova linha */
     }
     .serie-inputs {
-        margin-top: 2rem;
+        margin-top: 2rem; /* Espaçamento superior nos inputs de série */
     }
     .serie-group {
-        flex-direction: column;
+        flex-direction: column; /* Exibe os botões de série verticalmente */
     }
     .gender-title h6 {
-        margin: 0;
+        margin: 0; /* Remove margens dos títulos de gênero */
     }
     .serie-input {
-        margin-top: 0.5rem;
+        margin-top: 0.5rem; /* Espaçamento superior nos inputs de série */
     }
-
 }
-
-
-

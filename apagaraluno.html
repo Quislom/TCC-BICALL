@@ -1,115 +1,115 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href="styles/cadastroAluno.css">
-    <link rel="stylesheet" href="./styles/padrao.css"/>
+    <meta charset="UTF-8"> <!-- Define o conjunto de caracteres para UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade para diferentes tamanhos de tela -->
+    <link rel='stylesheet' href="styles/cadastroAluno.css"> <!-- Link para o estilo do formulário -->
+    <link rel="stylesheet" href="./styles/padrao.css"/> <!-- Link para o estilo padrão -->
+    <!-- Fontes externas para o texto -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A700" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C700" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo%3A400" />
-    <title>Formulário de Cadastro</title>
+    <title>Formulário de Cadastro</title> <!-- Título da página -->
 </head>
 <body>
-    <div class="fundo">
-        <div class="banner">
-            <div class="blocoAmareloLinks">
-                <div class="blocoAzulCima"></div>
-                <div class="div1">
+    <div class="fundo"> <!-- Contêiner principal do fundo -->
+        <div class="banner"> <!-- Seção de banner no topo -->
+            <div class="blocoAmareloLinks"> <!-- Área de links e logo -->
+                <div class="blocoAzulCima"></div> <!-- Barra azul superior decorativa -->
+                <div class="div1"> <!-- Contêiner para o título e links -->
                     <div class="div2">
                         <p class="divTitulo">
-                            <img src="img/logo.png" alt="Biometric Call Logo" class="logo">
+                            <img src="img/logo.png" alt="Biometric Call Logo" class="logo"> <!-- Logo da aplicação -->
                         </p>
-                        <p class="titulo1">BIOMETRIC</p>
-                        <p class="titulo2">CALL</p>
-                    </div>    
+                        <p class="titulo1">BIOMETRIC</p> <!-- Título principal -->
+                        <p class="titulo2">CALL</p> <!-- Subtítulo -->
+                    </div>
+                    <!-- Links de navegação do sistema -->
                     <p class="txtBanner"><a class="txtBanner" href="inicio.html">TELA PRINCIPAL</a></p>
                     <p class="txtBanner"><a class="txtBanner" href="verificarchamada.html">VERIFICAR CHAMADA</a></p>
                     <p class="txtBanner"><a class="txtBanner" href="atualizaraluno.html">ATUALIZAR DADOS</a></p>
                     <p class="txtBanner"><a class="txtBanner" href="cadastroAluno.html">CADASTRAR ALUNO</a></p>
+                    
+                    <!-- Alternância para o modo escuro -->
                     <div class="toggle-switch">
                         <input type="checkbox" id="toggle-dark-mode">
                         <label for="toggle-dark-mode" class="switch">
                             <span class="toggle-thumb"></span>
                         </label>
                     </div>
+
+                    <!-- Ícone de menu hambúrguer para navegação em telas menores -->
                     <div class="hamburguer">
                         <div class="line"></div>
                         <div class="line"></div>
                         <div class="line"></div>
                     </div>
 
+                    <!-- Barra lateral de navegação -->
                     <div class="sidebar">
-                        <ul class="">
-                            
-      <li class="listaSidebar"><a href="inicio.html" class="textoSidebar">TELA PRINCIPAL</a></li>
-      <li class="listaSidebar"><a class="txtBanner" href="cadastroAluno.html">CADASTRAR ALUNO</a></li>
-      <li class=""><a href="verificarchamada.html" class="">VERIFICAR CHAMADA</a></li>
-      <li class=""><a href="atualizaraluno.html" class="">ATUALIZAR DADOS</a></li>
-      <li class=""><a href="apagaraluno.html" class="">DESVINCULAR ALUNO</a></li>
+                        <ul>
+                            <li class="listaSidebar"><a href="inicio.html" class="textoSidebar">TELA PRINCIPAL</a></li>
+                            <li class="listaSidebar"><a class="txtBanner" href="cadastroAluno.html">CADASTRAR ALUNO</a></li>
+                            <li><a href="verificarchamada.html">VERIFICAR CHAMADA</a></li>
+                            <li><a href="atualizaraluno.html">ATUALIZAR DADOS</a></li>
+                            <li><a href="apagaraluno.html">DESVINCULAR ALUNO</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="blocoAzulMeio"></div>
+                <div class="blocoAzulMeio"></div> <!-- Barra azul decorativa central -->
             </div>
         </div>
+
+        <!-- Nota explicativa sobre a função de desvincular alunos -->
         <label class="obs">
-            *A função apresentada tem como objetivo desvincular alunos que foram transferidos. Esses dados não serão apagados, mas retirado da chamada escolar. Por isso, é responsabilidade do gestor adminstrar o processo de transferência.
+            *A função apresentada tem como objetivo desvincular alunos que foram transferidos. Esses dados não serão apagados, mas retirados da chamada escolar. Por isso, é responsabilidade do gestor administrar o processo de transferência.
         </label>
-        <div class ="container">
-            <div class="arquivar-img">
+
+        <div class="container"> <!-- Contêiner principal do formulário -->
+            <div class="arquivar-img"> <!-- Imagem decorativa para o formulário -->
                 <img src="img/arquivar-1.svg">
             </div>
 
-            <div class="formApagar">
-                <form name="formAluno" action="deletar_dados.php" method="POST" >
+            <div class="formApagar"> <!-- Seção de formulário de exclusão -->
+                <form name="formAluno" action="deletar_dados.php" method="POST"> <!-- Envia os dados para deletar_dados.php -->
                     <div class="form-header">
                         <div class="title">
-                            <h1>DESVINCULAR ALUNO</h1>
+                            <h1>DESVINCULAR ALUNO</h1> <!-- Título do formulário -->
                         </div>
                     </div>
+
+                    <!-- Grupo de inputs do formulário -->
                     <div class="input-group">
+                        <!-- Input para o CPF do aluno -->
                         <div class="input-box">
-                            
                             <label for="cpf">CPF do aluno</label>
                             <input class="txts" type="text" name="cpf" title="Apenas números são permitidos, e deve conter exatamente 11 dígitos" pattern="\d{11}" placeholder="Digite o CPF do aluno" maxlength="11" required>
-
                         </div>
-                        
-                          <div class="input-box">
-                            
+
+                        <!-- Input para confirmar a senha -->
+                        <div class="input-box">
                             <label for="cpf">Confirme sua senha</label>
                             <input class="txts" type="text" name="senha" title="Digite sua senha" pattern="\d{11}" placeholder="Digite sua senha" maxlength="11" required>
-
                         </div>
-                        
 
+                        <!-- Seção de série para formatação e layout, sem inputs adicionais -->
                         <div class="serie-inputs">
-                            <div class="input-box">
-                            </div>
+                            <div class="input-box"></div>
                             <div class="serie-group">
-                                <div class="serie-input">
-                                    
-                                </div>
+                                <div class="serie-input"></div>
                             </div>
                         </div>
-                        
                         <div class="serie-inputs">
-                            <div class="input-box">
-                            </div>
+                            <div class="input-box"></div>
                             <div class="serie-group">
-                                <div class="serie-input">
-                                    
-                                </div>
-                                <div class="serie-input">
-                                    
-                                </div>
-                                <div class="serie-input">
-                                    
-                                </div>
+                                <div class="serie-input"></div>
+                                <div class="serie-input"></div>
+                                <div class="serie-input"></div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Botão de submissão do formulário -->
                     <div class="continue-button">
                         <button class="btnform" type="submit">Apagar</button>
                     </div>
@@ -117,13 +117,13 @@
             </div>
         </div>
 
+        <!-- Rodapé da página -->
         <div class="divRodape">
-            <div class="blocoAmareloRodape">
-                
-            </div>
-            <div class="blocoAzulRodape"></div>
+            <div class="blocoAmareloRodape"></div> <!-- Parte amarela do rodapé -->
+            <div class="blocoAzulRodape"></div> <!-- Parte azul do rodapé -->
         </div>
         
+        <!-- Script para funcionalidade do menu hambúrguer -->
         <script src="js/menuHamburguer.js"></script>
     </div>
 </body>

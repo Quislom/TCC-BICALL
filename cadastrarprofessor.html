@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- Definições de metadados e links para ícones e estilos -->
   <meta charset="utf-8" />
   <link rel="icon" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
   <title>Cadastrar Professor</title>
+  
+  <!-- Links para fontes externas para uma aparência personalizada -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo%3A400"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inria+Sans%3A700"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500%2C700"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C500%2C700"/>
-  <script src="js/alertas.js"></script> <!-- Alert que aparece após o cadastro ser realizado com sucesso -->
+  
+  <!-- Script para exibir alertas após o cadastro ser realizado com sucesso -->
+  <script src="js/alertas.js"></script>
+  
+  <!-- Folha de estilo padrão -->
   <link rel="stylesheet" href="./styles/padrao.css"/>
 </head>
 <body>
@@ -18,43 +25,47 @@
   <div class="divAzulCentro">
     <div class="divAmarelaCentro">
     
-    <span class="txtBio">
-     BIOMETRIC
-    </span>
-    <span class="txtCALL">
-     CALL
-    </span>
+    <!-- Título da aplicação -->
+    <span class="txtBio">BIOMETRIC</span>
+    <span class="txtCALL">CALL</span>
+    
+    <!-- Container para a logo (caso precise ser adicionada por CSS) -->
     <div class="logo"></div>
    </div>
+
     <div class="divCadastrar">
-    <div class="h1" ><h1 style="text-shadow: 1px 1px 2px black;">CADASTRE-SE</h1>
-    </div>
-    <br>
-    <br>
+      <!-- Título do formulário de cadastro -->
+      <div class="h1">
+        <h1 style="text-shadow: 1px 1px 2px black;">CADASTRE-SE</h1>
+      </div>
+      <br>
+      <br>
 
-    <!-- Formulário -->
+      <!-- Formulário para cadastro de professor -->
+      <form name="formProf" method="POST" action="cadastroProfessor.php">
 
-    <form name= "formProf" method="POST" action="cadastroProfessor.php">
+        <!-- Campo para nome do professor -->
+        <label class="labelemailANDpassword">Nome:</label> <br/>
+        <input name="nome" class="txtBoxNP" type="text" placeholder="Digite o nome"><br>
 
-      <label class="labelemailANDpassword">Nome:</label> <br/>
-      <input name= "nome"class="txtBoxNP" type= "text" placeholder="Digite o nome"><br>
+        <!-- Campo para email do professor -->
+        <label class="labelemailANDpassword">Email: </label> <br/> 
+        <input name="email" class="txtBoxNP" type="text" id="login" placeholder="Digite o Email"><br>
+        
+        <!-- Campo para senha do professor -->
+        <label class="labelemailANDpassword">Senha: </label> <br/>   
+        <input class="txtBoxNP" type="password" name="senha" id="senha" placeholder="Digite a senha"><br>
+
+        <!-- Botão para submeter o formulário -->
+        <input class="btnCadProfessor" type="submit" value="Cadastrar" id="cadastrar" name="cadastrar">
+      </form>
       
-      <label class="labelemailANDpassword">Email: </label> <br/> 
-      <input name= "email" class="txtBoxNP" type= "text"  id="login" placeholder="Digite o Email"><br>
-      
-     <label class="labelemailANDpassword">Senha: </label> <br/>   
-      <input  class="txtBoxNP" type="password" name="senha" id="senha" placeholder="Digite a senha"><br>
-      <input class="btnCadProfessor" type="submit" value="Cadastrar" id="cadastrar" name="cadastrar">
-      
-    </form>
-    
-    <div class="divConta">
-      <span class="txtConta">Já tem conta? <a class="txtConectar" href="conectarprofessor.html">Conecte-se</a>
-    </div>
-
+      <!-- Link para página de login caso o usuário já tenha uma conta -->
+      <div class="divConta">
+        <span class="txtConta">Já tem conta? <a class="txtConectar" href="conectarprofessor.html">Conecte-se</a></span>
+      </div>
     </div>
   </div>
-
 
 </body>
 </html>

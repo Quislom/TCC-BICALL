@@ -1,10 +1,10 @@
 
 
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "23082006";
-$base = "tcc";
+$host = "localhost"; // Nome do hostname
+$user = "root"; //Nome do usuário
+$pass = "23082006"; //Senha do banco
+$base = "tcc"; // Nome da database
 
 // Conecta ao banco de dados
 $con = mysqli_connect($host, $user, $pass, $base);
@@ -16,7 +16,7 @@ if (!$con) {
 
 // Verifica se o formulário foi submetido
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Sanitização dos dados de entrada
+    // limpeza dos dados de entrada
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $senha = mysqli_real_escape_string($con, $_POST['senha']);
     
@@ -30,9 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (mysqli_num_rows($result) == 1) {
             // Login bem-sucedido
-            header("Location: inicio.html");
-                        // Redirecionar para uma a página inicio
-            exit();
+            header("Location: inicio.html"); // Redirecionar para uma a página inicio
+                        
+            exit(); // Finaliza a operação
         } else {
             // Credenciais inválidas
             echo "Email ou senha inválidos.";
