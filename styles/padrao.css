@@ -1,155 +1,184 @@
+/* -------------------------------
+   Parte Padrão: Reset e Estilo Global
+------------------------------- */
 
-  /*Parte Padrão*/
-
-  html {
-    font-size:62.5%;
-  }
-  * {
-    margin: 0;
-    padding: 0;
-  }
-  ul, li {
-    list-style: none;
-  }
-  input {
-    border: none;
-  }
-  body {
-      width: 100%;
-    }
-  
-    .fundo {
-      width: 100%;
-      overflow: hidden;
-      position: relative;
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      background-color: #ffffff;
-      min-height: 100vh
-    }
-    
-    .fundo.dark-mode {
-      width: 100%;
-      overflow: hidden;
-      position: relative;
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      background-color: #000000;
-      min-height: 100vh
-    }
-    
-    .toggle-switch {
-      position: absolute;
-      width: 60px;
-      height: 30px;
-      right: 5px;
-      background-color: #000000; /* Cor de fundo para o modo claro */
-      border-radius: 30px;
-      overflow: hidden;
-      transition: background-color 0.3s ease;
-      top: 10px;
-      left: 10px;
-  }
-  
-  input[type="checkbox"] {
-      display: none;
-  }
-  
-  .switch {
-      display: block;
-      width: 100%;
-      height: 100%;
-      cursor: pointer;
-      position: relative;
-  }
-  
-  .toggle-thumb {
-      position: absolute;
-      top: 3px;
-      left: 3px;
-      width: 24px;
-      height: 24px;
-      background-color: #ffffff; /* Cor do "dedo" do switch */
-      border-radius: 50%;
-      transition: transform 0.3s ease;
-      background-image: url('nossalogo.png'); /* Ícone do sol */
-      background-size: cover;
-  }
-  
-  
-  input[type="checkbox"]:checked + .switch .toggle-thumb {
-      transform: translateX(30px); /* Move o "dedo" para a direita */
-      background-image: url('nossalogo.png'); /* Ícone da lua */
-      background-color: #000000; /* Cor do "dedo" do switch */
-  }
-  
-  input[type="checkbox"]:checked + .switch {
-      background-color: #ffffff; /* Cor de fundo para o modo escuro */
-  }
-  
-  
-  
-  .banner {
-    margin-top: 5px;
-    width: 100%;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
-    position: relative;
-    bottom: 1rem;
-  }
-
-  .hamburguer{
-    width: 1rem;
-    height: 1rem;
-    position: absolute ;
-    z-index:7;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    right: 3rem;
-    top:-1rem;
-    cursor: pointer;
-    display: none;
-    left:0;
-  }
-
-  
-  
-  .hamburguer_exit{
-    width: 3rem;
-    height: 20rem;
-    position: absolute ;
-    z-index:5;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    right: 3rem;
-    top:5rem;
-    cursor: pointer;
-    display: block;
-    position:fixed;
-    bottom: 10rem;
-
-  }
-
-  
-   .show-menu .hamburguer{
-    right: 16rem;
-   }
-  
-   .line {
-    width: 8rem;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #FFA404;
-    transition: transform .7s;
-    display: none;
-    margin-left: 30px;  /*Ajusta a line para a direita/esquerda*/
+/* Define o tamanho da fonte base para 62.5% (10px, pois 100% seria 16px) */
+html {
+  font-size: 62.5%; /* Ajusta o tamanho base da fonte para 10px */
 }
+
+/* Remove margens e preenchimentos padrão de todos os elementos */
+* {
+  margin: 0; /* Remove a margem de todos os elementos */
+  padding: 0; /* Remove o preenchimento de todos os elementos */
+}
+
+/* Remove os marcadores (bolinhas ou números) das listas */
+ul, li {
+  list-style: none; /* Remove os ícones (bolinhas ou números) das listas */
+}
+
+/* Remove a borda padrão de campos de input */
+input {
+  border: none; /* Remove a borda padrão dos campos de input */
+}
+
+/* Garante que o corpo ocupe 100% da largura da tela */
+body {
+  width: 100%; /* Garante que o corpo ocupe toda a largura da tela */
+}
+
+/* -------------------------------
+   Layout de Fundo e Modo Escuro
+------------------------------- */
+
+/* Estilo padrão do fundo (modo claro) */
+.fundo {
+  width: 100%; /* A largura do fundo ocupa 100% da tela */
+  overflow: hidden; /* Impede que qualquer conteúdo ultrapasse os limites do fundo */
+  position: relative; /* Define que o fundo será posicionado em relação ao seu contêiner */
+  align-items: center; /* Centraliza os itens no eixo vertical (flexbox) */
+  display: flex; /* Define o contêiner como um layout flexível */
+  flex-direction: column; /* Organiza os itens no layout em uma coluna */
+  background-color: #ffffff; /* Define a cor de fundo como branco (modo claro) */
+  min-height: 100vh; /* Garante que o fundo ocupe toda a altura da tela */
+}
+
+/* Estilo do fundo para o modo escuro */
+.fundo.dark-mode {
+  background-color: #000000; /* Altera a cor de fundo para preto (modo escuro) */
+}
+
+/* -------------------------------
+   Toggle (Interruptor) para Mudar entre Modo Claro e Escuro
+------------------------------- */
+
+/* Estilo do switch (interruptor) para alternar entre os modos */
+.toggle-switch {
+  position: absolute; /* Posiciona o switch em relação ao contêiner mais próximo */
+  width: 60px; /* Largura do switch */
+  height: 30px; /* Altura do switch */
+  right: 5px; /* Posiciona o switch 5px à direita do contêiner */
+  background-color: #000000; /* Cor de fundo do switch (modo claro) */
+  border-radius: 30px; /* Torna o switch arredondado */
+  overflow: hidden; /* Garante que o conteúdo fora do switch seja escondido */
+  transition: background-color 0.3s ease; /* Transição suave da cor de fundo */
+  top: 10px; /* Posiciona o switch 10px do topo */
+  left: 10px; /* Posiciona o switch 10px da esquerda */
+}
+
+/* Esconde o checkbox, pois ele é controlado pelo switch visual */
+input[type="checkbox"] {
+  display: none; /* Esconde o checkbox */
+}
+
+/* Estilo do switch interno que é clicável */
+.switch {
+  display: block; /* Exibe o switch como um bloco */
+  width: 100%; /* O switch ocupa toda a largura do seu contêiner */
+  height: 100%; /* O switch ocupa toda a altura do seu contêiner */
+  cursor: pointer; /* Muda o cursor para indicar que o item é clicável */
+  position: relative; /* Define o posicionamento em relação ao contêiner */
+}
+
+/* Estilo do "dedo" do switch, que é o círculo que se move */
+.toggle-thumb {
+  position: absolute; /* Posiciona o "dedo" em relação ao switch */
+  top: 3px; /* Posiciona o "dedo" 3px abaixo do topo do switch */
+  left: 3px; /* Posiciona o "dedo" 3px à direita da borda esquerda do switch */
+  width: 24px; /* Largura do "dedo" */
+  height: 24px; /* Altura do "dedo" */
+  background-color: #ffffff; /* Cor de fundo do "dedo" (modo claro) */
+  border-radius: 50%; /* Torna o "dedo" arredondado */
+  transition: transform 0.3s ease; /* Transição suave para mover o "dedo" */
+  background-image: url('nossalogo.png'); /* Define a imagem de fundo do "dedo" (ícone do sol) */
+  background-size: cover; /* Faz com que o ícone se ajuste ao tamanho do "dedo" */
+}
+
+/* Quando o checkbox é marcado (modo escuro), move o "dedo" para a direita */
+input[type="checkbox"]:checked + .switch .toggle-thumb {
+  transform: translateX(30px); /* Move o "dedo" 30px para a direita */
+  background-image: url('nossalogo.png'); /* Altera o ícone do "dedo" (ícone da lua) */
+  background-color: #000000; /* Muda a cor de fundo do "dedo" (modo escuro) */
+}
+
+/* Quando o checkbox é marcado, a cor de fundo do switch muda para branco */
+input[type="checkbox"]:checked + .switch {
+  background-color: #ffffff; /* Altera a cor de fundo do switch para branco (modo escuro) */
+}
+
+/* -------------------------------
+   Estilo do Banner
+------------------------------- */
+
+/* Estilo do banner, que é centralizado e ocupa o topo da tela */
+.banner {
+  margin-top: 5px; /* Adiciona uma margem de 5px acima do banner */
+  width: 100%; /* O banner ocupa 100% da largura da tela */
+  align-items: center; /* Centraliza os itens no eixo vertical */
+  display: flex; /* Utiliza flexbox para o layout do banner */
+  flex-direction: column; /* Alinha os itens do banner na vertical */
+  flex-shrink: 0; /* Impede que o banner encolha */
+  position: relative; /* Posiciona o banner de forma relativa ao seu contêiner */
+  bottom: 1rem; /* Coloca o banner 1rem acima da parte inferior */
+}
+
+/* -------------------------------
+   Menu Hamburguer (ícone de menu) e Interações
+------------------------------- */
+
+/* Estilo do ícone de menu hambúrguer (três linhas empilhadas) */
+.hamburguer {
+  width: 1rem; /* Largura do ícone do hambúrguer */
+  height: 1rem; /* Altura do ícone do hambúrguer */
+  position: absolute; /* Posiciona o hambúrguer de forma absoluta */
+  z-index: 7; /* Garante que o hambúrguer fique acima de outros elementos */
+  display: flex; /* Utiliza flexbox para organizar as linhas do hambúrguer */
+  flex-direction: column; /* Alinha as linhas do hambúrguer na vertical */
+  justify-content: space-between; /* Espaça uniformemente as linhas do hambúrguer */
+  right: 3rem; /* Posiciona o hambúrguer 3rem à direita */
+  top: -1rem; /* Coloca o hambúrguer 1rem acima */
+  cursor: pointer; /* Muda o cursor para indicar que o item é clicável */
+  display: none; /* Esconde o hambúrguer inicialmente */
+  left: 0; /* Posiciona o hambúrguer na borda esquerda */
+}
+
+/* Estilo do botão de fechar do menu hambúrguer */
+.hamburguer_exit {
+  width: 3rem; /* Largura do botão de fechar */
+  height: 20rem; /* Altura do botão de fechar */
+  position: absolute; /* Posiciona o botão de fechar de forma absoluta */
+  z-index: 5; /* Garante que o botão de fechar fique atrás do hambúrguer */
+  display: flex; /* Utiliza flexbox para organizar o conteúdo do botão */
+  flex-direction: column; /* Alinha as linhas do botão de fechar na vertical */
+  justify-content: space-between; /* Espaça uniformemente as linhas do botão */
+  right: 3rem; /* Posiciona o botão de fechar 3rem à direita */
+  top: 5rem; /* Coloca o botão de fechar 5rem abaixo */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  display: block; /* Exibe o botão de fechar */
+  position: fixed; /* Posiciona o botão de forma fixa na tela */
+  bottom: 10rem; /* Posiciona o botão de fechar 10rem acima da parte inferior */
+}
+
+/* Quando o menu está visível, move o ícone do hambúrguer */
+.show-menu .hamburguer {
+  right: 16rem; /* Move o ícone do hambúrguer para a direita */
+}
+
+/* -------------------------------
+   Animação do Menu (Linha do Hambúrguer)
+------------------------------- */
+
+/* Estilo das linhas do ícone do hambúrguer */
+
+  .line {
+    width: 8rem; /* Largura de cada linha do hambúrguer */
+    padding: 10px; /* Preenchimento interno das linhas */
+    border-radius: 10px; /* Bordas arredondadas nas linhas */
+    background-color: #FFA404; /* Cor de fundo das linhas (laranja) */
+    transition: transform .7s; /* Transição suave de transformação (para animações) */
+    display: none; /* As linhas começam escondidas */
+  }
 
 .line:nth-child(1) {
     margin-top: 70px; /* Ajuste a margem superior da primeira linha */
@@ -163,1622 +192,1862 @@
     margin-top: 10px; /* Ajuste a margem superior da terceira linha */
 }
 
-   
-  
 
-  
+/* -------------------------------
+   Estilo para o menu lateral (Sidebar)
+------------------------------- */
 
-   
-
-
-/*Botão do menu-burger*/
-.sidebar{
-  width: 50rem;
-  height: 100%;
-  background-color: white;
-  z-index:5;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  left: -50rem;
-  top:5rem;
-  cursor: pointer;
-  top:0;
-  position: fixed;
-  transition: 0.7s;
-  box-shadow: #535353;
-
-}
-.sidebar.active{
-left: 0;
-
+/* Sidebar - container do menu lateral */
+.sidebar {
+  width: 50rem; /* Largura da sidebar */
+  height: 100%; /* Altura total da tela (100%) */
+  background-color: white; /* Cor de fundo branca para a sidebar */
+  z-index: 5; /* Garante que a sidebar fique acima de outros elementos (se houver sobreposição) */
+  display: flex; /* Define o uso de flexbox para o layout da sidebar */
+  align-items: center; /* Centraliza os itens no eixo vertical */
+  flex-direction: column; /* Organiza os itens de forma vertical */
+  justify-content: center; /* Centraliza os itens no eixo horizontal */
+  left: -50rem; /* Inicialmente, a sidebar está fora da tela à esquerda (50rem fora) */
+  top: 5rem; /* Posiciona a sidebar 5rem abaixo do topo */
+  cursor: pointer; /* Mostra o cursor de ponteiro para indicar que é clicável */
+  position: fixed; /* A sidebar é fixada na tela e não rola com a página */
+  transition: 0.7s; /* Transição suave de 0.7 segundos quando as propriedades de layout mudarem */
+  box-shadow: #535353; /* Adiciona uma sombra sutil à sidebar */
 }
 
-.textoSidebar{
-  font-size: 15px;
+/* Quando a classe "active" é adicionada à sidebar, ela é movida para dentro da tela */
+.sidebar.active {
+  left: 0; /* Move a sidebar para a posição inicial, dentro da tela */
 }
 
-/* Estilizando os links da sidebar */
+/* -------------------------------
+   Estilo para o texto dentro da sidebar
+------------------------------- */
+
+/* Texto da sidebar (dentro da lista de links) */
+.textoSidebar {
+  font-size: 15px; /* Define o tamanho da fonte do texto */
+}
+
+/* -------------------------------
+   Estilo dos links dentro da sidebar
+------------------------------- */
+
+/* Remove o marcador padrão de lista (bolinhas) */
 .sidebar ul {
-  list-style-type: none; /* Removendo os marcadores da lista */
-  padding: 0;
+  list-style-type: none; /* Remove os marcadores da lista */
+  padding: 0; /* Remove o preenchimento da lista */
 }
 
+/* Define o estilo para cada item da lista */
 .sidebar ul li {
-  margin-bottom: 10px; /* Espaçamento entre os itens da lista */
+  margin-bottom: 10px; /* Espaçamento de 10px entre cada item da lista */
 }
 
+/* Estilo dos links dentro da sidebar */
 .sidebar ul li a {
-  text-decoration: none; /* Removendo o sublinhado padrão dos links */
-  color: black; /* Cor do texto dos links */
-  display: block; /* Transformando os links em elementos de bloco para ocupar toda a largura do contêiner */
-  padding: 10px; /* Espaçamento interno dos links */
-  cursor: pointer;
-    margin-left:8%; 
-    max-width: 15.1rem;
-    text-align: center;
-    font-size: 2.4rem;
-    font-weight: 700;
-    line-height: 1.2125;
-    text-decoration: none; /* Remover o sublinhado padrão dos links */
-  transition: color 0.3s, transform 0.3s; /* Adicionar uma transição suave para a cor do texto */
-     width: auto;
-    font-family: 'Inter', 'Source Sans Pro';
-    flex-shrink: 0;
+  text-decoration: none; /* Remove o sublinhado padrão dos links */
+  color: black; /* Define a cor do texto dos links como preta */
+  display: block; /* Faz com que o link ocupe toda a largura disponível */
+  padding: 10px; /* Adiciona preenchimento dentro do link para aumentar a área clicável */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  margin-left: 8%; /* Aplica margem à esquerda, deslocando os links para a direita */
+  max-width: 15.1rem; /* Define um limite máximo para a largura dos links */
+  text-align: center; /* Centraliza o texto dentro do link */
+  font-size: 2.4rem; /* Define o tamanho da fonte dos links */
+  font-weight: 700; /* Define o peso da fonte como negrito */
+  line-height: 1.2125; /* Define a altura da linha, controlando o espaçamento entre as linhas do texto */
+  transition: color 0.3s, transform 0.3s; /* Define transições suaves de cor e transformação (para animações) */
+  width: auto; /* Deixa a largura do link se ajustar automaticamente ao conteúdo */
+  font-family: 'Inter', 'Source Sans Pro'; /* Define as fontes para os links */
+  flex-shrink: 0; /* Impede que o link encolha no layout flex */
 }
 
+/* Quando o mouse passa sobre o link, muda a cor para um cinza mais escuro */
 .sidebar ul li a:hover {
-  color: #555; /* Alterando a cor do texto ao passar o mouse */
+  color: #555; /* Cor do texto do link ao passar o mouse */
 }
 
+/* -------------------------------
+   Estilos adicionais para itens específicos da lista
+------------------------------- */
 
+/* Espaçamento maior entre os links especificados (listas 1, 2, 3) */
 .sidebar ul li.lista1 {
-  margin-bottom: 60px; /* Margem entre o segundo link e o próximo */
+  margin-bottom: 60px; /* Espaço maior entre o primeiro e o segundo link */
 }
 
 .sidebar ul li.lista2 {
-  margin-bottom: 60px; /* Margem entre o terceiro link e o próximo */
+  margin-bottom: 60px; /* Espaço maior entre o segundo e o terceiro link */
 }
 
 .sidebar ul li.lista3 {
-  margin-bottom: 60px; /* Margem entre o quarto link e o próximo */
+  margin-bottom: 60px; /* Espaço maior entre o terceiro e o quarto link */
 }
+
 .sidebar ul li.lista {
-  margin-bottom: 60px; /* Margem entre o primeiro link e o próximo */
+  margin-bottom: 60px; /* Espaço maior entre o primeiro e o segundo link, se necessário */
 }
 
+/* -------------------------------
+   Estilos de Responsividade para Logo na Sidebar
+------------------------------- */
 
-/*responsividade da logo quando a sidebar é ativada*/
-
-/* Responsividade do texto da logo quando a sidebar é ativada */
+/* Responsividade da logo quando a sidebar está ativa */
 .logo-reduzida .titulo1,
 .logo-reduzida .titulo2 {
-  width: 12rem; /* Tamanho menor da logo quando a sidebar está ativa */
-  height: 6rem;
-  font-size: 4.8rem;
-  left: -5rem;
-
-  
+  width: 12rem; /* A logo reduz para 12rem de largura */
+  height: 6rem; /* A altura da logo também é reduzida */
+  font-size: 4.8rem; /* A fonte do texto da logo é maior */
+  left: -5rem; /* Move a logo para a esquerda */
 }
 
-/* Tamanhos da logo quando a sidebar é ativada */
+/* -------------------------------
+   Estilo da Logo quando a Sidebar está ativa
+------------------------------- */
 
-.logo-reduzida .logo{
-  background: url('https://fn12.com/api/clusters/cluster-fn12-prod-us-west1/projects/3peSmWhZvTYA8Wp7QmLUfv/assets/images/6f8da9ee0723107a66ac17aa00a1237298de2f39?Expires=1711047331&KeyName=fn12-cdn&Signature=XlqakQsxVfJ0ijydUj81mdieRF4=') 50% / cover no-repeat;
-  position: absolute;
-  left: -160px;
-  top: 224px;
-  width: auto;
-  height: 140px;
-  margin-top: -300px;
-  z-index: 7;                 
-
+/* Logo que aparece dentro da sidebar quando ela está ativa */
+.logo-reduzida .logo {
+  background: url('https://fn12.com/api/clusters/cluster-fn12-prod-us-west1/projects/3peSmWhZvTYA8Wp7QmLUfv/assets/images/6f8da9ee0723107a66ac17aa00a1237298de2f39?Expires=1711047331&KeyName=fn12-cdn&Signature=XlqakQsxVfJ0ijydUj81mdieRF4=') 50% / cover no-repeat; /* Imagem de fundo da logo, com ajuste para cobrir o espaço */
+  position: absolute; /* A logo é posicionada de forma absoluta dentro do contêiner */
+  left: -160px; /* A logo é posicionada 160px à esquerda */
+  top: 224px; /* A logo é posicionada 224px abaixo do topo */
+  width: auto; /* A largura da logo é ajustada automaticamente */
+  height: 140px; /* Define a altura da logo */
+  margin-top: -300px; /* Ajusta a margem superior da logo */
+  z-index: 7; /* Garante que a logo fique acima de outros elementos */
 }
 
+/* -------------------------------
+   Estilo da Logo no Banner
+------------------------------- */
 
-
-
-/*estilizaçao da logotipo no banner*/
+/* Logo do banner */
 .logo {
-  background: url('https://fn12.com/api/clusters/cluster-fn12-prod-us-west1/projects/3peSmWhZvTYA8Wp7QmLUfv/assets/images/6f8da9ee0723107a66ac17aa00a1237298de2f39?Expires=1711047331&KeyName=fn12-cdn&Signature=XlqakQsxVfJ0ijydUj81mdieRF4=') 50% / cover no-repeat;
-  position: absolute;
-  left: -150px;
-  top: 224px;
-  width: auto;
-  height: 180px;
-  margin-top: -330px;
-  z-index: 7;                 
-
+  background: url('https://fn12.com/api/clusters/cluster-fn12-prod-us-west1/projects/3peSmWhZvTYA8Wp7QmLUfv/assets/images/6f8da9ee0723107a66ac17aa00a1237298de2f39?Expires=1711047331&KeyName=fn12-cdn&Signature=XlqakQsxVfJ0ijydUj81mdieRF4=') 50% / cover no-repeat; /* Imagem de fundo da logo no banner */
+  position: absolute; /* A logo é posicionada de forma absoluta dentro do contêiner */
+  left: -150px; /* A logo é posicionada 150px à esquerda */
+  top: 224px; /* A logo é posicionada 224px abaixo do topo */
+  width: auto; /* A largura da logo é ajustada automaticamente */
+  height: 180px; /* Define a altura da logo */
+  margin-top: -330px; /* Ajusta a margem superior da logo */
+  z-index: 7; /* Garante que a logo fique acima de outros elementos */
 }
 
-@media screen and (max-width: 704px ) {
+/* ----------------------------------------------
+   Estilos de mídia para diferentes tamanhos de tela (Responsividade)
+---------------------------------------------- */
+
+/* Quando a largura da tela for até 704px (para dispositivos móveis ou telas pequenas) */
+@media screen and (max-width: 704px) {
   .logo {
-    left: -250px;
+    left: -250px; /* Move a logo 250px para a esquerda, provavelmente para escondê-la em telas pequenas */
   }
 }
 
-
-
-
-
-
-/*Recolher a sidebar caso o site esteja em tela cheia*/
+/* Quando a largura da tela for maior ou igual a 100rem (para telas grandes) */
 @media screen and (min-width: 100rem) {
   .sidebar {
-    display: none;
+    display: none; /* Esconde a sidebar em telas grandes (modo tela cheia) */
   }
 }
 
-/**/
-@media screen and (max-width: 100rem) 
-{
-  .hamburguer{
-    display: block;
+/* Quando a largura da tela for até 100rem (telas médias, como tablets ou desktops pequenos) */
+@media screen and (max-width: 100rem) {
+  .hamburguer {
+    display: block; /* Exibe o ícone de hambúrguer (menu) quando a tela for pequena */
   }
 
+  .line {
+    display: block; /* Exibe as linhas do hambúrguer (menu) */
+  }
 
-    .line
-    {
-        display: block;
-    }
-
-    .txtBanner{
-      display: none;
-    }
-
-    
-    
-  
-    
+  .txtBanner {
+    display: none; /* Esconde o texto do banner em telas pequenas */
+  }
 }
 
-@media screen and (max-width: 1500px) 
-{
-  .container-menu-burger{
-    --menu-size: 48px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    height: var(--menu-size);
-    width: var(--menu-size);
-    right: -700px;
-    font-family: Arial, Helvetica, sans-serif;
-    flex-direction: column;
-
+/* Quando a largura da tela for até 1500px (desktops maiores) */
+@media screen and (max-width: 1500px) {
+  .container-menu-burger {
+    --menu-size: 48px; /* Define o tamanho do menu como 48px usando uma variável customizada */
+    position: relative; /* Define a posição como relativa para poder ajustar os elementos dentro */
+    display: flex; /* Usa flexbox para organizar os elementos dentro do container */
+    align-items: center; /* Alinha os itens no centro verticalmente */
+    height: var(--menu-size); /* Define a altura do container usando a variável customizada */
+    width: var(--menu-size); /* Define a largura do container usando a variável customizada */
+    right: -700px; /* Posiciona o container 700px à direita (fora da tela) */
+    font-family: Arial, Helvetica, sans-serif; /* Define a fonte como Arial, ou fontes alternativas caso não esteja disponível */
+    flex-direction: column; /* Organiza os itens dentro do container de forma vertical */
   }
-  
-
 }
 
-@media screen and (max-width: 1400px) 
-{
-  .container-menu-burger{
-    --menu-size: 48px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    height: var(--menu-size);
-    width: var(--menu-size);
-    right: -700px;
-    font-family: Arial, Helvetica, sans-serif;
-    flex-direction: column;
-
+/* Quando a largura da tela for até 1400px */
+@media screen and (max-width: 1400px) {
+  .container-menu-burger {
+    --menu-size: 48px; /* Mantém o tamanho do menu em 48px */
+    position: relative; /* Permite ajustar os elementos dentro do container */
+    display: flex; /* Organiza os itens dentro do container com flexbox */
+    align-items: center; /* Alinha os itens no centro verticalmente */
+    height: var(--menu-size); /* Define a altura usando a variável customizada */
+    width: var(--menu-size); /* Define a largura usando a variável customizada */
+    right: -700px; /* Posiciona o container fora da tela à direita */
+    font-family: Arial, Helvetica, sans-serif; /* Define a fonte para o conteúdo do menu */
+    flex-direction: column; /* Organiza os itens do menu verticalmente */
   }
-
 }
 
-@media screen and (max-width: 1300px) 
-{
-  .container-menu-burger{
-    --menu-size: 48px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    height: var(--menu-size);
-    width: var(--menu-size);
-    right: -700px;
-    font-family: Arial, Helvetica, sans-serif;
-    flex-direction: column;
-
+/* Quando a largura da tela for até 1300px */
+@media screen and (max-width: 1300px) {
+  .container-menu-burger {
+    --menu-size: 48px; /* Define o tamanho do menu como 48px */
+    position: relative; /* Define o container com posição relativa */
+    display: flex; /* Usa flexbox para organizar os elementos dentro do container */
+    align-items: center; /* Alinha os itens no centro verticalmente */
+    height: var(--menu-size); /* Define a altura com a variável */
+    width: var(--menu-size); /* Define a largura com a variável */
+    right: -700px; /* Posiciona o container fora da tela à direita */
+    font-family: Arial, Helvetica, sans-serif; /* Define a fonte para o conteúdo do menu */
+    flex-direction: column; /* Organiza os itens do menu em coluna */
   }
-
 }
 
-@media screen and (max-width: 1200px) 
-{
-  .container-menu-burger{
-    --menu-size: 48px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    height: var(--menu-size);
-    width: var(--menu-size);
-    right: -700px;
-    font-family: Arial, Helvetica, sans-serif;
-    flex-direction: column;
-
+/* Quando a largura da tela for até 1200px */
+@media screen and (max-width: 1200px) {
+  .container-menu-burger {
+    --menu-size: 48px; /* Define o tamanho do menu como 48px */
+    position: relative; /* Permite o posicionamento relativo dos itens */
+    display: flex; /* Organiza os itens com flexbox */
+    align-items: center; /* Centraliza os itens verticalmente */
+    height: var(--menu-size); /* Usa a variável para definir a altura */
+    width: var(--menu-size); /* Usa a variável para definir a largura */
+    right: -700px; /* Posiciona o container fora da tela à direita */
+    font-family: Arial, Helvetica, sans-serif; /* Define a fonte como Arial ou fontes alternativas */
+    flex-direction: column; /* Organiza os itens de forma vertical */
   }
-
 }
 
-@media screen and (max-width: 1100px) 
-{
-  .container-menu-burger{
-    --menu-size: 48px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    height: var(--menu-size);
-    width: var(--menu-size);
-    right: -700px;
-    font-family: Arial, Helvetica, sans-serif;
-    flex-direction: column;
-
+/* Quando a largura da tela for até 1100px */
+@media screen and (max-width: 1100px) {
+  .container-menu-burger {
+    --menu-size: 48px; /* Define o tamanho do menu como 48px */
+    position: relative; /* Define a posição como relativa */
+    display: flex; /* Usa flexbox para organizar os itens dentro do container */
+    align-items: center; /* Alinha os itens no centro verticalmente */
+    height: var(--menu-size); /* Define a altura do container com a variável */
+    width: var(--menu-size); /* Define a largura com a variável */
+    right: -700px; /* Posiciona o container fora da tela à direita */
+    font-family: Arial, Helvetica, sans-serif; /* Define a fonte para o menu */
+    flex-direction: column; /* Organiza os itens em coluna */
   }
-
 }
 
-@media screen and (max-width: 1000px) 
-{
-  .container-menu-burger{
-    --menu-size: 48px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    height: var(--menu-size);
-    width: var(--menu-size);
-    right: -700px;
-    font-family: Arial, Helvetica, sans-serif;
-    flex-direction: column;
-
+/* Quando a largura da tela for até 1000px */
+@media screen and (max-width: 1000px) {
+  .container-menu-burger {
+    --menu-size: 48px; /* Tamanho fixo do menu com variável */
+    position: relative; /* Permite o ajuste dos itens dentro do container */
+    display: flex; /* Usa flexbox para o layout */
+    align-items: center; /* Alinha os itens no centro vertical */
+    height: var(--menu-size); /* Altura definida pela variável */
+    width: var(--menu-size); /* Largura definida pela variável */
+    right: -700px; /* Posiciona o menu fora da tela à direita */
+    font-family: Arial, Helvetica, sans-serif; /* Fonte do menu */
+    flex-direction: column; /* Organiza os itens de forma vertical */
   }
-
 }
 
-@media screen {
-  
+
+  /* ----------------------------------------------
+   Bloco Superior Amarelo
+---------------------------------------------- */
+.blocoAmareloCima {
+  box-sizing: border-box; /* Inclui bordas e padding no cálculo do tamanho total do elemento */
+  margin-top: 5px; /* Adiciona 5px de margem na parte superior do elemento */
+  width: 100%; /* Define a largura do elemento para ocupar toda a largura disponível */
+  background-color: #12932a; /* Define a cor de fundo do bloco para verde (#12932a) */
 }
- 
+
+/* ----------------------------------------------
+   Bloco Superior Azul Claro
+---------------------------------------------- */
+.blocoAzulCima {
+  bottom: 50; /* Não tem unidade definida, provavelmente uma tentativa de posicionamento (incompleto) */
+  width: 100%; /* Define a largura do elemento para ocupar toda a largura disponível */
+  height: 30px; /* Define a altura do bloco como 30px */
+  background-color: white; /* Define a cor de fundo do bloco como branco */
+}
+
+/* ----------------------------------------------
+   Bloco Superior Azul Claro no Modo Escuro
+---------------------------------------------- */
+.blocoAzulCima.dark-mode {
+  bottom: 50; /* Como acima, o valor de `bottom` não tem unidade e parece estar incompleto */
+  width: 100%; /* Largura ocupando 100% do contêiner pai */
+  height: 30px; /* Altura do bloco é 30px */
+  background-color: rgb(0, 0, 0); /* Define a cor de fundo como preta quando o modo escuro está ativado */
+}
+
+/* ----------------------------------------------
+   Grupo de Elementos (Possivelmente um componente de UI com nome "auto-group-tkzx-fmH")
+---------------------------------------------- */
+.auto-group-tkzx-fmH {
+  margin-left: 37.7rem; /* Adiciona margem à esquerda de 37.7rem (provavelmente para posicionar o elemento à direita) */
+  width: 19.6rem; /* Define a largura do elemento como 19.6rem */
+  height: 11.5rem; /* Define a altura do elemento como 11.5rem */
+  position: relative; /* Permite o posicionamento de elementos filhos com relação a esse contêiner */
+}
+
+/* ----------------------------------------------
+   Título (provavelmente um título ou legenda)
+---------------------------------------------- */
+.divTitulo {
+  width: 19.6rem; /* Define a largura do título como 19.6rem */
+  height: 3.9rem; /* Define a altura do título como 3.9rem */
+  position: absolute; /* Posiciona o elemento de forma absoluta em relação ao seu contêiner pai */
+  left: 0; /* Posiciona o título a partir da borda esquerda do contêiner */
+  top: 7.6rem; /* Posiciona o título a 7.6rem a partir da borda superior do contêiner */
+  font-size: 3.2rem; /* Define o tamanho da fonte do título como 3.2rem */
+  font-weight: 700; /* Define o peso da fonte como 700 (negrito) */
+  line-height: 1.1975; /* Define a altura da linha para melhorar o espaçamento entre as linhas de texto */
+  letter-spacing: 1.376rem; /* Define o espaçamento entre as letras como 1.376rem */
+  color: #6d460c; /* Define a cor do texto como um tom marrom escuro (#6d460c) */
+  font-family: Inria Sans, 'Source Sans Pro'; /* Define as fontes usadas no texto (Inria Sans e 'Source Sans Pro') */
+  white-space: nowrap; /* Evita que o texto quebre em várias linhas */
+  display: flex; /* Usa o modelo de layout flexbox para os elementos filhos dentro do título */
+  align-items: baseline; /* Alinha os itens filhos com base na linha de base do texto */
+}
+
+/* ----------------------------------------------
+   Título logo: Biometric
+---------------------------------------------- */
+.titulo1 {
+  width: 16.5rem; /* Define a largura do título como 16.5rem */
+  height: 8.1rem; /* Define a altura do título como 8.1rem */
+  position: absolute; /* Posiciona o título de forma absoluta em relação ao contêiner pai */
+  left: -1rem; /* Move o título 1rem para a esquerda */
+  bottom: 3rem; /* Posiciona o título 3rem acima da borda inferior do contêiner pai */
+  font-size: 6.4rem; /* Define o tamanho da fonte como 6.4rem */
+  font-weight: 400; /* Define o peso da fonte como 400 (normal) */
+  line-height: 1.2575; /* Define a altura da linha para o texto */
+  color: #FFA404; /* Define a cor do texto como amarelo-alaranjado (#FFA404) */
+  display: block; /* Faz o título ser exibido como um bloco (ocupando toda a largura disponível) */
+  font-family: Baloo, 'Source Sans Pro'; /* Define a família de fontes como Baloo e 'Source Sans Pro' */
+  white-space: nowrap; /* Evita quebra de linha no texto */
+  right: -100px; /* Move o título 100px para a direita */
+  z-index: 7; /* Coloca o título em um nível mais alto na pilha de elementos */
+}
+
+/* ----------------------------------------------
+   Subtítulo logo: Call
+---------------------------------------------- */
+.titulo2 {
+  width: 16.5rem; /* Define a largura do subtítulo como 16.5rem */
+  height: 8.1rem; /* Define a altura do subtítulo como 8.1rem */
+  position: absolute; /* Posiciona o subtítulo de forma absoluta em relação ao contêiner pai */
+  left: -1rem; /* Move o subtítulo 1rem para a esquerda */
+  top: 7rem; /* Posiciona o subtítulo 7rem abaixo da borda superior do contêiner pai */
+  font-size: 6.4rem; /* Define o tamanho da fonte como 6.4rem */
+  font-weight: 400; /* Define o peso da fonte como 400 (normal) */
+  line-height: 1.2575; /* Define a altura da linha para o texto */
+  color: #613a07; /* Define a cor do texto como marrom escuro (#613a07) */
+  font-family: Baloo, 'Source Sans Pro'; /* Define as fontes para o subtítulo */
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+  display: flex; /* Organiza os itens dentro do título com flexbox */
+  right: -100px; /* Move o subtítulo 100px para a direita */
+  z-index: 7; /* Coloca o subtítulo em um nível mais alto na pilha de elementos */
+  display: block; /* Exibe o subtítulo como um bloco */
+}
 
 
-
-
-  
-  .blocoAmareloCima {
-    box-sizing: border-box;
-    margin-top: 5px;
-    width: 100%;
-    background-color: #12932a;
-  }
-  .blocoAzulCima {
-    bottom: 50;
-    width: 100%;
-    height: 30px;
-    background-color:white;
-  }
-
-  .blocoAzulCima.dark-mode {
-    bottom: 50;
-    width: 100%;
-    height: 30px;
-    background-color:rgb(0, 0, 0);
-  }
-  .auto-group-tkzx-fmH {
-    margin-left: 37.7rem;
-    width: 19.6rem;
-    height: 11.5rem;
-    position: relative;
-  }
-  
-  .divTitulo {
-    width: 19.6rem;
-    height: 3.9rem;
-    position: absolute;
-    left: 0;
-    top: 7.6rem;
-    font-size: 3.2rem;
-    font-weight: 700;
-    line-height: 1.1975;
-    letter-spacing: 1.376rem;
-    color: #6d460c;
-    font-family: Inria Sans, 'Source Sans Pro';
-    white-space: nowrap;
-    display: flex;
-    align-items: baseline;
-  }
-  
-    /*Titulo logo: Biometric*/
+ /* ----------------------------------------------
+   Regras de Estilo para Tela Pequena (max-width: 704px)
+---------------------------------------------- */
+@media screen and (max-width: 704px) {
   .titulo1 {
-    width: 16.5rem;
-    height: 8.1rem;
-    position: absolute ;
-    left: -1rem;
-    bottom: 3rem;
-    font-size: 6.4rem;
-    font-weight: 400;
-    line-height: 1.2575;
-    color:#FFA404;
-    display:block ;
-    font-family: Baloo, 'Source Sans Pro';
-    white-space: nowrap;
-    display: flex;
-    right: -100px;
-    z-index: 7;
+    left: -12rem; /* Move o título 12rem para a esquerda */
   }
 
-    /*Subtitulo logo: Call*/
   .titulo2 {
-    width: 16.5rem;
-    height: 8.1rem;
-    position: absolute ;
-    left: -1rem;
-    top: 7rem;
-    font-size: 6.4rem;
-    font-weight: 400;
-    line-height: 1.2575;
-    color: #613a07;
-    font-family: Baloo, 'Source Sans Pro';
-    white-space: nowrap;
-    display: flex;
-    right: -100px;
-    z-index: 7;
-    display: block;
-
+    left: -12rem; /* Move o subtítulo 12rem para a esquerda */
   }
 
-  @media screen and (max-width: 704px) {
-    .titulo1 {
-      left: -12rem;
-
-    }
-
-    .titulo2 {
-      left: -12rem;
-
-    }
-
-    .logo {
-      display: none;
-    }
-    
-    
+  .logo {
+    display: none; /* Esconde o logo quando a largura da tela for menor ou igual a 704px */
   }
-
-
- 
-/* concatenando para dark-mode*/
-  .titulo2.dark-mode {
-    width: 16.5rem;
-    height: 8.1rem;
-    position: absolute ;
-    left: -1rem;
-    top: 7rem;
-    font-size: 6.4rem;
-    font-weight: 400;
-    line-height: 1.2575;
-    color: #ffffff;
-    font-family: Baloo, 'Source Sans Pro';
-    white-space: nowrap;
-    display: flex;
-    right: -100px;
-    z-index: 7;
-    display: block;
-  }
-
-
- 
-  .blocoAzulMeio {
-    width: 100%;
-    height: 30px;
-    background-color: rgb(255, 255, 255);
-    flex-shrink: 0;
-    box-shadow: 0px 5px 8px -5px  #525252; 
-
-
-  }
-
-
-
-  .blocoAzulMeio.dark-mode {
-    width: 100%;
-    height: 30px;
-    background-color: rgb(0, 0, 0);
-    flex-shrink: 0;
-    
-  }
-
-  /*Texto-Link Banner*/
-  .txtBanner{
-    cursor: pointer;
-    margin-left:8%;
-    max-width: 15.1rem;
-    text-align: center;
-    font-size: 2.4rem;
-    font-weight: 700;
-    line-height: 1.2125;
-    color:#FFA404;    ;
-    text-decoration: none; /* Remover o sublinhado padrão dos links */
-  transition: color 0.3s, transform 0.3s; /* Adicionar uma transição suave para a cor do texto */
-     width: auto;
-    font-family: Inter, 'Source Sans Pro';
-    flex-shrink: 0;
-    
-  }
-  .txtBanner:hover {
-    color:#40A2E3; /* Alterar a cor do texto dos links quando o mouse passa por cima */
-    transform: scale(1.1); /* Aumentar ligeiramente o tamanho do link ao passar o mouse */
-   
 }
 
+/* ----------------------------------------------
+   Estilo da Título 2 no Modo Escuro (dark mode)
+---------------------------------------------- */
+.titulo2.dark-mode {
+  width: 16.5rem; /* Define a largura do subtítulo como 16.5rem */
+  height: 8.1rem; /* Define a altura do subtítulo como 8.1rem */
+  position: absolute; /* Posiciona o elemento de forma absoluta dentro do contêiner */
+  left: -1rem; /* Move o subtítulo 1rem para a esquerda */
+  top: 7rem; /* Posiciona o subtítulo 7rem abaixo da borda superior do contêiner pai */
+  font-size: 6.4rem; /* Define o tamanho da fonte como 6.4rem */
+  font-weight: 400; /* Define o peso da fonte como normal (400) */
+  line-height: 1.2575; /* Define a altura da linha para o subtítulo */
+  color: #ffffff; /* Define a cor do texto como branco (#ffffff) no modo escuro */
+  font-family: Baloo, 'Source Sans Pro'; /* Define a fonte do texto como Baloo ou 'Source Sans Pro' */
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+  display: flex; /* Usa o modelo de layout flexbox para os itens dentro do subtítulo */
+  right: -100px; /* Move o subtítulo 100px para a direita */
+  z-index: 7; /* Define a camada do subtítulo, colocando-o acima de outros elementos */
+  display: block; /* Garante que o subtítulo seja exibido como um bloco */
+}
+
+/* ----------------------------------------------
+   Bloco Azul Meio (barra de separação)
+---------------------------------------------- */
+.blocoAzulMeio {
+  width: 100%; /* O bloco ocupa 100% da largura do contêiner */
+  height: 30px; /* Define a altura do bloco como 30px */
+  background-color: rgb(255, 255, 255); /* Define o fundo do bloco como branco */
+  flex-shrink: 0; /* Impede que o bloco encolha em layouts flex */
+  box-shadow: 0px 5px 8px -5px #525252; /* Aplica uma sombra sutil ao bloco */
+}
+
+/* ----------------------------------------------
+   Bloco Azul Meio no Modo Escuro
+---------------------------------------------- */
+.blocoAzulMeio.dark-mode {
+  width: 100%; /* O bloco ocupa 100% da largura do contêiner */
+  height: 30px; /* A altura do bloco é de 30px */
+  background-color: rgb(0, 0, 0); /* No modo escuro, a cor de fundo é preta */
+  flex-shrink: 0; /* Impede que o bloco encolha */
+}
+
+/* ----------------------------------------------
+   Texto-Link do Banner
+---------------------------------------------- */
+.txtBanner {
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  margin-left: 8%; /* Adiciona margem à esquerda de 8% */
+  max-width: 15.1rem; /* Define a largura máxima do texto como 15.1rem */
+  text-align: center; /* Alinha o texto ao centro */
+  font-size: 2.4rem; /* Define o tamanho da fonte como 2.4rem */
+  font-weight: 700; /* Define o peso da fonte como negrito (700) */
+  line-height: 1.2125; /* Define o espaçamento entre as linhas de texto */
+  color: #FFA404; /* Define a cor do texto como laranja (#FFA404) */
+  text-decoration: none; /* Remove o sublinhado do link */
+  transition: color 0.3s, transform 0.3s; /* Adiciona uma transição suave para as mudanças de cor e transformação */
+  width: auto; /* A largura do link será ajustada automaticamente */
+  font-family: Inter, 'Source Sans Pro'; /* Define a fonte do texto como Inter ou 'Source Sans Pro' */
+  flex-shrink: 0; /* Impede que o link encolha em layouts flex */
+}
+
+/* ----------------------------------------------
+   Efeito de Hover (quando o mouse passa sobre o link)
+---------------------------------------------- */
+.txtBanner:hover {
+  color: #40A2E3; /* Muda a cor do texto para azul claro ao passar o mouse */
+  transform: scale(1.1); /* Aumenta o tamanho do texto ao passar o mouse */
+}
+
+/* ----------------------------------------------
+   Efeito de Hover no Modo Escuro (dark mode)
+---------------------------------------------- */
 .txtBanner.dark-mode:hover {
-  color: #ffffff; /* Alterar a cor do texto dos links quando o mouse passa por cima */
-  transform: scale(1.1); /* Aumentar ligeiramente o tamanho do link ao passar o mouse */
- 
+  color: #ffffff; /* Muda a cor do texto para branco no modo escuro */
+  transform: scale(1.1); /* Aumenta ligeiramente o tamanho do link no modo escuro */
 }
 
-
+/* ----------------------------------------------
+   Rodapé - Contêiner do Rodapé
+---------------------------------------------- */
 .divRodape {
-  width: 100%;
-  height: 14.7rem;
-  position: relative;
-  flex-shrink: 0;
+  width: 100%; /* O rodapé ocupa toda a largura disponível */
+  height: 14.7rem; /* Define a altura do rodapé como 14.7rem */
+  position: relative; /* Permite que elementos dentro do rodapé sejam posicionados em relação a ele */
+  flex-shrink: 0; /* Impede que o rodapé encolha em layouts flex */
 }
+
+/* ----------------------------------------------
+   Bloco Amarelo do Rodapé
+---------------------------------------------- */
 .blocoAmareloRodape {
-  width: 100%;
-  height: 11.8rem;
-  position: absolute;
-  left: 0;
-  top: 2.9rem;
-  background-color: white;
+  width: 100%; /* O bloco ocupa 100% da largura do rodapé */
+  height: 11.8rem; /* Define a altura do bloco como 11.8rem */
+  position: absolute; /* Posiciona o bloco de forma absoluta dentro do rodapé */
+  left: 0; /* Posiciona o bloco na borda esquerda */
+  top: 2.9rem; /* Posiciona o bloco a 2.9rem do topo do contêiner */
+  background-color: white; /* Define o fundo do bloco como branco */
 }
 
+/* ----------------------------------------------
+   Bloco Amarelo do Rodapé no Modo Escuro
+---------------------------------------------- */
 .blocoAmareloRodape.dark-mode {
-  width: 100%;
-  height: 11.8rem;
-  position: absolute;
-  left: 0;
-  top: 2.9rem;
-  background-color: rgb(0, 0, 0);
+  width: 100%; /* O bloco ocupa 100% da largura do rodapé */
+  height: 11.8rem; /* Define a altura do bloco como 11.8rem */
+  position: absolute; /* Posiciona o bloco de forma absoluta dentro do rodapé */
+  left: 0; /* Posiciona o bloco na borda esquerda */
+  top: 2.9rem; /* Posiciona o bloco a 2.9rem do topo do contêiner */
+  background-color: rgb(0, 0, 0); /* No modo escuro, a cor de fundo é preta */
 }
 
-
-
+/* ----------------------------------------------
+   Bloco Azul do Rodapé
+---------------------------------------------- */
 .blocoAzulRodape {
-  width: 100%;
-  height: 30px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  background-color: white;
-  box-shadow: 0px -5px 8px -5px  #525252;
+  width: 100%; /* O bloco ocupa 100% da largura do rodapé */
+  height: 30px; /* Define a altura do bloco como 30px */
+  position: absolute; /* Posiciona o bloco de forma absoluta dentro do rodapé */
+  left: 0; /* Posiciona o bloco na borda esquerda */
+  top: 0; /* Posiciona o bloco na borda superior do rodapé */
+  background-color: white; /* Define o fundo do bloco como branco */
+  box-shadow: 0px -5px 8px -5px #525252; /* Aplica uma sombra sutil ao bloco */
 }
 
+/* ----------------------------------------------
+   Bloco Azul do Rodapé no Modo Escuro
+---------------------------------------------- */
 .blocoAzulRodape.dark-mode {
-  width: 100%;
-  height: 30px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  background-color: rgb(0, 0, 0);
-  box-shadow: 0px -5px 8px -5px  #525252;
+  width: 100%; /* O bloco ocupa 100% da largura do rodapé */
+  height: 30px; /* Define a altura do bloco como 30px */
+  position: absolute; /* Posiciona o bloco de forma absoluta dentro do rodapé */
+  left: 0; /* Posiciona o bloco na borda esquerda */
+  top: 0; /* Posiciona o bloco na borda superior do rodapé */
+  background-color: rgb(0, 0, 0); /* No modo escuro, a cor de fundo é preta */
+  box-shadow: 0px -5px 8px -5px #525252; /* Aplica uma sombra sutil ao bloco */
 }
 
-/*Div do banner*/
+/* ----------------------------------------------
+   Bloco de Links Amarelos no Banner (Continuação)
+---------------------------------------------- */
 .blocoAmareloLinks {
-  box-sizing: border-box;
-  padding-bottom: 1.9rem;
-  width: 100%;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  flex-shrink: 0;
+  box-sizing: border-box; /* Inclui bordas e padding no cálculo do tamanho total do elemento */
+  padding-bottom: 1.9rem; /* Adiciona 1.9rem de espaçamento na parte inferior do bloco */
+  width: 100%; /* O bloco ocupa 100% da largura do contêiner pai */
+  align-items: center; /* Alinha todos os itens dentro do bloco no centro */
+  display: flex; /* Usa o modelo de layout flexbox para os itens dentro do bloco */
+  flex-direction: column; /* Organiza os itens dentro do bloco em uma coluna */
+  background-color: white; /* Define o fundo do bloco como branco */
+  flex-shrink: 0; /* Impede que o bloco encolha em layouts flex */
+}
+
+/* ----------------------------------------------
+   Bloco de Links Amarelos no Banner no Modo Escuro
+---------------------------------------------- */
+.blocoAmareloLinks.dark-mode {
+  box-sizing: border-box; /* Inclui bordas e padding no cálculo do tamanho total do elemento */
+  padding-bottom: 1.9rem; /* Adiciona 1.9rem de espaçamento na parte inferior do bloco */
+  width: 100%; /* O bloco ocupa 100% da largura do contêiner pai */
+  align-items: center; /* Alinha todos os itens dentro do bloco no centro */
+  display: flex; /* Usa o modelo de layout flexbox para os itens dentro do bloco */
+  flex-direction: column; /* Organiza os itens dentro do bloco em uma coluna */
+  background-color: rgb(0, 0, 0); /* No modo escuro, o fundo do bloco fica preto */
+  flex-shrink: 0; /* Impede que o bloco encolha em layouts flex */
 }
 
 
-.blocoAmareloLinks.dark-mode{
-  box-sizing: border-box;
-  padding-bottom: 1.9rem;
-  width: 100%;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(0, 0, 0);
-  flex-shrink: 0;
-}
-
-
-
+/* ------------------------------
+   Estilização da Div1
+------------------------------ */
 .div1 {
-  margin: 0rem 29.9rem 0rem 37.7rem;
-  width: calc(100% - 67.6rem);
-  height: 11.5rem;
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
+  margin: 0rem 29.9rem 0rem 37.7rem; /* Define as margens externas: 0 acima, 29.9rem à direita, 0 abaixo e 37.7rem à esquerda */
+  width: calc(100% - 67.6rem); /* Define a largura como 100% da tela, subtraindo 67.6rem */
+  height: 11.5rem; /* Define a altura da div em 11.5rem */
+  display: flex; /* Usa o modelo de layout flex para organizar os itens dentro da div */
+  align-items: center; /* Alinha os itens do flexbox verticalmente ao centro */
+  flex-shrink: 0; /* Impede que a div encolha em layouts flex */
 }
+
+/* ------------------------------
+   Estilização da Div2
+------------------------------ */
 .div2 {
-  margin-right: 11.9rem;
-  width: 18.5rem;
-  height: 100%;
-  position: relative;
-  flex-shrink: 0;
+  margin-right: 11.9rem; /* Define a margem à direita da div como 11.9rem */
+  width: 18.5rem; /* Define a largura da div como 18.5rem */
+  height: 100%; /* Define a altura da div como 100% do elemento pai */
+  position: relative; /* Define o posicionamento da div em relação ao seu contêiner pai */
+  flex-shrink: 0; /* Impede que a div encolha em layouts flex */
 }
 
-/*texto e caixa de texto*/
-  .txtCad {
-    font-size: 3.2rem;
-    font-weight: 700;
-    color: #ffffff;
-    font-family: Inter, 'Source Sans Pro';
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
+/* ------------------------------
+   Texto de Título: Cadastro
+------------------------------ */
+.txtCad {
+  font-size: 3.2rem; /* Define o tamanho da fonte como 3.2rem */
+  font-weight: 700; /* Define a espessura da fonte como 700 (negrito) */
+  color: #ffffff; /* Define a cor do texto como branca */
+  font-family: Inter, 'Source Sans Pro'; /* Define as fontes a serem usadas */
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+  flex-shrink: 0; /* Impede que o elemento encolha em layouts flex */
+}
 
-  .txt{
-    margin: 0rem 0rem 32.6rem 0.3rem;
-    font-size: 3.2rem;
-    font-weight: 700;
-    line-height: 1.2125;
-    color: #ffffff;
-    font-family: 'Inter', 'Source Sans Pro';
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
+/* ------------------------------
+   Texto do Campo de Cadastro
+------------------------------ */
+.txt {
+  margin: 0rem 0rem 32.6rem 0.3rem; /* Define as margens do texto (sem margem acima, 0.3rem à esquerda e 32.6rem abaixo) */
+  font-size: 3.2rem; /* Define o tamanho da fonte como 3.2rem */
+  font-weight: 700; /* Define o texto como negrito */
+  line-height: 1.2125; /* Define o espaçamento entre as linhas do texto */
+  color: #ffffff; /* Define a cor do texto como branca */
+  font-family: 'Inter', 'Source Sans Pro'; /* Define a fonte usada no texto */
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+  flex-shrink: 0; /* Impede que o elemento encolha em layouts flex */
+}
 
-  .txtNome {
-    margin-bottom: 4px;
-    margin-left: 75px;
-    font-size: 2.4rem;
-    font-weight: 700;
-    line-height: 1.2125;
-    color: #ffffff;
-    font-family: 'Inter', 'Source Sans Pro';
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-  .txtEmail {
-    margin-bottom: 4.7rem;
-    box-sizing: border-box;
-    padding: 2rem 2rem 1.9rem 2rem;
-    width: 50%;
-    font-size: 1.6rem;
-    font-weight: 400;
-    line-height: 1.2125;
-    color: #525252;
-    font-family: 'Inter', 'Source Sans Pro';
-    white-space: nowrap;
-    background-color: #ffffff;
-    border-radius: 2rem;
-    flex-shrink: 0;
-  }
-  .txtSenha {
-    margin-bottom: 7.8rem;
-    box-sizing: border-box;
-    padding: 2rem 2rem 1.9rem 2rem;
-    width: 50%;
-    font-size: 1.6rem;
-    font-weight: 400;
-    line-height: 1.2125;
-    color: #525252;
-    font-family: Inter, 'Source Sans Pro';
-    white-space: nowrap;
-    background-color: #ffffff;
-    border-radius: 2rem;
-    flex-shrink: 0;
-  }
+/* ------------------------------
+   Estilização do Texto "Nome"
+------------------------------ */
+.txtNome {
+  margin-bottom: 4px; /* Adiciona uma margem de 4px na parte inferior */
+  margin-left: 75px; /* Adiciona uma margem de 75px à esquerda */
+  font-size: 2.4rem; /* Define o tamanho da fonte como 2.4rem */
+  font-weight: 700; /* Define a espessura da fonte como 700 (negrito) */
+  line-height: 1.2125; /* Define o espaçamento entre as linhas do texto */
+  color: #ffffff; /* Define a cor do texto como branca */
+  font-family: 'Inter', 'Source Sans Pro'; /* Define a fonte usada no texto */
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+  flex-shrink: 0; /* Impede que o elemento encolha em layouts flex */
+}
 
-  .linkCon {
-    margin-left: 1.4rem;
-    cursor: pointer;
-    text-align: center;
-    font-size: 1.4rem;
-    font-weight: 500;
-    line-height: 1.2102272851;
-    color: #000000;
-    font-family: Inter, 'Source Sans Pro';
-    white-space: nowrap;
-    display: flex;
-    align-items: baseline;
-    flex-shrink: 0;
-  }
-  .txtJTC {
-    font-size: 1.4rem;
-    font-weight: 400;
-    line-height: 1.2125;
-    color: #000000;
-    font-family: Inter, 'Source Sans Pro';
-  }
-  
-  .txtCon {
-    font-size: 1.4rem;
-    font-weight: 700;
-    line-height: 1.2125;
-    color: #1236b5;
-    font-family: Inter, 'Source Sans Pro';
-  }
-  
+/* ------------------------------
+   Estilização do Campo de Email
+------------------------------ */
+.txtEmail {
+  margin-bottom: 4.7rem; /* Adiciona 4.7rem de margem na parte inferior */
+  box-sizing: border-box; /* Inclui bordas e padding no cálculo do tamanho do elemento */
+  padding: 2rem 2rem 1.9rem 2rem; /* Adiciona 2rem de padding nas laterais e 1.9rem na parte inferior */
+  width: 50%; /* Define a largura do campo de texto como 50% do contêiner pai */
+  font-size: 1.6rem; /* Define o tamanho da fonte como 1.6rem */
+  font-weight: 400; /* Define a espessura da fonte como 400 (normal) */
+  line-height: 1.2125; /* Define o espaçamento entre as linhas do texto */
+  color: #525252; /* Define a cor do texto como cinza claro */
+  font-family: 'Inter', 'Source Sans Pro'; /* Define as fontes a serem usadas */
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+  background-color: #ffffff; /* Define o fundo do campo de texto como branco */
+  border-radius: 2rem; /* Define bordas arredondadas com raio de 2rem */
+  flex-shrink: 0; /* Impede que o campo encolha em layouts flex */
+}
+
+/* ------------------------------
+   Estilização do Campo de Senha
+------------------------------ */
+.txtSenha {
+  margin-bottom: 7.8rem; /* Adiciona 7.8rem de margem na parte inferior */
+  box-sizing: border-box; /* Inclui bordas e padding no cálculo do tamanho do elemento */
+  padding: 2rem 2rem 1.9rem 2rem; /* Adiciona 2rem de padding nas laterais e 1.9rem na parte inferior */
+  width: 50%; /* Define a largura do campo de texto como 50% do contêiner pai */
+  font-size: 1.6rem; /* Define o tamanho da fonte como 1.6rem */
+  font-weight: 400; /* Define a espessura da fonte como 400 (normal) */
+  line-height: 1.2125; /* Define o espaçamento entre as linhas do texto */
+  color: #525252; /* Define a cor do texto como cinza claro */
+  font-family: 'Inter', 'Source Sans Pro'; /* Define as fontes a serem usadas */
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+  background-color: #ffffff; /* Define o fundo do campo de texto como branco */
+  border-radius: 2rem; /* Define bordas arredondadas com raio de 2rem */
+  flex-shrink: 0; /* Impede que o campo encolha em layouts flex */
+}
+
+/* ------------------------------
+   Estilização do Link de Cadastro
+------------------------------ */
+.linkCon {
+  margin-left: 1.4rem; /* Adiciona uma margem de 1.4rem à esquerda */
+  cursor: pointer; /* Altera o cursor para um ponteiro quando o mouse passa sobre o link */
+  text-align: center; /* Centraliza o texto dentro do link */
+  font-size: 1.4rem; /* Define o tamanho da fonte como 1.4rem */
+  font-weight: 500; /* Define a espessura da fonte como 500 (semi-negrito) */
+  line-height: 1.2102272851; /* Define o espaçamento entre as linhas do texto */
+  color: #000000; /* Define a cor do texto como preta */
+  font-family: Inter, 'Source Sans Pro'; /* Define as fontes a serem usadas */
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+  display: flex; /* Usa o modelo de layout flexbox para o link */
+  align-items: baseline; /* Alinha os itens dentro do link na linha de base */
+  flex-shrink: 0; /* Impede que o link encolha em layouts flex */
+}
+
+/* ------------------------------
+   Texto dentro do Link de Cadastro
+------------------------------ */
+.txtJTC {
+  font-size: 1.4rem; /* Define o tamanho da fonte como 1.4rem */
+  font-weight: 400; /* Define a espessura da fonte como 400 (normal) */
+  line-height: 1.2125; /* Define o espaçamento entre as linhas do texto */
+  color: #000000; /* Define a cor do texto como preta */
+  font-family: Inter, 'Source Sans Pro'; /* Define as fontes a serem usadas */
+}
+
+/* ------------------------------
+   Estilização do Texto do Link (Texto de Cadastro)
+------------------------------ */
+.txtCon {
+  font-size: 1.4rem; /* Define o tamanho da fonte como 1.4rem */
+  font-weight: 700; /* Define a espessura da fonte como 700 (negrito) */
+  line-height: 1.2125; /* Define o espaçamento entre as linhas do texto */
+  color: #1236b5; /* Define a cor do texto como azul */
+  font-family: Inter, 'Source Sans Pro'; /* Define as fontes a serem usadas */
+}
+/* ------------------------------
+   Estilização do campo de nome (caixa de texto)
+------------------------------ */
 .txtBoxNome {
-  margin-bottom: 4.7rem;
-  box-sizing: border-box;
-  padding: 2rem 2rem 1.9rem 2rem;
-  width:35%;
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 1.2125;
-  color: #525252;
-  font-family: Inter, 'Source Sans Pro';
-  white-space: nowrap;
-  background-color: #ffffff;
-  border-radius: 2rem;
-
-  flex-shrink: 0;
+  margin-bottom: 4.7rem; /* Adiciona uma margem de 4.7rem abaixo do campo */
+  box-sizing: border-box; /* Inclui as bordas e o padding no cálculo do tamanho do elemento */
+  padding: 2rem 2rem 1.9rem 2rem; /* Define o padding (espaçamento interno) nas 4 direções: 2rem nas laterais e 1.9rem na parte inferior */
+  width: 35%; /* Define a largura do campo de nome como 35% do elemento pai */
+  font-size: 1.6rem; /* Define o tamanho da fonte como 1.6rem */
+  font-weight: 400; /* Define a espessura da fonte como 400 (normal) */
+  line-height: 1.2125; /* Define o espaçamento entre as linhas do texto */
+  color: #525252; /* Define a cor do texto como cinza */
+  font-family: Inter, 'Source Sans Pro'; /* Define as fontes a serem usadas */
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+  background-color: #ffffff; /* Define a cor de fundo como branco */
+  border-radius: 2rem; /* Define bordas arredondadas com raio de 2rem */
+  flex-shrink: 0; /* Impede que o campo encolha em layouts flex */
 }
+
+/* ------------------------------
+   Estilização do texto do curso
+------------------------------ */
 .txtCurso {
-  margin-top:1px;
-  font-size: 2.4rem;
-  font-weight: 700;
-  line-height: 1.2125;
-  color: #ffffff;
-  font-family: Inter, 'Source Sans Pro';
-  white-space: nowrap;
-  flex-shrink: 0;
+  margin-top: 1px; /* Define uma margem de 1px acima do texto */
+  font-size: 2.4rem; /* Define o tamanho da fonte como 2.4rem */
+  font-weight: 700; /* Define a espessura da fonte como 700 (negrito) */
+  line-height: 1.2125; /* Define o espaçamento entre as linhas do texto */
+  color: #ffffff; /* Define a cor do texto como branca */
+  font-family: Inter, 'Source Sans Pro'; /* Define as fontes a serem usadas */
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+  flex-shrink: 0; /* Impede que o texto encolha em layouts flex */
 }
+
+/* ------------------------------
+   Estilização do texto da série
+------------------------------ */
 .txtSerie {
-  margin: 0rem 8rem 0.5rem 0rem;
-  font-size: 2.4rem;
-  font-weight: 700;
-  line-height: 1.2125;
-  color: #ffffff;
-  font-family: Inter, 'Source Sans Pro';
-  white-space: nowrap;
-  flex-shrink: 0;
+  margin: 0rem 8rem 0.5rem 0rem; /* Define as margens: 0 acima, 8rem à direita, 0.5rem abaixo, e 0 à esquerda */
+  font-size: 2.4rem; /* Define o tamanho da fonte como 2.4rem */
+  font-weight: 700; /* Define a espessura da fonte como 700 (negrito) */
+  line-height: 1.2125; /* Define o espaçamento entre as linhas do texto */
+  color: #ffffff; /* Define a cor do texto como branca */
+  font-family: Inter, 'Source Sans Pro'; /* Define as fontes a serem usadas */
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+  flex-shrink: 0; /* Impede que o texto encolha em layouts flex */
 }
+
+/* ------------------------------
+   Estilização do texto do nome do aluno
+------------------------------ */
 .txtNomeAluno {
-  margin-bottom: 4px;
-  margin-left: 75px;
-  font-size: 2.4rem;
-  font-weight: 700;
-  line-height: 1.2125;
-  color: white;
-  font-family: Inter, 'Source Sans Pro';
-  white-space: nowrap;
-  flex-shrink: 0;
+  margin-bottom: 4px; /* Adiciona uma margem de 4px na parte inferior */
+  margin-left: 75px; /* Adiciona uma margem de 75px à esquerda */
+  font-size: 2.4rem; /* Define o tamanho da fonte como 2.4rem */
+  font-weight: 700; /* Define a espessura da fonte como 700 (negrito) */
+  line-height: 1.2125; /* Define o espaçamento entre as linhas do texto */
+  color: white; /* Define a cor do texto como branca */
+  font-family: Inter, 'Source Sans Pro'; /* Define as fontes a serem usadas */
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+  flex-shrink: 0; /* Impede que o texto encolha em layouts flex */
 }
-.txtDigital
- {
-  width: 34.5rem;
-  height: 3rem;
-  position: absolute;
-  left: 7.3rem;
-  top: 31.4rem;
-  font-size: 2.4rem;
-  font-weight: 700;
-  line-height: 1.2125;
-  color: #ffffff;
-  font-family: Inter, 'Source Sans Pro';
-  white-space: nowrap;
+
+/* ------------------------------
+   Estilização do texto digital (provavelmente um título ou label)
+------------------------------ */
+.txtDigital {
+  width: 34.5rem; /* Define a largura do texto como 34.5rem */
+  height: 3rem; /* Define a altura do texto como 3rem */
+  position: absolute; /* Define o posicionamento absoluto em relação ao elemento pai */
+  left: 7.3rem; /* Define a posição à esquerda do elemento como 7.3rem */
+  top: 31.4rem; /* Define a posição do texto a partir do topo como 31.4rem */
+  font-size: 2.4rem; /* Define o tamanho da fonte como 2.4rem */
+  font-weight: 700; /* Define a espessura da fonte como 700 (negrito) */
+  line-height: 1.2125; /* Define o espaçamento entre as linhas do texto */
+  color: #ffffff; /* Define a cor do texto como branca */
+  font-family: Inter, 'Source Sans Pro'; /* Define as fontes a serem usadas */
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
 }
+
+/* ------------------------------
+   Estilização da caixa de nome (posição e tamanho)
+------------------------------ */
 .txtBoxNome {
-  margin-top: 15px;
-  width: 48.6rem;
-  height: 5.9rem;
-  position: absolute;
-  left: 6rem;
-  top: 2rem;
-  border-radius: 2rem;
-}
-/*caixa de texto do nome*/
-.digitarnome{
-  padding-left: 5px;
-  margin-top: -20px;
-  width: 48.6rem;
-  height: 5.9rem;
-  position: absolute;
-  left: 0rem;
-  top: 2rem;
-  background-color: #ffffff;
-  border-radius: 2rem;
-  font-size: 20px; /* Defina o tamanho da fonte desejado */
-  font-weight: bold; /* Deixa o texto em negrito */
-}
-.txts{
-  margin: 0.6rem 0;
- padding: 0.10rem 12.2rem;
- border:none;
- border-radius: 10px;
- box-shadow: 1px 1px 6px #000000c1; 
- font-size: 1.8rem;
- position: relative;
+  margin-top: 15px; /* Define uma margem de 15px acima do campo */
+  width: 48.6rem; /* Define a largura da caixa como 48.6rem */
+  height: 5.9rem; /* Define a altura da caixa como 5.9rem */
+  position: absolute; /* Define o posicionamento absoluto em relação ao elemento pai */
+  left: 6rem; /* Define a posição à esquerda da caixa como 6rem */
+  top: 2rem; /* Define a posição do topo da caixa como 2rem */
+  border-radius: 2rem; /* Define bordas arredondadas com raio de 2rem */
 }
 
-/*Responsividade inputs do formulário*/
+/* ------------------------------
+   Estilização da caixa de texto para digitar o nome
+------------------------------ */
+.digitarnome {
+  padding-left: 5px; /* Adiciona 5px de padding à esquerda dentro da caixa de texto */
+  margin-top: -20px; /* Define uma margem negativa de -20px para posicionar a caixa acima */
+  width: 48.6rem; /* Define a largura da caixa de texto como 48.6rem */
+  height: 5.9rem; /* Define a altura da caixa de texto como 5.9rem */
+  position: absolute; /* Define o posicionamento absoluto em relação ao elemento pai */
+  left: 0rem; /* Define a posição à esquerda da caixa como 0rem */
+  top: 2rem; /* Define a posição do topo da caixa como 2rem */
+  background-color: #ffffff; /* Define o fundo da caixa como branco */
+  border-radius: 2rem; /* Define bordas arredondadas com raio de 2rem */
+  font-size: 20px; /* Define o tamanho da fonte dentro da caixa como 20px */
+  font-weight: bold; /* Deixa o texto dentro da caixa em negrito */
+}
 
+/* ------------------------------
+   Estilização de outros campos de texto (geral)
+------------------------------ */
+.txts {
+  margin: 0.6rem 0; /* Define uma margem de 0.6rem na parte superior e inferior */
+  padding: 0.10rem 12.2rem; /* Adiciona padding de 0.10rem à esquerda e à direita, e 12.2rem na parte inferior */
+  border: none; /* Remove qualquer borda padrão */
+  border-radius: 10px; /* Define bordas arredondadas com raio de 10px */
+  box-shadow: 1px 1px 6px #000000c1; /* Adiciona uma sombra suave ao redor da caixa */
+  font-size: 1.8rem; /* Define o tamanho da fonte como 1.8rem */
+  position: relative; /* Define o posicionamento relativo em relação ao seu contêiner */
+}
+
+
+/* ------------------------------
+   Responsividade: ajustes nos campos de texto (inputs) em diferentes larguras de tela
+------------------------------ */
+
+/* Para telas com largura máxima de 507px */
 @media screen and (max-width: 507px) {
   .txts {
-    width: 270px ;
-    left: 2px;
-
+    width: 270px; /* Ajusta a largura do campo de texto para 270px */
+    left: 2px;    /* Posiciona o campo a 2px da borda esquerda */
   }
-
 }
 
-@media  screen and  (max-width: 1064px ) {
-  .txts{
-      left: 2px;
-
+/* Para telas com largura máxima de 1064px */
+@media screen and (max-width: 1064px) {
+  .txts {
+    left: 2px; /* Mantém o campo a 2px da borda esquerda */
   }
-
 }
 
-@media  screen and  (max-width: 807px ) {
-  .txts{
-      left: 2px;
-      width: 390px ;
-
+/* Para telas com largura máxima de 807px */
+@media screen and (max-width: 807px) {
+  .txts {
+    left: 2px;    /* Mantém o campo a 2px da borda esquerda */
+    width: 390px; /* Ajusta a largura do campo de texto para 390px */
   }
-
 }
 
-@media  screen and  (max-width: 717px ) {
-  .txts{
-      left: 2px;
-      width: 360px ;
-
+/* Para telas com largura máxima de 717px */
+@media screen and (max-width: 717px) {
+  .txts {
+    left: 2px;    /* Mantém o campo a 2px da borda esquerda */
+    width: 360px; /* Ajusta a largura do campo de texto para 360px */
   }
-
-}
-@media  screen and  (max-width: 660px ) {
-  .txts{
-      left: 2px;
-      width: 330px ;
-
-  }
-
-}
-@media  screen and  (max-width: 606px ) {
-  .txts{
-      left: 2px;
-      width: 300px ;
-
-  }
-
 }
 
-@media  screen and  (max-width: 552px ) {
-  .txts{
-      left: 2px;
-      width: 270px ;
-
+/* Para telas com largura máxima de 660px */
+@media screen and (max-width: 660px) {
+  .txts {
+    left: 2px;    /* Mantém o campo a 2px da borda esquerda */
+    width: 330px; /* Ajusta a largura do campo de texto para 330px */
   }
-
 }
 
-@media  screen and  (max-width: 497px ) {
-  .txts{
-      left: 2px;
-      width: 240px ;
-
+/* Para telas com largura máxima de 606px */
+@media screen and (max-width: 606px) {
+  .txts {
+    left: 2px;    /* Mantém o campo a 2px da borda esquerda */
+    width: 300px; /* Ajusta a largura do campo de texto para 300px */
   }
-
 }
 
+/* Para telas com largura máxima de 552px */
+@media screen and (max-width: 552px) {
+  .txts {
+    left: 2px;    /* Mantém o campo a 2px da borda esquerda */
+    width: 270px; /* Ajusta a largura do campo de texto para 270px */
+  }
+}
 
+/* Para telas com largura máxima de 497px */
+@media screen and (max-width: 497px) {
+  .txts {
+    left: 2px;    /* Mantém o campo a 2px da borda esquerda */
+    width: 240px; /* Ajusta a largura do campo de texto para 240px */
+  }
+}
 
+/* ------------------------------
+   Estilização das divs principais do formulário
+------------------------------ */
 
+/* Estiliza o container principal do formulário */
+.divForm {
+  box-sizing: border-box; /* Inclui bordas e padding no cálculo do tamanho total do elemento */
+  padding: 2.6rem 47.7rem 10.7rem 47.7rem; /* Adiciona espaçamento interno nas 4 direções */
+  width: 100%; /* Define a largura como 100% do seu contêiner pai */
+  align-items: center; /* Alinha os itens ao centro */
+  display: flex; /* Define o display como flexbox */
+  flex-direction: column; /* Alinha os itens na direção vertical (coluna) */
+  flex-shrink: 0; /* Impede que a div encolha em layouts flex */
+}
 
-  /*divs*/
-  .divForm {
-    box-sizing: border-box;
-    padding: 2.6rem 47.7rem 10.7rem 47.7rem;
-    width: 100%;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
-  }
+/* Estiliza a div do meio do formulário */
+.divMeio {
+  width: 100%; /* Largura de 100% do contêiner pai */
+  height: 60rem; /* Altura definida como 60rem */
+  position: relative; /* Define o posicionamento relativo para os filhos */
+  flex-shrink: 0; /* Impede que a div encolha */
+}
 
-  .divMeio {
-    width: 100%;
-    height: 60rem;
-    position: relative;
-    flex-shrink: 0;
-  }
-  .divRB {
-    width: 57.6rem;
-    height: 3.7rem;
-    position: absolute;
-    left: 7.2rem;
-    top: 15.6rem;
-    display: flex;
-    align-items: center;
-  }
-  .divFormCad {
-    width: 100%;
-    height: 60rem;
-    position: relative;
-    flex-shrink: 0;
-  }
-  .ladoLado {
-    width: 86.8rem;
-    height: 3.5rem;
-    position: absolute;
-    left: 7.3rem;
-    top: 10.8rem;
-    display: flex;
-    align-items: center;
-  }
+/* Estiliza a div do grupo de radio buttons */
+.divRB {
+  width: 57.6rem; /* Define a largura do grupo de radio buttons */
+  height: 3.7rem; /* Define a altura do grupo de radio buttons */
+  position: absolute; /* Posiciona a div de forma absoluta em relação ao contêiner pai */
+  left: 7.2rem; /* Define a posição da div a 7.2rem da borda esquerda */
+  top: 15.6rem; /* Define a posição da div a 15.6rem do topo */
+  display: flex; /* Usa o modelo de layout flexbox */
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+}
 
-  /*radio buttons*/
-  .rbDs {
-    margin-top: 0.6478rem;
-    font-size: 17px;
-    font-weight: 700;
-    line-height: 1.2125;
-    color: #000000;
-    font-family: Inter, 'Source Sans Pro';
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-  .rb2 {
-    margin: 0rem 34.9rem 0.352rem 0rem;
-    font-size: 17px;
-    font-weight: 700;
-    line-height: 1.2125;
-    color: #000000;
-    font-family: Inter, 'Source Sans Pro';
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-  .rbLog {
-    margin-top: 0.6739rem;
-    font-size: 17px;
-    font-weight: 700;
-    line-height: 1.2125;
-    color: #000000;
-    font-family: Inter, 'Source Sans Pro';
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-  .rb3 {
-    margin: 0rem 34.8rem 0.326rem 0rem;
-    font-size: 17px;
-    font-weight: 700;
-    line-height: 1.2125;
-    color: #000000;
-    font-family: Inter, 'Source Sans Pro';
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-  .rbAdm {
-    margin-top: 0.7rem;
-    font-size: 17px;
-    font-weight: 700;
-    line-height: 1.2125;
-    color: #000000;
-    font-family: Inter, 'Source Sans Pro';
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-  .rb1 {
-    margin: 0rem 34.9rem 0.352rem 0rem;
-    font-size: 17px;
-    font-weight: 700;
-    line-height: 1.2125;
-    color: #000000;
-    font-family: Inter, 'Source Sans Pro';
-    white-space: nowrap;
-    flex-shrink: 0;
-  } 
-  
-  
-/*botões*/
+/* Estiliza a div do formulário de cadastro */
+.divFormCad {
+  width: 100%; /* Largura de 100% do contêiner pai */
+  height: 60rem; /* Altura definida como 60rem */
+  position: relative; /* Define o posicionamento relativo para os filhos */
+  flex-shrink: 0; /* Impede que a div encolha */
+}
 
+/* Estiliza a div que organiza os campos lado a lado */
+.ladoLado {
+  width: 86.8rem; /* Largura da div para os campos lado a lado */
+  height: 3.5rem; /* Define a altura da div */
+  position: absolute; /* Posiciona a div de forma absoluta */
+  left: 7.3rem; /* Posiciona a div a 7.3rem da borda esquerda */
+  top: 10.8rem; /* Posiciona a div a 10.8rem do topo */
+  display: flex; /* Usa o modelo de layout flexbox */
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+}
+
+/* ------------------------------
+   Estilização dos textos e labels dos radio buttons
+------------------------------ */
+
+/* Estiliza o texto ao lado do primeiro radio button */
+.rbDs {
+  margin-top: 0.6478rem; /* Adiciona uma margem no topo */
+  font-size: 17px; /* Define o tamanho da fonte como 17px */
+  font-weight: 700; /* Deixa a fonte em negrito */
+  line-height: 1.2125; /* Define o espaçamento entre as linhas do texto */
+  color: #000000; /* Define a cor do texto como preto */
+  font-family: Inter, 'Source Sans Pro'; /* Define as fontes a serem usadas */
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+  flex-shrink: 0; /* Impede que o texto encolha em layouts flex */
+}
+
+/* Estiliza o texto ao lado do segundo radio button */
+.rb2 {
+  margin: 0rem 34.9rem 0.352rem 0rem; /* Define as margens: 0 no topo, 34.9rem à direita, 0.352rem abaixo e 0 à esquerda */
+  font-size: 17px; /* Define o tamanho da fonte como 17px */
+  font-weight: 700; /* Deixa a fonte em negrito */
+  line-height: 1.2125; /* Define o espaçamento entre as linhas do texto */
+  color: #000000; /* Define a cor do texto como preto */
+  font-family: Inter, 'Source Sans Pro'; /* Define as fontes a serem usadas */
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+  flex-shrink: 0; /* Impede que o texto encolha em layouts flex */
+}
+
+/* Estiliza o texto ao lado do terceiro radio button */
+.rbLog {
+  margin-top: 0.6739rem; /* Adiciona uma margem no topo */
+  font-size: 17px; /* Define o tamanho da fonte como 17px */
+  font-weight: 700; /* Deixa a fonte em negrito */
+  line-height: 1.2125; /* Define o espaçamento entre as linhas do texto */
+  color: #000000; /* Define a cor do texto como preto */
+  font-family: Inter, 'Source Sans Pro'; /* Define as fontes a serem usadas */
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+  flex-shrink: 0; /* Impede que o texto encolha em layouts flex */
+}
+
+/* Estiliza o texto ao lado do quarto radio button */
+.rb3 {
+  margin: 0rem 34.8rem 0.326rem 0rem; /* Define as margens: 0 no topo, 34.8rem à direita, 0.326rem abaixo e 0 à esquerda */
+  font-size: 17px; /* Define o tamanho da fonte como 17px */
+  font-weight: 700; /* Deixa a fonte em negrito */
+  line-height: 1.2125; /* Define o espaçamento entre as linhas do texto */
+  color: #000000; /* Define a cor do texto como preto */
+  font-family: Inter, 'Source Sans Pro'; /* Define as fontes a serem usadas */
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+  flex-shrink: 0; /* Impede que o texto encolha em layouts flex */
+}
+
+/* ------------------------------
+   Estilização dos radio buttons (rbAdm, rb1) - Botões de seleção
+------------------------------ */
+
+/* Estilo do radio button com classe .rbAdm */
+.rbAdm {
+  margin-top: 0.7rem; /* Adiciona uma margem no topo */
+  font-size: 17px; /* Define o tamanho da fonte como 17px */
+  font-weight: 700; /* Deixa a fonte em negrito */
+  line-height: 1.2125; /* Define o espaçamento entre as linhas do texto */
+  color: #000000; /* Define a cor do texto como preto */
+  font-family: Inter, 'Source Sans Pro'; /* Define as fontes a serem usadas */
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+  flex-shrink: 0; /* Impede que o texto encolha em layouts flex */
+}
+
+/* Estilo do radio button com classe .rb1 */
+.rb1 {
+  margin: 0rem 34.9rem 0.352rem 0rem; /* Define margens específicas: 0 no topo, 34.9rem à direita, 0.352rem abaixo e 0 à esquerda */
+  font-size: 17px; /* Define o tamanho da fonte como 17px */
+  font-weight: 700; /* Deixa a fonte em negrito */
+  line-height: 1.2125; /* Define o espaçamento entre as linhas do texto */
+  color: #000000; /* Define a cor do texto como preto */
+  font-family: Inter, 'Source Sans Pro'; /* Define as fontes a serem usadas */
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+  flex-shrink: 0; /* Impede que o texto encolha em layouts flex */
+}
+
+/* ------------------------------
+   Estilização dos botões
+------------------------------ */
+
+/* Estilo do botão com classe .button */
 .button {
-  width: 48rem;
-  height: 5.4rem;
-  position: absolute;
-  left: 48.9rem;
-  top: 51.1rem;
-  text-align: center;
-  font-size: 1.8rem;
-  font-weight: 700;
-  line-height: 1.2125;
-  color: #000000;
-  font-family: Inter, 'Source Sans Pro';
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ecf5e0;
-  border-radius: 2rem;
+  width: 48rem; /* Define a largura do botão como 48rem */
+  height: 5.4rem; /* Define a altura do botão como 5.4rem */
+  position: absolute; /* Posiciona o botão de forma absoluta */
+  left: 48.9rem; /* Posiciona o botão a 48.9rem da borda esquerda */
+  top: 51.1rem; /* Posiciona o botão a 51.1rem do topo */
+  text-align: center; /* Centraliza o texto dentro do botão */
+  font-size: 1.8rem; /* Define o tamanho da fonte como 1.8rem */
+  font-weight: 700; /* Deixa a fonte em negrito */
+  line-height: 1.2125; /* Define o espaçamento entre as linhas do texto */
+  color: #000000; /* Define a cor do texto como preto */
+  font-family: Inter, 'Source Sans Pro'; /* Define as fontes a serem usadas */
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+  display: flex; /* Usa o modelo de layout flexbox */
+  align-items: center; /* Alinha o conteúdo verticalmente ao centro */
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  background-color: #ecf5e0; /* Define a cor de fundo como um tom claro de verde */
+  border-radius: 2rem; /* Aplica bordas arredondadas ao botão */
 }
+
+/* Estilo do botão com classe .btnCad */
 .btnCad {
-  margin: 0rem 0rem 2.7rem 0.6rem;
-  width: 50%;
-  height: 5.4rem;
-  text-align: center;
-  font-size: 1.8rem;
-  font-weight: 700;
-  line-height: 1.2125;
-  color: #000000;
-  font-family: Inter, 'Source Sans Pro';
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ecf5e0;
-  border-radius: 2rem;
-  flex-shrink: 0;
+  margin: 0rem 0rem 2.7rem 0.6rem; /* Define margens: 0 no topo, 0.6rem à esquerda e 2.7rem abaixo */
+  width: 50%; /* Define a largura do botão como 50% do contêiner pai */
+  height: 5.4rem; /* Define a altura do botão como 5.4rem */
+  text-align: center; /* Centraliza o texto dentro do botão */
+  font-size: 1.8rem; /* Define o tamanho da fonte como 1.8rem */
+  font-weight: 700; /* Deixa a fonte em negrito */
+  line-height: 1.2125; /* Define o espaçamento entre as linhas do texto */
+  color: #000000; /* Define a cor do texto como preto */
+  font-family: Inter, 'Source Sans Pro'; /* Define as fontes a serem usadas */
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+  display: flex; /* Usa o modelo de layout flexbox */
+  align-items: center; /* Alinha o conteúdo verticalmente ao centro */
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  background-color: #ecf5e0; /* Define a cor de fundo como um tom claro de verde */
+  border-radius: 2rem; /* Aplica bordas arredondadas ao botão */
+  flex-shrink: 0; /* Impede que o botão encolha em layouts flex */
 }
 
+/* ------------------------------
+   Estilização dos grupos de itens
+------------------------------ */
 
-/*grupos*/
+/* Estilo do grupo com classe .auto-group-hgg7-vqS */
 .auto-group-hgg7-vqS {
-  width: 55.2rem;
-  height: 3.6478rem;
-  position: absolute;
-  left: 7.2rem;
-  top: 19.7522rem;
-  display: flex;
-  align-items: center;
+  width: 55.2rem; /* Largura do grupo de elementos */
+  height: 3.6478rem; /* Altura do grupo de elementos */
+  position: absolute; /* Posiciona o grupo de forma absoluta */
+  left: 7.2rem; /* Define a distância da borda esquerda */
+  top: 19.7522rem; /* Define a distância do topo */
+  display: flex; /* Usa o modelo de layout flexbox */
+  align-items: center; /* Alinha os itens verticalmente ao centro */
 }
+
+/* Estilo do grupo com classe .auto-group-uawh-Vrc */
 .auto-group-uawh-Vrc {
-  width: 56.8rem;
-  height: 3.6739rem;
-  position: absolute;
-  left: 7.2rem;
-  top: 23.8261rem;
-  display: flex;
-  align-items: center;
+  width: 56.8rem; /* Largura do grupo de elementos */
+  height: 3.6739rem; /* Altura do grupo de elementos */
+  position: absolute; /* Posiciona o grupo de forma absoluta */
+  left: 7.2rem; /* Define a distância da borda esquerda */
+  top: 23.8261rem; /* Define a distância do topo */
+  display: flex; /* Usa o modelo de layout flexbox */
+  align-items: center; /* Alinha os itens verticalmente ao centro */
 }
 
-/*icones*/
-.icon-radiobutton-TKa {
-  margin: 0rem 1.115rem 0.749rem 0rem;
-  width: 2.9847rem;
-  height: 2.8987rem;
-  object-fit: contain;
-  vertical-align: top;
-  flex-shrink: 0;
+/* ------------------------------
+   Estilização dos ícones de radio buttons
+------------------------------ */
+
+/* Estilo dos ícones de radio buttons */
+.icon-radiobutton-TKa, .icon-radiobutton-hzc, .icon-radiobutton-4HS, .icon-radiobutton-pdz,
+.icon-radiobutton-avg, .icon-radiobutton-pa8 {
+  margin: 0rem 1.115rem 0.749rem 0rem; /* Define margens, variando dependendo da classe */
+  width: 2.9847rem; /* Define a largura do ícone */
+  height: 2.8987rem; /* Define a altura do ícone */
+  object-fit: contain; /* Faz o conteúdo do ícone se ajustar dentro das dimensões, sem distorção */
+  vertical-align: top; /* Alinha o ícone ao topo verticalmente */
+  flex-shrink: 0; /* Impede que o ícone encolha em layouts flex */
 }
 
+/* Estilo específico do ícone com a classe .icon-radiobutton-hzc */
 .icon-radiobutton-hzc {
-  margin: 0.251rem 1.115rem 0rem 0rem;
-  width: 2.9847rem;
-  height: 2.8987rem;
-  object-fit: contain;
-  vertical-align: top;
-  flex-shrink: 0;
+  margin: 0.251rem 1.115rem 0rem 0rem; /* Define margens específicas para esta classe */
 }
+
+/* Estilo específico do ícone com a classe .icon-radiobutton-4HS */
 .icon-radiobutton-4HS {
-  margin: 0.225rem 1.115rem 0rem 0rem;
-  width: 2.9847rem;
-  height: 2.8987rem;
-  object-fit: contain;
-  vertical-align: top;
-  flex-shrink: 0;
+  margin: 0.225rem 1.115rem 0rem 0rem; /* Define margens específicas para esta classe */
 }
+
+/* Estilo específico do ícone com a classe .icon-radiobutton-pdz */
 .icon-radiobutton-pdz {
-  margin: 0rem 1.115rem 0.775rem 0rem;
-  width: 2.9847rem;
-  height: 2.8987rem;
-  object-fit: contain;
-  vertical-align: top;
-  flex-shrink: 0;
+  margin: 0rem 1.115rem 0.775rem 0rem; /* Define margens específicas para esta classe */
 }
+
+/* Estilo específico do ícone com a classe .icon-radiobutton-avg */
 .icon-radiobutton-avg {
-  margin: 0rem 1.115rem 0.801rem 0rem;
-  width: 2.9847rem;
-  height: 2.8987rem;
-  object-fit: contain;
-  vertical-align: top;
-  flex-shrink: 0;
+  margin: 0rem 1.115rem 0.801rem 0rem; /* Define margens específicas para esta classe */
 }
 
+/* Estilo específico do ícone com a classe .icon-radiobutton-pa8 */
 .icon-radiobutton-pa8 {
-  margin: 0.199rem 1.115rem 0rem 0rem;
-  width: 2.9847rem;
-  height: 2.8987rem;
-  object-fit: contain;
-  vertical-align: top;
-  flex-shrink: 0;
+  margin: 0.199rem 1.115rem 0rem 0rem; /* Define margens específicas para esta classe */
 }
 
+/* Estilo do ícone de biometria */
 .biometria-xq5 {
-  width: 80px;
-  height: 80px;
-  margin-top: 350px;
-  margin-left: 80px;
+  width: 80px; /* Largura do ícone de biometria */
+  height: 80px; /* Altura do ícone de biometria */
+  margin-top: 350px; /* Adiciona uma margem no topo de 350px */
+  margin-left: 80px; /* Adiciona uma margem à esquerda de 80px */
 }
 
+/* ------------------------------
+   Estilização dos textos de título
+------------------------------ */
 
-
-
-
+/* Estilo do texto de cadastro de aluno */
 .cadastraraluno-H7D {
-  margin: 1.8rem 6.1rem 0rem 0rem;
-  max-width: 15.1rem;
-  text-align: center;
-  font-size: 2.4rem;
-  font-weight: 700;
-  line-height: 1.2125;
-  color: #ffffff;
-  font-family: Inter, 'Source Sans Pro';
-  flex-shrink: 0;
+  margin: 1.8rem 6.1rem 0rem 0rem; /* Define margens: 1.8rem no topo, 6.1rem à direita e 0rem embaixo e à esquerda */
+  max-width: 15.1rem; /* Define a largura máxima do título */
+  text-align: center; /* Centraliza o texto dentro do elemento */
+  font-size: 2.4rem; /* Define o tamanho da fonte como 2.4rem */
+  font-weight: 700; /* Deixa o texto em negrito */
+  line-height: 1.2125; /* Define o espaçamento entre as linhas do texto */
+  color: #ffffff; /* Define a cor do texto como branco */
+  font-family: Inter, 'Source Sans Pro'; /* Define as fontes a serem usadas */
+  flex-shrink: 0; /* Impede que o texto encolha em layouts flex */
 }
+
+/* Estilo do texto de verificar chamada */
 .verificarchamada-z1d {
-  margin: 1.8rem 6.5rem 0rem 0rem;
-  max-width: 12.9rem;
-  text-align: center;
-  font-size: 2.4rem;
-  font-weight: 700;
-  line-height: 1.2125;
-  color: #ffffff;
-  font-family: Inter, 'Source Sans Pro';
-  flex-shrink: 0;
+  margin: 1.8rem 6.5rem 0rem 0rem; /* Define margens: 1.8rem no topo, 6.5rem à direita e 0rem embaixo e à esquerda */
+  max-width: 12.9rem; /* Define a largura máxima do título */
+  text-align: center; /* Centraliza o texto dentro do elemento */
+  font-size: 2.4rem; /* Define o tamanho da fonte como 2.4rem */
+  font-weight: 700; /* Deixa o texto em negrito */
+  line-height: 1.2125; /* Define o espaçamento entre as linhas do texto */
+  color: #ffffff; /* Define a cor do texto como branco */
+  font-family: Inter, 'Source Sans Pro'; /* Define as fontes a serem usadas */
+  flex-shrink: 0; /* Impede que o texto encolha em layouts flex */
 }
+/* ------------------------------
+   Estilização dos textos de ações (atualizar, apagar, etc.)
+------------------------------ */
+
+/* Estilo do texto "Atualizar aluno" */
 .atualizaraluno-t71 {
-  margin: 1.8rem 7.9rem 0rem 0rem;
-  max-width: 14.3rem;
-  text-align: center;
-  font-size: 2.4rem;
-  font-weight: 700;
-  line-height: 1.2125;
-  color: #ffffff;
-  font-family: Inter, 'Source Sans Pro';
-  flex-shrink: 0;
+  margin: 1.8rem 7.9rem 0rem 0rem; /* Margem no topo de 1.8rem, à direita 7.9rem e 0rem embaixo e à esquerda */
+  max-width: 14.3rem; /* Largura máxima de 14.3rem */
+  text-align: center; /* Alinha o texto ao centro */
+  font-size: 2.4rem; /* Tamanho da fonte de 2.4rem */
+  font-weight: 700; /* Deixa o texto em negrito */
+  line-height: 1.2125; /* Define o espaçamento entre linhas */
+  color: #ffffff; /* Cor do texto é branca */
+  font-family: Inter, 'Source Sans Pro'; /* Fonte utilizada para o texto */
+  flex-shrink: 0; /* Impede que o texto encolha em layouts flex */
 }
+
+/* Estilo do texto "Apagar aluno" */
 .apagaraluno-bXD {
-  margin-top: 1.8rem;
-  max-width: 10.1rem;
-  text-align: center;
-  font-size: 2.4rem;
-  font-weight: 700;
-  line-height: 1.2125;
-  color: #6d460c;
-  font-family: Inter, 'Source Sans Pro';
-  flex-shrink: 0;
+  margin-top: 1.8rem; /* Margem no topo de 1.8rem */
+  max-width: 10.1rem; /* Largura máxima do texto de 10.1rem */
+  text-align: center; /* Alinha o texto ao centro */
+  font-size: 2.4rem; /* Tamanho da fonte de 2.4rem */
+  font-weight: 700; /* Deixa o texto em negrito */
+  line-height: 1.2125; /* Define o espaçamento entre linhas */
+  color: #6d460c; /* Cor do texto marrom escuro */
+  font-family: Inter, 'Source Sans Pro'; /* Fonte utilizada para o texto */
+  flex-shrink: 0; /* Impede que o texto encolha em layouts flex */
 }
+
+/* ------------------------------
+   Estilização dos blocos de fundo (bloco azul, etc.)
+------------------------------ */
+
+/* Estilo do bloco azul de fundo */
 .blocoazul-7Ef {
-  margin-left: 21.8rem;
-  width: 170.9rem;
-  height: 3rem;
-  background-color: #40a2e3;
-  flex-shrink: 0;
+  margin-left: 21.8rem; /* Margem à esquerda de 21.8rem */
+  width: 170.9rem; /* Largura do bloco de 170.9rem */
+  height: 3rem; /* Altura de 3rem */
+  background-color: #40a2e3; /* Cor de fundo azul (#40a2e3) */
+  flex-shrink: 0; /* Impede que o bloco encolha em layouts flex */
 }
+
+/* Estilo do texto "Digite o código do aluno" */
 .digite-o-cdigo-do-aluno--SXq {
-  margin-right: 11.2rem;
-  font-size: 2.4rem;
-  font-weight: 700;
-  line-height: 1.2125;
-  color: #ffffff;
-  font-family: Inter, 'Source Sans Pro';
-  white-space: nowrap;
-  flex-shrink: 0;
+  margin-right: 11.2rem; /* Margem à direita de 11.2rem */
+  font-size: 2.4rem; /* Tamanho da fonte de 2.4rem */
+  font-weight: 700; /* Deixa o texto em negrito */
+  line-height: 1.2125; /* Define o espaçamento entre linhas */
+  color: #ffffff; /* Cor do texto é branca */
+  font-family: Inter, 'Source Sans Pro'; /* Fonte utilizada para o texto */
+  white-space: nowrap; /* Impede que o texto quebre linha */
+  flex-shrink: 0; /* Impede que o texto encolha em layouts flex */
 }
+
+/* ------------------------------
+   Estilização dos grupos de elementos
+------------------------------ */
+
+/* Grupo que envolve o conteúdo principal (composição de elementos) */
 .auto-group-ljkm-xm5 {
-  width: 100%;
-  height: 54.8rem;
-  position: relative;
-  flex-shrink: 0;
+  width: 100%; /* Ocupa 100% da largura disponível */
+  height: 54.8rem; /* Altura de 54.8rem */
+  position: relative; /* Posiciona o elemento relativamente ao seu contêiner */
+  flex-shrink: 0; /* Impede que o grupo encolha em layouts flex */
 }
+
+/* ------------------------------
+   Estilização do botão para apagar o aluno
+------------------------------ */
+
+/* Estilo do botão de apagar aluno */
 .btnapagar-iVM {
-  width: 480px;
-  height: 5.4rem;
-  position: absolute;
-  left: 25%;
-  top: 30.1rem;
-  text-align: center;
-  font-size: 1.8rem;
-  font-weight: 700;
-  line-height: 1.2125;
-  color: #000000;
-  font-family: Inter, 'Source Sans Pro';
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ecf5e0;
-  border-radius: 2rem;
+  width: 480px; /* Largura do botão de 480px */
+  height: 5.4rem; /* Altura de 5.4rem */
+  position: absolute; /* Posiciona o botão de forma absoluta dentro de um contêiner */
+  left: 25%; /* Posiciona o botão 25% a partir da esquerda do contêiner */
+  top: 30.1rem; /* Posiciona o botão 30.1rem a partir do topo */
+  text-align: center; /* Alinha o texto dentro do botão ao centro */
+  font-size: 1.8rem; /* Tamanho da fonte de 1.8rem */
+  font-weight: 700; /* Deixa o texto em negrito */
+  line-height: 1.2125; /* Define o espaçamento entre linhas */
+  color: #000000; /* Cor do texto é preta */
+  font-family: Inter, 'Source Sans Pro'; /* Fonte utilizada para o texto */
+  white-space: nowrap; /* Impede que o texto quebre linha */
+  display: flex; /* Usa display flex para facilitar o alinhamento */
+  align-items: center; /* Alinha os itens ao centro verticalmente */
+  justify-content: center; /* Alinha os itens ao centro horizontalmente */
+  background-color: #ecf5e0; /* Cor de fundo do botão é verde claro */
+  border-radius: 2rem; /* Bordas arredondadas de 2rem */
 }
+
+/* ------------------------------
+   Estilização do texto "Apagar" dentro do botão
+------------------------------ */
+
+/* Estilo do texto "Apagar" */
 .txtApagar {
-  width: 44.7rem;
-  height: 3rem;
-  position: absolute;
-  left: 28%;
-  top: 11.4rem;
-  font-size: 2.4rem;
-  font-weight: 700;
-  line-height: 1.2125;
-  color: #ffffff;
-  font-family: 'Inter', 'Source Sans Pro';
-  white-space: nowrap;
-  margin-right: 450px;
+  width: 44.7rem; /* Largura do texto de 44.7rem */
+  height: 3rem; /* Altura do texto de 3rem */
+  position: absolute; /* Posiciona o texto de forma absoluta dentro do contêiner */
+  left: 28%; /* Posiciona o texto 28% a partir da esquerda do contêiner */
+  top: 11.4rem; /* Posiciona o texto 11.4rem a partir do topo */
+  font-size: 2.4rem; /* Tamanho da fonte de 2.4rem */
+  font-weight: 700; /* Deixa o texto em negrito */
+  line-height: 1.2125; /* Define o espaçamento entre linhas */
+  color: #ffffff; /* Cor do texto é branca */
+  font-family: 'Inter', 'Source Sans Pro'; /* Fonte utilizada para o texto */
+  white-space: nowrap; /* Impede que o texto quebre linha */
+  margin-right: 450px; /* Margem à direita de 450px */
 }
+
+/* ------------------------------
+   Estilização do botão de confirmação "Sim"
+------------------------------ */
+
+/* Estilo do grupo que contém o botão de "Sim" */
 .rbsim-6Vu {
-
-  height: 3.2rem;
-  position: absolute;
-  left: 28%;
-  top: 16.2rem;
-  display: flex;
-  align-items: flex-start;
+  height: 3.2rem; /* Altura do grupo de 3.2rem */
+  position: absolute; /* Posiciona o grupo de forma absoluta */
+  left: 28%; /* Posiciona o grupo 28% a partir da esquerda */
+  top: 16.2rem; /* Posiciona o grupo 16.2rem a partir do topo */
+  display: flex; /* Usa display flex para o alinhamento */
+  align-items: flex-start; /* Alinha os itens no início (topo) */
 }
+
+/* Estilo do ícone associado ao botão "Sim" */
 .vector-pwh {
-  margin-right: 1.1153rem;
-  width: 2.9847rem;
-  height: 2.8987rem;
-  object-fit: contain;
-  vertical-align: top;
-  flex-shrink: 0;
+  margin-right: 1.1153rem; /* Margem à direita de 1.1153rem */
+  width: 2.9847rem; /* Largura do ícone de 2.9847rem */
+  height: 2.8987rem; /* Altura do ícone de 2.8987rem */
+  object-fit: contain; /* Faz com que a imagem se ajuste ao tamanho do contêiner */
+  vertical-align: top; /* Alinha a imagem no topo */
+  flex-shrink: 0; /* Impede que o ícone encolha em layouts flex */
 }
+
+/* Estilo do texto "Sim" */
 .rbSim {
-  margin-top: 0.2rem;
-  font-size: 2.4rem;
-  font-weight: 700;
-  line-height: 1.2125;
-  color: #ffffff;
-  font-family: 'Inter', 'Source Sans Pro';
-  white-space: nowrap;
-  flex-shrink: 0;
+  margin-top: 0.2rem; /* Margem no topo de 0.2rem */
+  font-size: 2.4rem; /* Tamanho da fonte de 2.4rem */
+  font-weight: 700; /* Deixa o texto em negrito */
+  line-height: 1.2125; /* Define o espaçamento entre linhas */
+  color: #ffffff; /* Cor do texto é branca */
+  font-family: 'Inter', 'Source Sans Pro'; /* Fonte utilizada para o texto */
+  white-space: nowrap; /* Impede que o texto quebre linha */
+  flex-shrink: 0; /* Impede que o texto encolha em layouts flex */
 }
+/* ------------------------------
+   Estilização de caixas de entrada e blocos
+------------------------------ */
 
-
+/* Caixa de texto com código (campo de entrada) */
 .txtcod-KX5 {
-  width: 48.6rem;
-  height: 5.9rem;
-  position: absolute;
-  left: 47.5rem;
-  top: 2.1rem;
-  background-color: #ffffff;
-  border-radius: 2rem;
+  width: 48.6rem; /* Largura de 48.6rem */
+  height: 5.9rem; /* Altura de 5.9rem */
+  position: absolute; /* Posiciona o elemento de forma absoluta dentro de um contêiner */
+  left: 47.5rem; /* Largura a partir da esquerda do contêiner */
+  top: 2.1rem; /* Altura a partir do topo do contêiner */
+  background-color: #ffffff; /* Cor de fundo branca */
+  border-radius: 2rem; /* Bordas arredondadas com raio de 2rem */
 }
+
+/* Rodapé (parte inferior) */
 .rodape-Srb {
-  margin-bottom: 10.4rem;
-  width: 170.9rem;
-  height: 14.7rem;
-  position: relative;
-  flex-shrink: 0;
+  margin-bottom: 10.4rem; /* Margem inferior de 10.4rem */
+  width: 170.9rem; /* Largura de 170.9rem */
+  height: 14.7rem; /* Altura de 14.7rem */
+  position: relative; /* Posiciona o rodapé de forma relativa */
+  flex-shrink: 0; /* Impede que o rodapé encolha em layouts flex */
 }
+
+/* Bloco amarelo (background de uma seção) */
 .blocoamarelo-bDh {
-  width: 144rem;
-  height: 11.8rem;
-  position: absolute;
-  left: 0;
-  top: 2.9rem;
-  background-color: #ffa404;
+  width: 144rem; /* Largura de 144rem */
+  height: 11.8rem; /* Altura de 11.8rem */
+  position: absolute; /* Posiciona o bloco de forma absoluta */
+  left: 0; /* Posição à esquerda do contêiner */
+  top: 2.9rem; /* Posição a partir do topo do contêiner */
+  background-color: #ffa404; /* Cor de fundo amarela (#ffa404) */
 }
+
+/* Bloco azul de fundo */
 .blocoazul-8UX {
-  width: 170.9rem;
-  height: 3rem;
-  position: absolute;
-  left: 0;
-  top: 0;
-  background-color: #40a2e3;
+  width: 170.9rem; /* Largura de 170.9rem */
+  height: 3rem; /* Altura de 3rem */
+  position: absolute; /* Posiciona o bloco de forma absoluta */
+  left: 0; /* Posição à esquerda do contêiner */
+  top: 0; /* Posição no topo do contêiner */
+  background-color: #40a2e3; /* Cor de fundo azul (#40a2e3) */
 }
+
+/* Estilo do ícone ou botão de dúvida */
 .btnduvida-H6X {
-  margin-left: 354rem;
-  width: 8.5rem;
-  height: 8.3rem;
-  object-fit: contain;
-  vertical-align: top;
-  flex-shrink: 0;
+  margin-left: 354rem; /* Margem à esquerda de 354rem */
+  width: 8.5rem; /* Largura de 8.5rem */
+  height: 8.3rem; /* Altura de 8.3rem */
+  object-fit: contain; /* Ajusta a imagem para caber dentro do espaço */
+  vertical-align: top; /* Alinha a imagem no topo */
+  flex-shrink: 0; /* Impede que o ícone encolha em layouts flex */
 }
 
-/*cadastrar professor*/
+/* ------------------------------
+   Estilização de textos para o cadastro de professor
+------------------------------ */
+
+/* Título de cadastro (provavelmente um cabeçalho) */
 .txtCALL {
-  position: absolute;
-  left: 520px;
-  top: 430px;
-  overflow-wrap: break-word;
-  font-family: 'Inria Sans', 'Roboto Condensed';
-  font-weight: 700;
-  font-size: 32px;
-  letter-spacing: 13.8px;
-  color: #6D460C;
-  display: block;
-
+  position: absolute; /* Posiciona o texto de forma absoluta */
+  left: 520px; /* Posição à esquerda do contêiner, 520px */
+  top: 430px; /* Posição do topo do contêiner, 430px */
+  overflow-wrap: break-word; /* Garante que o texto quebre linha se necessário */
+  font-family: 'Inria Sans', 'Roboto Condensed'; /* Fonte utilizada */
+  font-weight: 700; /* Deixa o texto em negrito */
+  font-size: 32px; /* Tamanho da fonte de 32px */
+  letter-spacing: 13.8px; /* Espaçamento entre as letras */
+  color: #6D460C; /* Cor do texto marrom escuro */
+  display: block; /* Exibe o elemento como bloco */
 }
+
+/* Texto biográfico */
 .txtBio {
-  position: absolute;
-  left: 310px;
-  top: 353px;
-  overflow-wrap: break-word;
-  font-family: 'Baloo', 'Roboto Condensed';
-  font-weight: 400;
-  font-size: 64px;
-  color: #FFFFFF;
-  display: block;
-
+  position: absolute; /* Posiciona o texto de forma absoluta */
+  left: 310px; /* Posição à esquerda do contêiner, 310px */
+  top: 353px; /* Posição do topo do contêiner, 353px */
+  overflow-wrap: break-word; /* Garante que o texto quebre linha se necessário */
+  font-family: 'Baloo', 'Roboto Condensed'; /* Fonte utilizada */
+  font-weight: 400; /* Peso da fonte normal (não negrito) */
+  font-size: 64px; /* Tamanho da fonte de 64px */
+  color: #FFFFFF; /* Cor do texto branca */
+  display: block; /* Exibe o texto como um bloco */
 }
 
+/* Bloco amarelo centralizado */
 .divAmarelaCentro {
-  width: 55%;
-  left:0%;
-  top: 0%;
-  bottom: 0%;
-  background-color: #FFA404;
-  position: absolute;
-  display: block;
+  width: 55%; /* Largura do bloco é 55% da largura do contêiner pai */
+  left: 0%; /* Posição à esquerda do contêiner pai */
+  top: 0%; /* Posição no topo do contêiner pai */
+  bottom: 0%; /* Posição no fundo do contêiner pai */
+  background-color: #FFA404; /* Cor de fundo amarela (#FFA404) */
+  position: absolute; /* Posiciona o bloco de forma absoluta */
+  display: block; /* Exibe o bloco como um elemento de bloco */
 }
 
+/* ------------------------------
+   Media Queries (para responsividade)
+------------------------------ */
 
+/* Para telas com largura até 1500px */
 @media screen and (max-width: 1500px) {
+  /* Ajusta a posição do texto biográfico */
   .txtBio {
-    left: 100px;
-
+    left: 100px; /* Mover para a esquerda */
   }
 
+  /* Ajusta a posição do título de cadastro */
   .txtCALL{
-    left: 320px;
-
+    left: 320px; /* Mover para a esquerda */
   }
-  
-  
 }
 
+/* Para telas com largura até 1344px */
 @media screen and (max-width: 1344px) {
+  /* Ajusta a largura do bloco amarelo central */
   .divAmarelaCentro{
-    width: 50%;
-
+    width: 50%; /* Reduz a largura para 50% */
   }
-  
 }
 
+/* Para telas com largura até 1120px */
 @media screen and (max-width: 1120px) {
+  /* Ajusta a largura do bloco amarelo central */
   .divAmarelaCentro{
-    width: 40%;
-
+    width: 40%; /* Reduz a largura para 40% */
   }
 
+  /* Ajusta a posição do texto biográfico */
   .txtBio {
-    left: 10px;
-
+    left: 10px; /* Mover para a esquerda */
   }
 
+  /* Ajusta a posição do título de cadastro */
   .txtCALL{
-    left: 220px;
-
+    left: 220px; /* Mover para a esquerda */
   }
-  
 }
 
+/* Para telas com largura até 855px */
 @media screen and (max-width: 855px) {
+  /* Esconde o bloco amarelo central */
   .divAmarelaCentro{
-    width: 40%;
-    display: none;
-
-
+    width: 40%; /* Reduz a largura para 40% */
+    display: none; /* Torna invisível o bloco */
   }
 
+  /* Esconde o texto biográfico */
   .txtBio {
-    left: 10px;
-    display: none;
-
-
+    left: 10px; /* Mover para a esquerda */
+    display: none; /* Torna o texto invisível */
   }
 
+  /* Esconde o título de cadastro */
   .txtCALL{
-    left: 220px;
-    display: none;
-
+    left: 220px; /* Mover para a esquerda */
+    display: none; /* Torna o texto invisível */
   }
-
 }
 
 
+/* ------------------------------
+   Estilos para o texto "Conectar"
+------------------------------ */
+
+/* Estilo para o texto "Conectar" com tamanho pequeno */
 .txtConectar {
-  font-family: 'Inter';
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.333;
-  color: #1337B6;
-  margin-top: 30px;
-  position: relative;
+  font-family: 'Inter'; /* Define a fonte como 'Inter' */
+  font-weight: 700; /* Define o peso da fonte como negrito (700) */
+  font-size: 14px; /* Define o tamanho da fonte como 14px */
+  line-height: 1.333; /* Define o espaçamento entre as linhas como 1.333 vezes o tamanho da fonte */
+  color: #1337B6; /* Cor do texto como um tom de azul (#1337B6) */
+  margin-top: 30px; /* Margem superior de 30px */
+  position: relative; /* Posiciona o elemento de forma relativa dentro de seu contêiner */
 }
 
+/* Estilo para o texto "Conectar" em tamanho maior */
 .Conectar {
-  font-family: 'Inter';
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 1.333;
-  color:white;
-  margin-top: 30px;
-  position: relative;
+  font-family: 'Inter'; /* Define a fonte como 'Inter' */
+  font-weight: 700; /* Define o peso da fonte como negrito (700) */
+  font-size: 30px; /* Define o tamanho da fonte como 30px */
+  line-height: 1.333; /* Define o espaçamento entre as linhas como 1.333 vezes o tamanho da fonte */
+  color: white; /* Cor do texto como branco */
+  margin-top: 30px; /* Margem superior de 30px */
+  position: relative; /* Posiciona o elemento de forma relativa dentro de seu contêiner */
 }
 
+/* Efeito hover para o link "Conectar" */
 .Conectar:hover {
-  color:#40A2E3; /* Alterar a cor do texto dos links quando o mouse passa por cima */
-  transform: scale(1.1); /* Aumentar ligeiramente o tamanho do link ao passar o mouse */
- 
+  color: #40A2E3; /* Quando o mouse passar por cima, a cor do texto muda para azul claro (#40A2E3) */
+  transform: scale(1.1); /* Aumenta o tamanho do texto em 10% (efeito de zoom) */
 }
 
 
+/* ------------------------------
+   Estilos para a seção da conta
+------------------------------ */
+
+/* Estilo para o texto da conta com fonte e cor */
 .txtConta {
-  width: 486px;
-  font-family: 'Inter';
-  font-weight: 486px;
-  font-size: 14px;
-  line-height: 1.333;
-  color: #000000;
-  position: relative;
+  width: 486px; /* Largura de 486px */
+  font-family: 'Inter'; /* Define a fonte como 'Inter' */
+  font-weight: 400; /* Peso normal da fonte */
+  font-size: 14px; /* Tamanho da fonte de 14px */
+  line-height: 1.333; /* Define o espaçamento entre as linhas */
+  color: #000000; /* Cor do texto preta */
+  position: relative; /* Posiciona o elemento de forma relativa dentro de seu contêiner */
 }
 
-.divConta
-{
-position: absolute;
-width: 500px;
-height: 30px;
-
-
+/* Estilo do contêiner da conta */
+.divConta {
+  position: absolute; /* Posiciona o contêiner de forma absoluta em relação ao contêiner pai */
+  width: 500px; /* Largura do contêiner de 500px */
+  height: 30px; /* Altura do contêiner de 30px */
 }
 
+/* ------------------------------
+   Estilos para o bloco azul central
+------------------------------ */
+
+/* Estilo do contêiner azul central */
 .divAzulCentro {
-  background: #ABCFD8;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  padding: 150px 68px 244px 0;
-  width: 100%;
-  height: 100rem;
-  box-sizing: border-box;
-  position: relative;
-  
+  background: #ABCFD8; /* Cor de fundo azul claro (#ABCFD8) */
+  display: flex; /* Utiliza o layout flexbox */
+  flex-direction: column; /* Organiza os elementos de forma vertical (em coluna) */
+  align-items: flex-end; /* Alinha os itens ao final (direita) */
+  padding: 150px 68px 244px 0; /* Define o preenchimento interno do contêiner */
+  width: 100%; /* Largura de 100% do contêiner pai */
+  height: 100rem; /* Altura de 100rem */
+  box-sizing: border-box; /* Inclui padding e bordas no cálculo do tamanho do contêiner */
+  position: relative; /* Posiciona o contêiner de forma relativa dentro do seu contêiner pai */
 }
+
+/* Estilo para o texto do botão "Cadastrar" */
 .divCadastrar {
-  margin-left: 55%;
-  display: inline-block;
-  align-self: center;
-  overflow-wrap: break-word;
-  font-family: 'Inter';
-  font-weight: 700;
-  font-size: 32px;
-  color: #FFFFFF;
+  margin-left: 55%; /* Define uma margem à esquerda de 55% (meia largura) */
+  display: inline-block; /* Exibe o elemento como bloco em linha */
+  align-self: center; /* Alinha o item no centro do contêiner flex */
+  overflow-wrap: break-word; /* Permite quebra de linha se necessário */
+  font-family: 'Inter'; /* Define a fonte como 'Inter' */
+  font-weight: 700; /* Define o peso da fonte como negrito */
+  font-size: 32px; /* Define o tamanho da fonte como 32px */
+  color: #FFFFFF; /* Cor do texto branca */
 }
+
+/* Estilo para o texto do botão de "Professor" */
 .txtBtnProfessor {
-  overflow-wrap: break-word;
-  font-family: 'Inter';
-  font-weight: 700;
-  font-size: 18px;
-  color: #000000;
+  overflow-wrap: break-word; /* Permite quebra de linha no texto se necessário */
+  font-family: 'Inter'; /* Define a fonte como 'Inter' */
+  font-weight: 700; /* Define o peso da fonte como negrito */
+  font-size: 18px; /* Define o tamanho da fonte como 18px */
+  color: #000000; /* Cor do texto preta */
 }
+
+/* Estilo para o texto com informações sobre "NP" (possivelmente nome ou identificação) */
 .txtNP {
-  overflow-wrap: break-word;
-  font-family: 'Inter';
-  font-weight: 400;
-  font-size: 16px;
-  color: #535353;
-  display: flex;
-  justify-content: left;
-  align-items: center;
+  overflow-wrap: break-word; /* Permite quebra de linha no texto se necessário */
+  font-family: 'Inter'; /* Define a fonte como 'Inter' */
+  font-weight: 400; /* Peso normal da fonte */
+  font-size: 16px; /* Tamanho da fonte de 16px */
+  color: #535353; /* Cor do texto cinza escuro */
+  display: flex; /* Usa o layout flexbox */
+  justify-content: left; /* Alinha os itens à esquerda */
+  align-items: center; /* Alinha os itens ao centro verticalmente */
 }
+
+/* Estilo da caixa de entrada do "NP" */
 .txtBoxNP {
-  font-size: 20px;
-  border-radius: 20px;
-  background: #ffffff;
-  margin-bottom: 4px;
-  padding: 20px;
-  width: 486px;
-  box-sizing: border-box;
-  height: 60px;
-  position: relative;
+  font-size: 20px; /* Tamanho da fonte de 20px */
+  border-radius: 20px; /* Bordas arredondadas com raio de 20px */
+  background: #ffffff; /* Cor de fundo branca */
+  margin-bottom: 4px; /* Margem inferior de 4px */
+  padding: 20px; /* Preenchimento interno de 20px */
+  width: 486px; /* Largura da caixa de 486px */
+  box-sizing: border-box; /* Inclui o padding e a borda no cálculo do tamanho da caixa */
+  height: 60px; /* Altura de 60px */
+  position: relative; /* Posiciona o elemento de forma relativa dentro de seu contêiner */
+}
+/* ------------------------------
+   Estilos para o título (h1)
+------------------------------ */
+.h1 {
+  font-size: 15px; /* Define o tamanho da fonte como 15px */
+  position: relative; /* Posiciona o elemento de forma relativa dentro do contêiner */
 }
 
-
-
-
-
-
-.h1{
-  font-size:15px;
-  position: relative;
-}
+/* ------------------------------
+   Estilos para a caixa de entrada "EP" (provavelmente email ou similar)
+------------------------------ */
 .txtBoxEP {
-  font-size: 20px;
-    border-radius: 20px;
-  background: #FFFFFF;
-  margin-top: 45px;
-  padding: 20px;
-  width: 486px;
-  box-sizing: border-box;
-  height: 60px;
+  font-size: 20px; /* Define o tamanho da fonte como 20px */
+  border-radius: 20px; /* Bordas arredondadas com raio de 20px */
+  background: #FFFFFF; /* Cor de fundo branca */
+  margin-top: 45px; /* Define uma margem superior de 45px */
+  padding: 20px; /* Define o preenchimento interno de 20px */
+  width: 486px; /* Largura de 486px */
+  box-sizing: border-box; /* Inclui o padding e a borda no cálculo do tamanho da caixa */
+  height: 60px; /* Altura da caixa de 60px */
 }
+
+/* Estilo para o texto dentro da caixa "EP" */
 .txtEP {
-  overflow-wrap: break-word;
-  font-family: 'Inter';
-  font-weight: 400;
-  font-size: 16px;
-  color: #535353;
-  display: flex;
-  justify-content: left;
-  align-items: center;
+  overflow-wrap: break-word; /* Permite quebra de linha se o texto for muito longo */
+  font-family: 'Inter'; /* Define a fonte como 'Inter' */
+  font-weight: 400; /* Peso normal da fonte */
+  font-size: 16px; /* Define o tamanho da fonte como 16px */
+  color: #535353; /* Cor do texto cinza escuro */
+  display: flex; /* Utiliza o layout flexbox */
+  justify-content: left; /* Alinha os itens à esquerda */
+  align-items: center; /* Alinha os itens ao centro verticalmente */
 }
+
+/* ------------------------------
+   Estilos para a caixa de entrada "SP" (provavelmente senha ou similar)
+------------------------------ */
 .txtBoxSP {
-  border-radius: 20px;
-  background: #FFFFFF;
-  margin-top: 50px;
-  padding: 20px;
-  width: 486px;
-  box-sizing: border-box;
-  height: 60px;
+  border-radius: 20px; /* Bordas arredondadas com raio de 20px */
+  background: #FFFFFF; /* Cor de fundo branca */
+  margin-top: 50px; /* Define uma margem superior de 50px */
+  padding: 20px; /* Define o preenchimento interno de 20px */
+  width: 486px; /* Largura de 486px */
+  box-sizing: border-box; /* Inclui o padding e a borda no cálculo do tamanho da caixa */
+  height: 60px; /* Altura de 60px */
 }
+
+/* Estilo para o texto dentro da caixa "SP" */
 .txtSP {
-  overflow-wrap: break-word;
-  font-family: 'Inter';
-  font-weight: 400;
-  font-size: 16px;
-  color: #535353;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-}
-.btnCadProfessor {
-  border-radius: 50px;
-  background: #ECF5E0;
-  position: relative;
-  margin-top: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 16px 6px 16px 0;
-  width: 200px;
-  left: 150px;
-  box-sizing: border-box;
+  overflow-wrap: break-word; /* Permite quebra de linha se o texto for muito longo */
+  font-family: 'Inter'; /* Define a fonte como 'Inter' */
+  font-weight: 400; /* Peso normal da fonte */
+  font-size: 16px; /* Define o tamanho da fonte como 16px */
+  color: #535353; /* Cor do texto cinza escuro */
+  display: flex; /* Utiliza o layout flexbox */
+  justify-content: left; /* Alinha os itens à esquerda */
+  align-items: center; /* Alinha os itens ao centro verticalmente */
 }
 
+/* ------------------------------
+   Estilos para o botão de cadastro do professor
+------------------------------ */
 .btnCadProfessor {
-  background-color: #007BFF; /* Cor azul para o botão */
-  color: white;
-  border: none;
-  border-radius: 50px;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 50px; /* Bordas arredondadas com raio de 50px */
+  background: #ECF5E0; /* Cor de fundo amarela clara */
+  position: relative; /* Posiciona o elemento de forma relativa dentro do contêiner */
+  margin-top: 50px; /* Define uma margem superior de 50px */
+  display: flex; /* Utiliza o layout flexbox */
+  flex-direction: row; /* Alinha os itens em linha (horizontal) */
+  justify-content: center; /* Alinha o conteúdo ao centro */
+  padding: 16px 6px 16px 0; /* Define o preenchimento interno (topo, direita, fundo e esquerda) */
+  width: 200px; /* Largura do botão de 200px */
+  left: 150px; /* Define a posição à esquerda como 150px */
+  box-sizing: border-box; /* Inclui o padding e a borda no cálculo do tamanho do botão */
 }
 
+/* Estilo do botão de cadastro com cor de fundo azul */
+.btnCadProfessor {
+  background-color: #007BFF; /* Cor de fundo azul para o botão */
+  color: white; /* Cor do texto branca */
+  border: none; /* Remove a borda padrão */
+  border-radius: 50px; /* Bordas arredondadas */
+  padding: 10px 20px; /* Preenchimento interno de 10px no topo e fundo, 20px nas laterais */
+  font-size: 16px; /* Tamanho da fonte de 16px */
+  font-weight: bold; /* Texto em negrito */
+  cursor: pointer; /* Muda o cursor para ponteiro, indicando que é clicável */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Adiciona animação suave para mudanças de cor e transformação */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil no botão */
+}
+
+/* Efeito de hover (passar o mouse por cima) */
 .btnCadProfessor:hover {
-  background-color: #FFA404; /* Tom mais escuro para o hover */
-  transform: translateY(-2px); /* Leve elevação no hover */
+  background-color: #FFA404; /* Muda a cor de fundo para um tom mais escuro de amarelo */
+  transform: translateY(-2px); /* Aplica uma leve elevação no botão */
 }
 
+/* Efeito de clique no botão */
 .btnCadProfessor:active {
-  background-color: #00408d; /* Tom mais escuro no clique */
-  transform: translateY(1px); /* Efeito de pressão no clique */
+  background-color: #00408d; /* Muda a cor de fundo para um tom mais escuro de azul */
+  transform: translateY(1px); /* Aplica um efeito de "pressão" no botão */
 }
 
+/* Efeito de foco no botão */
 .btnCadProfessor:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Destaque no foco */
+  outline: none; /* Remove o contorno padrão de foco */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Adiciona uma sombra ao redor do botão quando ele recebe foco */
 }
 
-.digitarnomeatt{
-  margin-top: -20px;
-  width: 48.6rem;
-  height: 5.9rem;
-  position: absolute;
-  left: 0rem;
-  top: 2rem;
-  background-color: #ffffff;
-  border-radius: 2rem;
-  font-size: 20px; /* Defina o tamanho da fonte desejado */
+/* ------------------------------
+   Estilos para o campo de "Nome" (campo de texto para digitar)
+------------------------------ */
+.digitarnomeatt {
+  margin-top: -20px; /* Define uma margem superior negativa para sobrepor o elemento acima */
+  width: 48.6rem; /* Largura de 48.6rem */
+  height: 5.9rem; /* Altura de 5.9rem */
+  position: absolute; /* Posiciona o campo de texto de forma absoluta dentro do contêiner pai */
+  left: 0rem; /* Posiciona o campo de texto no canto esquerdo */
+  top: 2rem; /* Define uma posição 2rem abaixo do topo */
+  background-color: #ffffff; /* Cor de fundo branca */
+  border-radius: 2rem; /* Bordas arredondadas com raio de 2rem */
+  font-size: 20px; /* Tamanho da fonte de 20px */
   font-weight: bold; /* Deixa o texto em negrito */
 }
+
+/* ------------------------------
+   Estilos para a caixa "CD" (campo de digitar código)
+------------------------------ */
 .negritocd {
-  font-weight: bold;
-  font-size: 20px; 
-  padding: 16px;
-  width: 480px;
-  border-radius: 20px;
-  background-color: #ffffff;
+  font-weight: bold; /* Deixa o texto em negrito */
+  font-size: 20px; /* Tamanho da fonte de 20px */
+  padding: 16px; /* Preenchimento de 16px */
+  width: 480px; /* Largura da caixa de 480px */
+  border-radius: 20px; /* Bordas arredondadas com raio de 20px */
+  background-color: #ffffff; /* Cor de fundo branca */
   border: 2px solid #000000; /* Adiciona uma borda preta */
-  transition: all 0.3s ease; /* Adiciona transição suave para mudanças */
+  transition: all 0.3s ease; /* Adiciona uma transição suave para mudanças */
 }
 
-/* Efeito de hover */
+/* Efeito de hover (passar o mouse por cima) na caixa "CD" */
 .negritocd:hover {
-  background-color: #f0f0f0; /* Muda a cor de fundo ao passar o mouse */
-  border-color: #333333; /* Muda a cor da borda ao passar o mouse */
-  cursor: pointer; /* Altera o cursor ao passar o mouse */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra ao botão */
+  background-color: #f0f0f0; /* Muda a cor de fundo para cinza claro */
+  border-color: #333333; /* Muda a cor da borda para cinza escuro */
+  cursor: pointer; /* Muda o cursor para ponteiro, indicando que é clicável */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra ao redor da caixa */
 }
 
-
-.digitarID{
-  margin-bottom: 4px;
-  margin-left: 7px;
-  font-size: 2.4rem;
-  border-radius: 20px;
-  font-weight: 700;
-  line-height: 1.2125;
-  color: #000000;
-  font-family: Inter, 'Source Sans Pro';
-  white-space: nowrap;
-  flex-shrink: 0;
-  text-align: center;
+/* ------------------------------
+   Estilos para o campo de "ID" (provavelmente identificação)
+------------------------------ */
+.digitarID {
+  margin-bottom: 4px; /* Define uma margem inferior de 4px */
+  margin-left: 7px; /* Define uma margem à esquerda de 7px */
+  font-size: 2.4rem; /* Define o tamanho da fonte como 2.4rem */
+  border-radius: 20px; /* Bordas arredondadas com raio de 20px */
+  font-weight: 700; /* Deixa o texto em negrito (peso 700) */
+  line-height: 1.2125; /* Define o espaçamento entre as linhas */
+  color: #000000; /* Cor do texto preta */
+  font-family: Inter, 'Source Sans Pro'; /* Define as fontes a serem usadas */
+  white-space: nowrap; /* Impede a quebra de linha */
+  flex-shrink: 0; /* Impede que o elemento encolha */
+  text-align: center; /* Alinha o texto ao centro */
 }
 
-/*Botao conectar na página index*/
+/* ------------------------------
+   Estilos para o botão "Conectar" na página de index
+------------------------------ */
 .conectarProfessor {
-  position: absolute;
-  left: 20px;
-  bottom: 35px;
-  border-radius: 20px;
-  background: #40a2e3;
-  position: relative;
-  margin-top: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 16px 6px 16px 0;
-  width: 480px;
-  box-sizing: border-box;
-  font-size: 20px;
-  font-weight: bold; /* Adicionado para texto em negrito */
-  color: white; /* Adicionado para texto branco */
+  position: absolute; /* Posiciona o botão de forma absoluta dentro do contêiner */
+  left: 20px; /* Posiciona o botão 20px à esquerda */
+  bottom: 35px; /* Posiciona o botão 35px acima do fundo */
+  border-radius: 20px; /* Bordas arredondadas com raio de 20px */
+  background: #40a2e3; /* Cor de fundo azul */
+  position: relative; /* Posiciona o botão dentro de seu contêiner */
+  margin-top: 50px; /* Define uma margem superior de 50px */
+  display: flex; /* Utiliza o layout flexbox */
+  flex-direction: row; /* Alinha os itens em linha (horizontal) */
+  justify-content: center; /* Alinha o conteúdo ao centro */
+  padding: 16px 6px 16px 0; /* Define o preenchimento interno do botão */
+  width: 480px; /* Largura de 480px */
+  box-sizing: border-box; /* Inclui o padding e a borda no cálculo do tamanho */
+  font-size: 20px; /* Tamanho da fonte de 20px */
+  font-weight: bold; /* Texto em negrito */
+  color: white; /* Cor do texto branca */
 }
 
-.loginh1{
-  position: relative;
+/* ------------------------------
+   Estilos para o título do login (h1)
+------------------------------ */
+.loginh1 {
+  position: relative; /* Posiciona o título de forma relativa dentro do contêiner */
 }
 
-/* label email e senha*/
-.labelemailANDpassword{
-  position: relative;
+/* ------------------------------
+   Estilos para o label de email e senha
+------------------------------ */
+.labelemailANDpassword {
+  position: relative; /* Posiciona o label de forma relativa */
 }
 
+/* ------------------------------
+   Media Query para telas com largura até 855px
+------------------------------ */
+@media screen and (max-width: 855px) {
 
-@media screen and (max-width: 855px){
-
-  .txtBoxNP{
-    right: 150px;
-    padding: 20px;
-    
-  }
-  .btnCadProfessor{
-    left: -20px;
-  }
-  .txtConta{
-    left: -20px;
+  /* Estilo para a caixa de texto "NP" (campo de entrada) */
+  .txtBoxNP {
+    right: 150px; /* Move a caixa 150px para a direita em relação ao contêiner pai */
+    padding: 20px; /* Adiciona preenchimento interno de 20px em todas as direções */
   }
 
-  .labelemailANDpassword{
-    left: -140px;
+  /* Estilo para o botão de cadastro do professor */
+  .btnCadProfessor {
+    left: -20px; /* Move o botão 20px para a esquerda em relação à posição original */
   }
 
-  .loginh1{
-    left: 50px;
-  }
-  
-}
-
-@media screen and (max-width: 600px){
-
-  .txtBoxNP{
-    padding: 20px;
-    right: 80px;
-  }
-  .btnCadProfessor{
-    left: 50px;
-  }
-  .txtConta{
-    left: 50px;
+  /* Estilo para o texto da conta (provavelmente informações do usuário ou email) */
+  .txtConta {
+    left: -20px; /* Move o texto da conta 20px para a esquerda */
   }
 
-  .labelemailANDpassword{
-    left: -70px;
+  /* Estilo para o label de email e senha */
+  .labelemailANDpassword {
+    left: -140px; /* Move o label de email e senha 140px para a esquerda */
   }
-  
-  .loginh1{
-    left: 110px;
+
+  /* Estilo para o título da tela de login */
+  .loginh1 {
+    left: 50px; /* Move o título 50px para a esquerda */
   }
 }
 
-.arquivar-img{
-  position: relative;
-  bottom: -60px;
+/* ------------------------------
+   Media Query para telas com largura até 600px
+------------------------------ */
+@media screen and (max-width: 600px) {
+
+  /* Estilo para a caixa de texto "NP" (campo de entrada) */
+  .txtBoxNP {
+    padding: 20px; /* Adiciona preenchimento interno de 20px */
+    right: 80px; /* Move a caixa 80px para a direita */
+  }
+
+  /* Estilo para o botão de cadastro do professor */
+  .btnCadProfessor {
+    left: 50px; /* Move o botão 50px para a esquerda */
+  }
+
+  /* Estilo para o texto da conta (provavelmente informações do usuário ou email) */
+  .txtConta {
+    left: 50px; /* Move o texto da conta 50px para a esquerda */
+  }
+
+  /* Estilo para o label de email e senha */
+  .labelemailANDpassword {
+    left: -70px; /* Move o label de email e senha 70px para a esquerda */
+  }
+
+  /* Estilo para o título da tela de login */
+  .loginh1 {
+    left: 110px; /* Move o título 110px para a esquerda */
+  }
 }
+
+/* ------------------------------
+   Estilo para a imagem do arquivo
+------------------------------ */
+.arquivar-img {
+  position: relative; /* Define a posição relativa para a imagem dentro do seu contêiner */
+  bottom: -60px; /* Move a imagem 60px para baixo em relação à posição original */
+}
+

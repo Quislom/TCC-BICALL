@@ -1,9 +1,9 @@
 <?php
 // Definindo as credenciais de conexão ao banco de dados
-$host = "localhost";
-$user = "root";
-$pass = "23082006";
-$base = "tcc";
+$host = "localhost"; //Nome do host
+$user = "root"; // Nome do usuário
+$pass = "23082006"; //Senha do banco
+$base = "tcc"; //Nome da database
 
 // Conecta ao banco de dados
 $con = mysqli_connect($host, $user, $pass, $base);
