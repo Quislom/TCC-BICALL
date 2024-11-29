@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Digital</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .message {
+            font-size: 18px;
+            color: #4CAF50;
+            text-align: center;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Cadastro de Digital</h2>
+ 
+        <p>Por favor, coloque o dedo no sensor para capturar a digital.</p>
+ 
+        <!-- Botão de capturar a digital -->
+        <button id="startCaptureBtn">Iniciar Captura de Digital</button>
+       
+        <p>Após capturar a digital, você será solicitado a colocar o dedo novamente para confirmação.</p>
+ 
+        <div class="message" id="confirmationMessage">
+            <p>Digital cadastrada com sucesso!</p>
+        </div>
+    </div>
+ 
+    <script>
+        document.getElementById('startCaptureBtn').addEventListener('click', function() {
+            // Exibir uma mensagem de carregamento ou instrução
+            alert("Aguarde enquanto a digital é capturada. Verifique a comunicação com o Arduino.");
+ 
+            // Simular o envio para o Arduino para capturar a digital
+            // Após a captura, o Arduino chamará o PHP para cadastrar
+ 
+            // Exemplo de interação com o PHP (aqui você deveria chamar o seu backend com AJAX ou um form)
+            fetch('cadastrar.php', {
+                method: 'POST',
+                body: new URLSearchParams({
+                    'id_digital': '12345',  // Simular ID da digital
+                    'id_aluno': '1'         // Simular ID do aluno
+                })
+            })
+            .then(response => response.text())
+            .then(data => {
+                console.log(data);  // Exibe a resposta do servidor no console
+                if (data.includes("Cadastro realizado com sucesso")) {
+                    document.getElementById('confirmationMessage').style.display = 'block';
+                } else {
+                    alert("Erro ao cadastrar a digital. Tente novamente.");
+                }
+            })
+            .catch(error => {
+                console.error("Erro de conexão:", error);
+                alert("Erro na comunicação com o servidor. Tente novamente.");
+            });
+        });
+    </script>
+</body>
+</html>
