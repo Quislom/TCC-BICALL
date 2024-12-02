@@ -52,4 +52,11 @@ END //
 DELIMITER ;
  
 select * from alunosArquivados
+
+-- Tabela para armazenar as digitais
+CREATE TABLE  fingerprints (
+    id INT AUTO_INCREMENT PRIMARY KEY,       -- Identificador único para cada digital
+    fingerprint_data TEXT NOT NULL,          -- Dados da digital (salvos como string ou hash)
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP -- Data e hora do cadastro
+);
  
