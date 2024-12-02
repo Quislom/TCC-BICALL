@@ -48,14 +48,13 @@
 <body>
 
     <?php
-    // Dados de conexão com o banco de dados
-    $host = "localhost"; // Host do banco de dados
-    $user = "root"; // Usuário do banco de dados
-    $pass = ""; // Senha do banco de dados
-    $base = "tcc"; // Nome do banco de dados
 
-    // Conecta ao banco de dados
-    $con = mysqli_connect($host, $user, $pass, $base);
+    
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Methods: POST");
+    header("Access-Control-Allow-Headers: Content-Type, Authorization");
+    include 'conexao_bd.php';  // Certifique-se de que o caminho esteja correto
+
 
     // Verifica se a conexão foi bem-sucedida
     if (!$con) {

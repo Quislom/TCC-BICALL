@@ -40,12 +40,13 @@
 </head>
 <body>
     <?php
+
+    
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Methods: POST");
+    header("Access-Control-Allow-Headers: Content-Type, Authorization");
      /* conexao bd  */
-    $host = "localhost";
-    $user = "root";
-    $pass = "";
-    $base = "tcc";
-    $con = mysqli_connect($host, $user, $pass, $base);
+   include 'conexao_bd.php';  // Certifique-se de que o caminho esteja correto;
 
     // Verifica a conexão
     if (!$con) {

@@ -1,17 +1,14 @@
 
 <?php
-//conexao bd
-$host = "localhost";
-$user = "root";
-$pass = "";
-$base = "tcc";
-$con = mysqli_connect($host, $user, $pass, $base);
+include 'conexao_bd.php';
 
-// Verificar a conexão
-if (!$con) {
-    die("Falha na conexão: " . mysqli_connect_error());
-}
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
 // Receber dados do formulário
 $cpf = $_POST['cpf'];
 $nome = $_POST['cxnomealuno'];

@@ -1,20 +1,17 @@
 <?php
-
-$host = "localhost"; // Nome do hostname
-$user = "root"; // Nome do usuario 
-$pass = ""; // Substitua pela sua senha do MySQL
-$base = "tcc"; //Nome da database
+$host = "sql111.infinityfree.com"; // Nome do hostname
+$user = "if0_37821527"; // Nome do usuário
+$pass = "CgMEhx64Ma7"; // Substitua pela sua senha do MySQL
+$base = "if0_37821527_tcc"; // Nome da database
 
 // Criar uma conexão com o banco de dados
-$conn = new mysqli($host, $user, $pass, $base);
+$con = new mysqli($host, $user, $pass, $base);
 
 // Verificar a conexão
-
-if ($conn->connect_error) {
-    die("Conexão falhou: " . $conn->connect_error);
+if ($con->connect_error) {
+    die("Conexão falhou: " . $con->connect_error);
 }
 
 // Definir o conjunto de caracteres para utf8 (opcional)
-$conn->set_charset("utf8");
-
+$con->set_charset("utf8");
 ?>

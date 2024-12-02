@@ -1,45 +1,33 @@
-
-
 <?php
-$host = "localhost"; // Nome do hostname
-$user = "root"; //Nome do usuário
-$pass = "23082006"; //Senha do banco
-$base = "tcc"; // Nome da database
+include 'conexao_bd.php'; // Certifique-se de que o caminho esteja correto
 
-// Conecta ao banco de dados
-$con = mysqli_connect($host, $user, $pass, $base);
-
-// Verifica a conexão
-if (!$con) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
-// Verifica se o formulário foi submetido
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // limpeza dos dados de entrada
     $email = mysqli_real_escape_string($con, $_POST['email']);
-    $senha = mysqli_real_escape_string($con, $_POST['senha']);
-    
-    // Verifica se os campos estão preenchidos
+    $senha = $_POST['senha'];
+
     if (empty($email) || empty($senha)) {
         echo "Por favor, preencha todos os campos.";
-    } else {
-        // Consulta para verificar as credenciais
-        $sql = "SELECT * FROM tb_professores WHERE email='$email' AND senha='$senha'";
-        $result = mysqli_query($con, $sql);
+        exit();
+    }
 
-        if (mysqli_num_rows($result) == 1) {
-            // Login bem-sucedido
-            header("Location: inicio.html"); // Redirecionar para uma a página inicio
-                        
-            exit(); // Finaliza a operação
+    // Busca o usuário pelo email
+    $sql = "SELECT * FROM tb_professores WHERE email = '$email'";
+    $result = mysqli_query($con, $sql);
+
+    if (mysqli_num_rows($result) == 1) {
+        $row = mysqli_fetch_assoc($result);
+
+        // Verifica a senha
+        if (password_verify($senha, $row['senha'])) {
+            header("Location: inicio.html"); // Redirecionar para a página inicial
+            exit();
         } else {
-            // Credenciais inválidas
-            echo "Email ou senha inválidos.";
+            echo "Senha inválida.";
         }
+    } else {
+        echo "Usuário não encontrado.";
     }
 }
 
-// Fecha a conexão
 mysqli_close($con);
 ?>

@@ -1,6 +1,11 @@
 <?php
 include 'conexao.php';
 
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+
+
 $sql = "SELECT * FROM alunos";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
