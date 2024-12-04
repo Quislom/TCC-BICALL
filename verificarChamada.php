@@ -1,55 +1,5 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <!-- Define o conjunto de caracteres para a página -->
-    <meta charset="UTF-8">
-    <!-- Configura a visualização para dispositivos móveis (responsividade) -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dados do Aluno</title>
-
-    <style>
-        /* Estilo para a tabela */
-        .styled-table {
-            width: 100%; /* A tabela ocupa 100% da largura da página */
-            border-collapse: collapse; /* Remove espaçamento entre as células */
-            margin: 25px 0; /* Margem superior e inferior da tabela */
-            font-size: 1em; /* Tamanho da fonte */
-            font-family: Arial, sans-serif; /* Fonte da tabela */
-            border-radius: 5px; /* Bordas arredondadas */
-            overflow: hidden; /* Esconde qualquer conteúdo fora da borda da tabela */
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); /* Sombra para efeito de profundidade */
-        }
-
-        /* Estilo para as células da tabela */
-        .styled-table th,
-        .styled-table td {
-            padding: 12px 15px; /* Preenchimento dentro das células */
-            text-align: center; /* Alinhamento centralizado do texto */
-            border-bottom: 1px solid #ddd; /* Linha de separação entre as células */
-        }
-
-        /* Estilo para os cabeçalhos da tabela */
-        .styled-table th {
-            background-color: #009879; /* Cor de fundo verde para os cabeçalhos */
-            color: #fff; /* Cor do texto branco */
-        }
-
-        /* Estilo para as linhas pares da tabela (linhas alternadas) */
-        .styled-table tbody tr:nth-of-type(even) {
-            background-color: #f3f3f3; /* Cor de fundo para linhas pares */
-        }
-
-        /* Estilo para a última linha da tabela */
-        .styled-table tbody tr:last-of-type {
-            border-bottom: 2px solid #009879; /* Linha mais forte na parte inferior */
-        }
-    </style>
-</head>
-<body>
-
-
 <?php
-
+// Inicia a execução do PHP para processar os dados antes de gerar qualquer saída HTML
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
@@ -73,36 +23,130 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verifica se a consulta retornou algum resultado
     if ($result && mysqli_num_rows($result) > 0) {
         // Exibe os dados dos alunos em uma tabela HTML
-        echo "<table class='styled-table'>
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Curso</th>
-                        <th>Série</th>
-                    </tr>
-                </thead>
-                <tbody>";
+        $tabela = "<table class='styled-table'>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Curso</th>
+                            <th>Série</th>
+                        </tr>
+                    </thead>
+                    <tbody>";
 
         // Exibe os resultados encontrados
         while ($aluno = mysqli_fetch_assoc($result)) {
-            echo "<tr>
-                    <td>" . htmlspecialchars($aluno['nome']) . "</td> <!-- Exibe o nome do aluno -->
-                    <td>" . htmlspecialchars($aluno['Cursos']) . "</td> <!-- Exibe o curso do aluno -->
-                    <td>" . htmlspecialchars($aluno['serie']) . "</td> <!-- Exibe a série do aluno -->
-                  </tr>";
+            $tabela .= "<tr>
+                        <td>" . htmlspecialchars($aluno['nome']) . "</td> 
+                        <td>" . htmlspecialchars($aluno['Cursos']) . "</td> 
+                        <td>" . htmlspecialchars($aluno['serie']) . "</td> 
+                    </tr>";
         }
 
-        echo "</tbody></table>";
+        $tabela .= "</tbody></table>";
     } else {
-        // Caso não encontre nenhum aluno para os parâmetros informados
-        echo "<p>Nenhum aluno encontrado para o curso e série informados.</p>";
+        $tabela = "<p>Nenhum aluno encontrado para o curso e série informados.</p>";
     }
 } else {
-    // Caso o formulário não tenha sido enviado, exibe uma mensagem
-    echo "<p>Por favor, envie o formulário.</p>";
+    $tabela = "<p>Por favor, envie o formulário.</p>";
 }
 
 // Fecha a conexão com o banco de dados após a execução
 mysqli_close($con);
-
 ?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="./styles/padrao.css"/> <!-- Link para o estilo padrão -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados do Aluno</title>
+
+    <style>
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 1em;
+            font-family: Arial, sans-serif;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .styled-table th,
+        .styled-table td {
+            padding: 12px 15px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .styled-table th {
+            background-color: #009879;
+            color: #fff;
+        }
+
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid #009879;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fundo">
+        <div class="banner">
+            <div class="blocoAmareloLinks">
+                <div class="blocoAzulCima"></div>
+                <div class="div1">
+                    <div class="div2">
+                        <p class="divTitulo">
+                            <img src="img/logo.png" alt="Biometric Call Logo" class="logo">
+                        </p>
+                        <p class="titulo1">BIOMETRIC</p>
+                        <p class="titulo2">CALL</p>
+                    </div>
+                    <p class="txtBanner"><a class="txtBanner" href="inicio.html">TELA PRINCIPAL</a></p>
+                    <p class="txtBanner"><a class="txtBanner" href="atualizaraluno.html">ATUALIZAR DADOS</a></p>
+                    <p class="txtBanner"><a class="txtBanner" href="cadastroAluno.html">CADASTRAR ALUNO</a></p>
+                    <p class="txtBanner"><a class="txtBanner" href="apagaraluno.html">DESVINCULAR ALUNO</a></p>
+
+                    <!-- modo dark -->
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="toggle-dark-mode">
+                        <label for="toggle-dark-mode" class="switch">
+                            <span class="toggle-thumb"></span>
+                        </label>
+                    </div>
+
+                    <!-- menu sidebar-->
+                    <div class="hamburguer">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+
+                    <div class="sidebar">
+                        <ul class="">
+                            <li class="listaSidebar"><a href="inicio.html" class="textoSidebar">TELA PRINCIPAL</a></li>
+                            <li class="listaSidebar"><a class="txtBanner" href="cadastroAluno.html">CADASTRAR ALUNO</a></li>
+                            <li class=""><a href="verificarchamada.html" class="">VERIFICAR CHAMADA</a></li>
+                            <li class=""><a href="atualizaraluno.html" class="">ATUALIZAR DADOS</a></li>
+                            <li class=""><a href="apagaraluno.html" class="">DESVINCULAR ALUNO</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="blocoAzulMeio"></div>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Exibe a tabela abaixo do banner -->
+            <?php echo $tabela; ?>
+        </div>
+    </div>
+</body>
+</html>
