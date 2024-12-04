@@ -61,13 +61,13 @@ mysqli_close($con);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dados do Aluno</title>
-
     <style>
+        /* estilo da exibição dos dados */
         .styled-table {
             width: 100%;
-            border-collapse: collapse;
+            table-layout: fixed;  /* Tenta forçar uma largura fixa */
             margin: 25px 0;
-            font-size: 1em;
+            font-size: 2em;
             font-family: Arial, sans-serif;
             border-radius: 5px;
             overflow: hidden;
@@ -87,7 +87,7 @@ mysqli_close($con);
         }
 
         .styled-table tbody tr:nth-of-type(even) {
-            background-color: #f3f3f3;
+            background-color: #009879;
         }
 
         .styled-table tbody tr:last-of-type {
@@ -114,36 +114,14 @@ mysqli_close($con);
                     <p class="txtBanner"><a class="txtBanner" href="cadastroAluno.html">CADASTRAR ALUNO</a></p>
                     <p class="txtBanner"><a class="txtBanner" href="apagaraluno.html">DESVINCULAR ALUNO</a></p>
 
-                    <!-- modo dark -->
-                    <div class="toggle-switch">
-                        <input type="checkbox" id="toggle-dark-mode">
-                        <label for="toggle-dark-mode" class="switch">
-                            <span class="toggle-thumb"></span>
-                        </label>
-                    </div>
 
-                    <!-- menu sidebar-->
-                    <div class="hamburguer">
-                        <div class="line"></div>
-                        <div class="line"></div>
-                        <div class="line"></div>
-                    </div>
-
-                    <div class="sidebar">
-                        <ul class="">
-                            <li class="listaSidebar"><a href="inicio.html" class="textoSidebar">TELA PRINCIPAL</a></li>
-                            <li class="listaSidebar"><a class="txtBanner" href="cadastroAluno.html">CADASTRAR ALUNO</a></li>
-                            <li class=""><a href="verificarchamada.html" class="">VERIFICAR CHAMADA</a></li>
-                            <li class=""><a href="atualizaraluno.html" class="">ATUALIZAR DADOS</a></li>
-                            <li class=""><a href="apagaraluno.html" class="">DESVINCULAR ALUNO</a></li>
-                        </ul>
-                    </div>
+                 
                 </div>
                 <div class="blocoAzulMeio"></div>
             </div>
         </div>
 
-        <div class="container">
+        <div class="">
             <!-- Exibe a tabela abaixo do banner -->
             <?php echo $tabela; ?>
         </div>

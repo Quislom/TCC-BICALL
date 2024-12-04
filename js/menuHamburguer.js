@@ -52,6 +52,28 @@ document.getElementById('toggle-dark-mode').addEventListener('click', function()
   if (blocoAzulRodape){
     blocoAzulRodape.classList.toggle('dark-mode');
   }
+
+  const footersection  = document.querySelector('.footer-section ul li a ');
+  if (footersection){
+    footersection.classList.toggle('dark-mode');
+  }
+ 
+  const footerp  = document.querySelector('.footer-section p ');
+  if (footerp){
+    footerp.classList.toggle('dark-mode');
+  }
+
+  const footerul  = document.querySelector('.footer-section ul ');
+  if (footerul){
+    footerul.classList.toggle('dark-mode');
+  }
+
+  const footercc  = document.querySelector('.footer-section.contact p ');
+  if (footercc){
+    footercc.classList.toggle('dark-mode');
+  }
+ 
+
  
   // Aplica o modo escuro em todos os elementos com a classe 'txtBanner'
   const txtBannerElements = document.querySelectorAll('.txtBanner');
