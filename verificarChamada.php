@@ -16,8 +16,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $curso = mysqli_real_escape_string($con, $_POST['curso']);
     $serie = mysqli_real_escape_string($con, $_POST['serie']);
 
-    // Consulta o banco de dados para buscar os dados do aluno pelo curso e série
-    $sql = "SELECT nome, Cursos, serie FROM tb_alunos WHERE Cursos = '$curso' AND serie = '$serie'";
+    // Consulta o banco de dados para buscar os dados do aluno e as chamadas associadas
+    $sql = "SELECT a.id, a.nome, a.Cursos, a.serie, c.data_chamada 
+            FROM tb_alunos a
+            LEFT JOIN tb_chamadas c ON a.id = c.aluno_id
+            WHERE a.Cursos = '$curso' AND a.serie = '$serie'";
+
     $result = mysqli_query($con, $sql);
 
     // Verifica se a consulta retornou algum resultado
@@ -29,16 +33,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <th>Nome</th>
                             <th>Curso</th>
                             <th>Série</th>
+                            <th>Data da Chamada</th> <!-- Nova coluna para exibir a data da chamada -->
                         </tr>
                     </thead>
                     <tbody>";
 
         // Exibe os resultados encontrados
         while ($aluno = mysqli_fetch_assoc($result)) {
+            // Verifica se a chamada existe para o aluno
+            $data_chamada = $aluno['data_chamada'] ? htmlspecialchars($aluno['data_chamada']) : "Não registrada";  // Exibe a data ou "Não registrada" se não houver chamada
+
             $tabela .= "<tr>
                         <td>" . htmlspecialchars($aluno['nome']) . "</td> 
                         <td>" . htmlspecialchars($aluno['Cursos']) . "</td> 
                         <td>" . htmlspecialchars($aluno['serie']) . "</td> 
+                        <td>" . $data_chamada . "</td>  <!-- Exibe a data da chamada -->
                     </tr>";
         }
 
@@ -113,9 +122,6 @@ mysqli_close($con);
                     <p class="txtBanner"><a class="txtBanner" href="atualizaraluno.html">ATUALIZAR DADOS</a></p>
                     <p class="txtBanner"><a class="txtBanner" href="cadastroAluno.html">CADASTRAR ALUNO</a></p>
                     <p class="txtBanner"><a class="txtBanner" href="apagaraluno.html">DESVINCULAR ALUNO</a></p>
-
-
-                 
                 </div>
                 <div class="blocoAzulMeio"></div>
             </div>
