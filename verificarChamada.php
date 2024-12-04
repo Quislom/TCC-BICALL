@@ -47,64 +47,62 @@
 </head>
 <body>
 
-    <?php
 
-    
-    header("Access-Control-Allow-Origin: *");
-    header("Access-Control-Allow-Methods: POST");
-    header("Access-Control-Allow-Headers: Content-Type, Authorization");
-    include 'conexao_bd.php';  // Certifique-se de que o caminho esteja correto
+<?php
 
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+include 'conexao_bd.php';  // Certifique-se de que o caminho esteja correto
 
-    // Verifica se a conexão foi bem-sucedida
-    if (!$con) {
-        // Se falhar, exibe uma mensagem de erro e para a execução do código
-        die("Falha na conexão: " . mysqli_connect_error());
-    }
+// Verifica se a conexão foi bem-sucedida
+if (!$con) {
+    die("Falha na conexão: " . mysqli_connect_error());
+}
 
-    // Verifica se o formulário foi enviado (via método POST)
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Recebe o CPF enviado pelo formulário e evita SQL Injection
-        $cpf = mysqli_real_escape_string($con, $_POST['cpf']);
+// Verifica se o formulário foi enviado (via método POST)
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recebe os valores de curso e série enviados pelo formulário e evita SQL Injection
+    $curso = mysqli_real_escape_string($con, $_POST['curso']);
+    $serie = mysqli_real_escape_string($con, $_POST['serie']);
 
-        // Consulta o banco de dados para buscar os dados do aluno pelo CPF
-        $sql = "SELECT nome, Cursos, serie FROM tb_alunos WHERE cpf = '$cpf'";
-        $result = mysqli_query($con, $sql);
+    // Consulta o banco de dados para buscar os dados do aluno pelo curso e série
+    $sql = "SELECT nome, Cursos, serie FROM tb_alunos WHERE Cursos = '$curso' AND serie = '$serie'";
+    $result = mysqli_query($con, $sql);
 
-        // Verifica se a consulta retornou algum resultado
-        if ($result && mysqli_num_rows($result) > 0) {
-            // Extrai os dados do aluno encontrados
-            $aluno = mysqli_fetch_assoc($result);
+    // Verifica se a consulta retornou algum resultado
+    if ($result && mysqli_num_rows($result) > 0) {
+        // Exibe os dados dos alunos em uma tabela HTML
+        echo "<table class='styled-table'>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Curso</th>
+                        <th>Série</th>
+                    </tr>
+                </thead>
+                <tbody>";
 
-            // Exibe os dados do aluno em uma tabela HTML
-            echo "<table class='styled-table'>
-                    <thead>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Curso</th>
-                            <th>Série</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>" . htmlspecialchars($aluno['nome']) . "</td> <!-- Exibe o nome do aluno -->
-                            <td>" . htmlspecialchars($aluno['Cursos']) . "</td> <!-- Exibe o curso do aluno -->
-                            <td>" . htmlspecialchars($aluno['serie']) . "</td> <!-- Exibe a série do aluno -->
-                        </tr>
-                    </tbody>
-                </table>";
-        } else {
-            // Caso não encontre o aluno, exibe uma mensagem
-            echo "<p>Aluno não encontrado.</p>";
+        // Exibe os resultados encontrados
+        while ($aluno = mysqli_fetch_assoc($result)) {
+            echo "<tr>
+                    <td>" . htmlspecialchars($aluno['nome']) . "</td> <!-- Exibe o nome do aluno -->
+                    <td>" . htmlspecialchars($aluno['Cursos']) . "</td> <!-- Exibe o curso do aluno -->
+                    <td>" . htmlspecialchars($aluno['serie']) . "</td> <!-- Exibe a série do aluno -->
+                  </tr>";
         }
+
+        echo "</tbody></table>";
     } else {
-        // Caso o formulário não tenha sido enviado, exibe uma mensagem
-        echo "<p>Por favor, envie o formulário.</p>";
+        // Caso não encontre nenhum aluno para os parâmetros informados
+        echo "<p>Nenhum aluno encontrado para o curso e série informados.</p>";
     }
+} else {
+    // Caso o formulário não tenha sido enviado, exibe uma mensagem
+    echo "<p>Por favor, envie o formulário.</p>";
+}
 
-    // Fecha a conexão com o banco de dados após a execução
-    mysqli_close($con);
-    ?>
+// Fecha a conexão com o banco de dados após a execução
+mysqli_close($con);
 
-</body>
-</html>
+?>
