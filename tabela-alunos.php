@@ -1,10 +1,10 @@
 <?php
 // Conexão com o banco de dados
-include 'conexao_bd.php';  // Certifique-se de que o caminho esteja correto
+include 'conexao_bd.php'; // Certifique-se de que o caminho esteja correto
 
 // Verifica a conexão
 if (!$con) {
-    die("Connection failed: " . mysqli_connect_error());
+    die("<script>alert('Erro ao conectar ao banco de dados.'); window.location.href='cadastroAluno.html';</script>");
 }
 
 // Verifica se o formulário foi submetido
@@ -21,23 +21,49 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $complemento = mysqli_real_escape_string($con, $_POST['complemento']);
     $telefone = mysqli_real_escape_string($con, $_POST['telefone']);
 
-    // Verifica se todos os campos estão preenchidos
-    if (empty($nome) || empty($cursos) || empty($serie) || empty($cpf) || empty($datanasc) || empty($cep) || empty($endereco)|| empty($bairro) || empty($telefone)) {
-        echo "Por favor, preencha todos os campos obrigatorios.";
-    } else {
-        // Insere os dados no banco de dados
-        $sql = "INSERT INTO tb_alunos (nome, cursos, serie, cpf, datanasc, cep, endereco, bairro, complemento, telefone) 
-                VALUES ('$nome', '$cursos', '$serie', '$cpf', '$datanasc', '$cep', '$endereco','$bairro','$complemento', '$telefone')";
-        
-        if (!mysqli_query($con, $sql)) {
-            echo "Erro ao cadastrar os dados: " . mysqli_error($con);
-        }
+    // Verifica duplicidade no banco de dados
+    $sql_check = "SELECT * FROM tb_alunos WHERE cpf = '$cpf' OR nome = '$nome'";
+    $res_check = mysqli_query($con, $sql_check);
+
+    if (mysqli_num_rows($res_check) > 0) {
+        echo "<script>
+                alert('CPF ou Nome já cadastrado no sistema. Por favor, verifique os dados.');
+                window.location.href='cadastroAluno.html';
+              </script>";
+        exit;
     }
+
+    // Verifica se todos os campos estão preenchidos
+    if (empty($nome) || empty($cursos) || empty($serie) || empty($cpf) || empty($datanasc) || empty($cep) || empty($endereco) || empty($bairro) || empty($telefone)) {
+        echo "<script>
+                alert('Por favor, preencha todos os campos obrigatórios.');
+                window.location.href='cadastroAluno.html';
+              </script>";
+        exit;
+    }
+
+    // Insere os dados no banco de dados
+    $sql = "INSERT INTO tb_alunos (nome, cursos, serie, cpf, datanasc, cep, endereco, bairro, complemento, telefone) 
+            VALUES ('$nome', '$cursos', '$serie', '$cpf', '$datanasc', '$cep', '$endereco', '$bairro', '$complemento', '$telefone')";
+
+    if (mysqli_query($con, $sql)) {
+        echo "<script>
+                alert('Cadastro realizado com sucesso!');
+                window.location.href='cadastroAluno.html';
+              </script>";
+    } else {
+        echo "<script>
+                alert('Erro ao cadastrar os dados: " . mysqli_error($con) . "');
+                window.location.href='cadastroAluno.html';
+              </script>";
+    }
+    exit;
 }
 
-// Exibir dados após a inserção
+// Exibir dados após a inserção (opcional, se necessário)
 $res = mysqli_query($con, "SELECT * FROM tb_alunos");
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">

@@ -83,12 +83,14 @@
                     </div>
                     <div class="input-group">
                         <div class="input-box">
+                            <div id="error-message" class="error-message" style="color: red; display: none;"></div>
+
                             <label for="txtBoxNomeA">Nome do aluno</label>
                             <input class="txts" type="text" name="txtBoxNomeA" title="Apenas letras são permitidas" pattern="[A-Za-z\s]+" placeholder="Digite o nome do aluno" required>
 
                             <label for="cpf">CPF do aluno</label>
-                            <input class="txts" type="text" name="cpf" title="Apenas números são permitidos, e deve conter exatamente 11 dígitos" pattern="\d{11}" placeholder="Digite o CPF do aluno" maxlength="11" required>
-
+                            <input class="txts" type="text" name="cpf" id="cpf" title="Apenas números são permitidos, e deve conter exatamente 11 dígitos" pattern="\d{11}" placeholder="Digite o CPF do aluno" maxlength="11" required>
+                            
                             <label for="datanasc">Data de nascimento do aluno:</label>
                             <input class="txts" type="date" name="datanasc" required>
 
@@ -173,6 +175,7 @@
         </div>
         <!-- script sidebar -->
         <script src="js/menuHamburguer.js"></script>
+        <script src="js/verificarCpf.js"></script>
 
         
     </div>

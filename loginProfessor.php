@@ -6,7 +6,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $senha = $_POST['senha'];
 
     if (empty($email) || empty($senha)) {
-        echo "Por favor, preencha todos os campos.";
+        echo "<script>
+                alert('Por favor, preencha todos os campos.');
+                window.location.href = 'conectarprofessor.html';
+              </script>";
         exit();
     }
 
@@ -22,10 +25,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: inicio.html"); // Redirecionar para a página inicial
             exit();
         } else {
-            echo "Senha inválida.";
+            echo "<script>
+                    alert('Senha inválida.');
+                    window.location.href = 'conectarprofessor.html';
+                  </script>";
         }
     } else {
-        echo "Usuário não encontrado.";
+        echo "<script>
+                alert('Usuário não encontrado.');
+                window.location.href = 'conectarprofessor.html';
+              </script>";
     }
 }
 
