@@ -1,41 +1,135 @@
-
 <?php
-include 'conexao_bd.php';
+include 'conexao_bd.php'; // Conexão com o banco de dados
 
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: POST");
-header("Access-Control-Allow-Headers: Content-Type, Authorization");
+// Verifica a conexão
+if (!$con) {
+    die("<script>alert('Erro ao conectar ao banco de dados.'); window.location.href='cadastroAluno.html';</script>");
+}
 
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: POST");
-header("Access-Control-Allow-Headers: Content-Type, Authorization");
+// Verifica se o formulário foi enviado
 // Receber dados do formulário
 $cpf = $_POST['cpf'];
 $nome = $_POST['cxnomealuno'];
 $cursos = $_POST['curso'];
 $serie = $_POST['serie'];
 
-// Buscar o ID do aluno pelo CPF
-$id_query = "SELECT id FROM tb_alunos WHERE cpf = '$cpf'";
-$id_result = mysqli_query($con, $id_query);
-if ($id_result && mysqli_num_rows($id_result) > 0) {
-    $id_row = mysqli_fetch_assoc($id_result);
-    $id = $id_row['id'];
 
-    // Atualizar os dados do aluno
-    $sql = "UPDATE tb_alunos SET nome = '$nome', cursos = '$cursos', serie = '$serie' WHERE id = $id";
-    if (mysqli_query($con, $sql)) {
-        echo "<script>
-                alert('Operação realizada com sucesso');
-                window.location.href = 'tabela-alunos.php'; // Atualiza a página para mostrar as mudanças
-              </script>";
-    } else {
-        echo "<script>alert('Erro ao atualizar dados: " . mysqli_error($con) . "');</script>";
-    }
-} else {
-    echo "<script>alert('Aluno não encontrado');</script>";
+// Atualizar dados no banco de dados
+$sql = "UPDATE tb_alunos SET nome = '$nome', cursos = '$cursos', serie = '$serie' WHERE cpf = '$cpf'";
+$result = mysqli_query($con, $sql);
+
+if (!$result) {
+    die("<script>alert('Erro ao atualizar os dados: " . mysqli_error($con) . "'); window.location.href='atualizaraluno.html';</script>");
 }
 
-// Fechar a conexão
-mysqli_close($con);
+// Buscar todos os alunos para exibição
+$sql = "SELECT * FROM tb_alunos";
+$result = mysqli_query($con, $sql);
+
+if (!$result) {
+    die("<script>alert('Erro ao buscar os dados: " . mysqli_error($con) . "');</script>");
+}
 ?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<link rel="stylesheet" href="./styles/padrao.css">
+<style>
+    /* estilo da exibição dos dados */
+    .styled-table {
+        width: 100%;
+        table-layout: fixed;
+        margin: 25px 0;
+        font-size: 1.5em;
+        font-family: Arial, sans-serif;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .styled-table th,
+    .styled-table td {
+        padding: 12px 15px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .styled-table th {
+        background-color: #009879;
+        color: #fff;
+    }
+
+    .styled-table tbody tr:nth-of-type(even) {
+        background-color: #f3f3f3;
+    }
+
+    .styled-table tbody tr:last-of-type {
+        border-bottom: 2px solid #009879;
+    }
+</style>
+
+    <!-- Cabeçalho igual ao anterior -->
+</head>
+<body>
+<div class="fundo">
+        <div class="banner">
+            <div class="blocoAmareloLinks">
+                <div class="blocoAzulCima"></div>
+                <div class="div1">
+                    <div class="div2">
+                        <p class="divTitulo">
+                            <img src="img/logo.png" alt="Biometric Call Logo" class="logo">
+                        </p>
+                        <p class="titulo1">BIOMETRIC</p>
+                        <p class="titulo2">CALL</p>
+                    </div>
+                    <p class="txtBanner"><a class="txtBanner" href="inicio.html">TELA PRINCIPAL</a></p>
+                    <p class="txtBanner"><a class="txtBanner" href="atualizaraluno.html">ATUALIZAR DADOS</a></p>
+                    <p class="txtBanner"><a class="txtBanner" href="cadastroAluno.html">CADASTRAR ALUNO</a></p>
+                    <p class="txtBanner"><a class="txtBanner" href="verificarchamada.html">VERIFICAR CHAMADA</a></p>
+                </div>
+                <div class="blocoAzulMeio"></div>
+            </div>
+        </div>
+
+        <!-- Aqui começa a exibição da tabela logo abaixo do banner -->
+        <div class="tabela-dados">
+    <!-- Conteúdo da página -->
+    <div class="tabela-dados">
+        <?php
+        if (mysqli_num_rows($result) > 0) {
+            echo "<table class='styled-table'>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Curso</th>
+                            <th>Série</th>
+                            <th>CPF</th>
+                            <th>Data de Nascimento</th>
+                        </tr>
+                    </thead>
+                    <tbody>";
+
+            while ($row = mysqli_fetch_assoc($result)) {
+                $datanasc_formatada = date('d-m-Y', strtotime($row['datanasc']));
+                echo "<tr>
+                        <td>" . htmlspecialchars($row['nome']) . "</td>
+                        <td>" . htmlspecialchars($row['cursos']) . "</td>
+                        <td>" . htmlspecialchars($row['serie']) . "</td>
+                        <td>" . htmlspecialchars($row['cpf']) . "</td>
+                        <td>" . $datanasc_formatada . "</td>
+                    </tr>";
+            }
+
+            echo "</tbody></table>";
+        } else {
+            echo "<p>Nenhum dado encontrado.</p>";
+        }
+
+        // Fechar a conexão
+        mysqli_close($con);
+        ?>
+    </div>
+</body>
+</html>
